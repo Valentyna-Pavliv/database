@@ -1,0 +1,190 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ECB817ED-7696-8B81-6DCC-5C88C90FB24C" name="HOUSE">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:04:42 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_16</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="neighbourhood" id="A5E1F300-53C5-354A-DC8B-DE9EE7F43A30">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="longitude" id="CD28CD3A-E887-267E-58FE-79DF7240146F">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA64F5F9-9EA4-78D1-7962-4155B48C91EA" referredColumn="C9F3ACBF-0B36-1BA7-AA01-5D613D1190E2"/>
+</associations>
+</Column>
+<Column name="latitude" id="5711F907-C712-5359-4D5F-B61FCDF8CB1C">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA64F5F9-9EA4-78D1-7962-4155B48C91EA" referredColumn="9D400D9C-49FC-CDAC-26D0-2F0CCF398F69"/>
+</associations>
+</Column>
+<Column name="beds" id="1868C433-5656-6EDD-A475-43B18CF1A56B">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="space" id="B01BC423-7E01-8C86-9DFE-4B1CD9343640">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="property_type" id="8A00A235-185C-0B1F-4EF2-8881BD221D51">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="room_type" id="2B650952-1DDF-30C5-88BB-6CC5507DE136">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bed_type" id="83C0EA02-4DBB-C73E-712B-F1FB884A79ED">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="house_rules" id="BCB8B6B0-75BA-79BE-1C9C-A2642F2D1164">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="accommodates" id="FCB7F4C5-0D92-9558-42CF-5EA8C886568B">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="square_feet" id="FA045FC1-03DA-3BC7-3C71-75027EAF6C52">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bathrooms" id="1FF54A2C-98E2-696C-E875-DCD4D39B6D07">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bedrooms" id="6E57B486-F33B-91EC-2070-1455E82D3BA0">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="93B515C0-74E6-74B9-D606-C123F965E47C" name="HOUSE_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD28CD3A-E887-267E-58FE-79DF7240146F"/>
+<colUsage columnID="5711F907-C712-5359-4D5F-B61FCDF8CB1C"/>
+<colUsage columnID="A5E1F300-53C5-354A-DC8B-DE9EE7F43A30"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3099C2F0-4BF8-2DF6-B1EB-7A403581270D" name="HOUSE_LOCATION_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5711F907-C712-5359-4D5F-B61FCDF8CB1C"/>
+<colUsage columnID="CD28CD3A-E887-267E-58FE-79DF7240146F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

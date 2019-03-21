@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2963F172-C8CE-3771-D36E-398457A2B971" name="LOCATION">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:23:39 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="latitude" id="9D400D9C-49FC-CDAC-26D0-2F0CCF398F69">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:25:23 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="longitude" id="C9F3ACBF-0B36-1BA7-AA01-5D613D1190E2">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:25:23 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id" id="A947274D-C985-8AB4-84D1-A78C8139058D">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:34:16 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9DEA9695-2A9F-ABF9-AF8D-9344A253E481" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+</associations>
+</Column>
+<Column name="country" id="718581DB-1243-C44F-3F31-5EC30FEE3F34">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:26:22 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="country_code" id="789578B7-1AEC-6497-2461-5DA981787888">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:26:22 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city" id="4AFE4D04-EEE4-98C5-66BC-B49649CA8AB2">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:26:22 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="24D87D77-9061-6499-128A-8D28B5E3AC24" name="LOCATION_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:25:23 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D400D9C-49FC-CDAC-26D0-2F0CCF398F69"/>
+<colUsage columnID="C9F3ACBF-0B36-1BA7-AA01-5D613D1190E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="64A99264-2746-8515-2A5A-3A2A293096EB" name="LOCATION_ID_UN">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:34:16 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A947274D-C985-8AB4-84D1-A78C8139058D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9970EF1B-3281-5802-0D8F-392F423028FE" name="LOCATION_LISTINGS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:34:16 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A947274D-C985-8AB4-84D1-A78C8139058D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

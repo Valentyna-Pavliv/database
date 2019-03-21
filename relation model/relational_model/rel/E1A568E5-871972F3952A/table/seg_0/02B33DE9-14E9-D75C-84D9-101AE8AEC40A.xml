@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02B33DE9-14E9-D75C-84D9-101AE8AEC40A" name="AMENITIES">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:16:49 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="511EDC44-8EF8-8377-3FB6-E383F917F774">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="722A0AAF-CAE4-87DD-4E9F-67A2017DCA15" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+</associations>
+</Column>
+<Column name="amenities" id="22151192-A3F7-319F-E304-06E0D06EB92A">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="access" id="A0A16344-A7F7-5637-5633-ADF8DA010939">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="876F744A-E1A2-CC79-0E65-EB70B13D9DC0" name="AMENITIES_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="511EDC44-8EF8-8377-3FB6-E383F917F774"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C326AD57-9F71-150D-F2B6-F6F75C9112FF" name="AMENITIES_ID_UN">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="511EDC44-8EF8-8377-3FB6-E383F917F774"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A3BEDB73-8430-9EF3-4AE2-4C14290CDAB5" name="AMENITIES_LISTINGS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="511EDC44-8EF8-8377-3FB6-E383F917F774"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

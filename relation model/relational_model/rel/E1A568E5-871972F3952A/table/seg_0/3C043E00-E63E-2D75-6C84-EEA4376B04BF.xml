@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3C043E00-E63E-2D75-6C84-EEA4376B04BF" name="BOOKING_POLICY">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:02:15 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="12D29B3C-F24B-50B2-AEA9-8E26E36C4A55">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:10:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64CE2E3B-E295-BAAF-DB28-D718646912EA" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+</associations>
+</Column>
+<Column name="extra_people" id="1685DF91-E9B9-590B-58BF-9E5D204C069D">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_business_travel_ready" id="32EB25CD-2F4F-530D-B0FE-586F2D8DFD29">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="require_guest_profile_picture" id="3CFA548D-DB8F-D2C2-3932-15DB2AA766E1">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maximum_nights" id="6E6DF8EF-0009-06BF-13DE-0C9FE4B1294D">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="minimum_nights" id="FF3597D9-A236-E0C6-700F-C0504B1D8EBC">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cancellation_policy" id="0464EF91-749B-C2E7-F385-6A4E8EF0A707">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="guests_included" id="2CD8060F-1272-D723-2981-B87F58F0FAC9">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:29 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="13E9B4E3-3121-48C9-E4AD-C069F648CE5D" name="BOOKING_POLICY_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:12:07 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12D29B3C-F24B-50B2-AEA9-8E26E36C4A55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5731BE26-F7E5-B522-7BD4-5F4DAEA40CF2" name="BOOKING_POLICY_ID_UN">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:21:37 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12D29B3C-F24B-50B2-AEA9-8E26E36C4A55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FD27FD3B-9947-B263-AB03-6B1043F1FC8C" name="BOOKING_POLICY_LISTINGS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 10:12:07 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12D29B3C-F24B-50B2-AEA9-8E26E36C4A55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
