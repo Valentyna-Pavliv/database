@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B50A0767-8C18-594E-85CF-B44FE5B0D881" name="HOSTS">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:45:08 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_16</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="url" id="4A275E27-D33E-F630-7CAB-687CEA8BE182">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_listings" id="DEC98EFF-23A8-F206-717D-EFB6C85EE65F">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:52:35 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="931F83F0-8DFA-CA0C-74B2-2075C18240CF" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+</associations>
+</Column>
+<Column name="id_user" id="E0669BA6-F643-FFC3-F204-79B03BE6F431">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:41:05 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A02EE4B-4836-4C7D-EBDF-C87171DBE13F" referredColumn="D6757606-24F9-DCE9-1433-806DB04E7DE7"/>
+</associations>
+</Column>
+<Column name="since" id="4FA1CF70-8AAF-48F7-14B9-B852328DD00F">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="about" id="9DD92181-747B-6DD1-4891-56B0EE8D837D">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="neighbourhood" id="87FD5D7A-B08F-7CE7-D254-6E7D0FEA36DA">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="thumbnail_url" id="FB040AB8-B788-260C-C526-3E5AB0C3727B">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="verifications" id="74E92C58-3E81-8639-B902-4C8045E725F3">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="response_time" id="B5C02D43-FC5E-6457-E173-64983EA153D4">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A3734162-D4AD-FC6C-7573-0B05C074BA8D" name="HOSTS_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:50:58 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A275E27-D33E-F630-7CAB-687CEA8BE182"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="68CE1198-58EC-3C27-5F32-39642F34A1C6" name="HOSTS_ID_UN">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-21 14:52:35 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DEC98EFF-23A8-F206-717D-EFB6C85EE65F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6845C2D7-5E8B-69CA-609E-5F5AE80AF5F5" name="HOSTS_LISTINGS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:01:38 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DEC98EFF-23A8-F206-717D-EFB6C85EE65F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="61CF4D4A-A324-FDE2-5463-2BE5B29CF63C" name="HOSTS_USER_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:41:05 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0669BA6-F643-FFC3-F204-79B03BE6F431"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3402CCAE-1F7E-8137-64B2-F7EF42B9BC23" name="REVIEW">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:02:30 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_20</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="71022E15-2D15-6BB5-93E5-7FA0AC8EC0C0">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="listings_id" id="4F0EF3C1-8D37-081A-807E-E97673E51240">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="664E72ED-CCEE-8213-E7E8-06ECCAC4F921" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+</associations>
+</Column>
+<Column name="reviewer_id" id="468D962A-6685-6ED6-7683-B57FE0C8DB58">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CC6D694D-0CD1-D600-2DD0-3419F92F904C" referredColumn="D6757606-24F9-DCE9-1433-806DB04E7DE7"/>
+</associations>
+</Column>
+<Column name="reviewer_name" id="B21FA3C6-5281-99A8-1512-EF43EEE5EE24">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="878686BC-6186-53F1-65EA-91D2040C99C2">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="place" id="C41E1E50-30FD-A563-76EC-2D0F8B080D56">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comments" id="4995A86F-42BE-F6CC-6505-691A282B56F6">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBDE3D7C-D4F2-5B2D-B6BC-4AA186D81235" name="REVIEW_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="71022E15-2D15-6BB5-93E5-7FA0AC8EC0C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8CA1A80E-8B65-1282-5F14-DD24250DBB86" name="REVIEW_LISTINGS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F0EF3C1-8D37-081A-807E-E97673E51240"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFDC117B-DB0F-88C9-E1C4-DE749EBD0417" name="REVIEW_USER_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:24:16 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="468D962A-6685-6ED6-7683-B57FE0C8DB58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
