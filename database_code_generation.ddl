@@ -48,7 +48,7 @@ CREATE TABLE date_informations (
 ALTER TABLE date_informations ADD CONSTRAINT date_informations_pk PRIMARY KEY ( "date",
                                                                                 id );
 
-CREATE TABLE hosts (
+CREATE TABLE host (
     url             CHAR(100) NOT NULL,
     id_listings     INTEGER NOT NULL,
     id_user         INTEGER NOT NULL,
@@ -60,9 +60,9 @@ CREATE TABLE hosts (
     response_time   CHAR(20)
 );
 
-ALTER TABLE hosts ADD CONSTRAINT hosts_pk PRIMARY KEY ( url );
+ALTER TABLE host ADD CONSTRAINT hosts_pk PRIMARY KEY ( id_user );
 
-ALTER TABLE hosts ADD CONSTRAINT hosts_id_un UNIQUE ( id_listings );
+ALTER TABLE host ADD CONSTRAINT hosts_id_un UNIQUE ( id_listings );
 
 CREATE TABLE house (
     neighbourhood   CHAR(20) NOT NULL,
