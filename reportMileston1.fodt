@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><dc:title>Evaluation of Ontology Modeling Languages and Tools for Closed Loop PLM</dc:title><meta:initial-creator>manos</meta:initial-creator><meta:editing-cycles>37</meta:editing-cycles><meta:print-date>2016-02-28T19:29:00</meta:print-date><meta:creation-date>2017-02-27T21:22:00</meta:creation-date><dc:date>2019-03-23T19:02:08.236320709</dc:date><dc:language>en-US</dc:language><meta:editing-duration>PT8H32M27S</meta:editing-duration><meta:generator>LibreOffice/6.0.7.3$Linux_X86_64 LibreOffice_project/00m0$Build-3</meta:generator><meta:document-statistic meta:character-count="7899" meta:image-count="1" meta:non-whitespace-character-count="6688" meta:object-count="0" meta:page-count="8" meta:paragraph-count="136" meta:table-count="1" meta:word-count="1339"/><meta:user-defined meta:name="AppVersion">14.0000</meta:user-defined><meta:user-defined meta:name="DocSecurity" meta:value-type="float">0</meta:user-defined><meta:user-defined meta:name="HyperlinksChanged" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="LinksUpToDate" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ScaleCrop" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ShareDoc" meta:value-type="boolean">false</meta:user-defined><meta:template xlink:type="simple" xlink:actuate="onRequest" xlink:title="Normal.dotm" xlink:href=""/></office:meta>
+ <office:meta><dc:title>Evaluation of Ontology Modeling Languages and Tools for Closed Loop PLM</dc:title><meta:initial-creator>manos</meta:initial-creator><meta:editing-cycles>38</meta:editing-cycles><meta:print-date>2016-02-28T19:29:00</meta:print-date><meta:creation-date>2017-02-27T21:22:00</meta:creation-date><dc:date>2019-03-23T22:08:36.311174809</dc:date><dc:language>en-US</dc:language><meta:editing-duration>PT8H32M36S</meta:editing-duration><meta:generator>LibreOffice/6.0.7.3$Linux_X86_64 LibreOffice_project/00m0$Build-3</meta:generator><meta:document-statistic meta:table-count="1" meta:image-count="1" meta:object-count="0" meta:page-count="9" meta:paragraph-count="136" meta:word-count="1339" meta:character-count="7898" meta:non-whitespace-character-count="6687"/><meta:user-defined meta:name="AppVersion">14.0000</meta:user-defined><meta:user-defined meta:name="DocSecurity" meta:value-type="float">0</meta:user-defined><meta:user-defined meta:name="HyperlinksChanged" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="LinksUpToDate" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ScaleCrop" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ShareDoc" meta:value-type="boolean">false</meta:user-defined><meta:template xlink:type="simple" xlink:actuate="onRequest" xlink:title="Normal.dotm" xlink:href=""/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">0</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">41275</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
-   <config:config-item config:name="ViewAreaWidth" config:type="long">47574</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">21142</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="long">49267</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">20719</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">16046</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">4482</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">32053</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">49724</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleRight" config:type="long">47572</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">21140</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">41275</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="long">49265</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">61992</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -92,7 +92,7 @@
    <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
    <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">4756949</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">4861499</config:config-item>
    <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
    <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InvertBorderSpacing" config:type="boolean">true</config:config-item>
@@ -3290,94 +3290,140 @@
    <style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
    <style:text-properties fo:font-size="12pt" style:font-size-asian="12pt"/>
   </style:style>
-  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Heading_20_1">
-   <style:paragraph-properties fo:break-before="page"/>
-  </style:style>
-  <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Contents_20_2">
-   <style:paragraph-properties>
-    <style:tab-stops>
-     <style:tab-stop style:position="6.9181in" style:type="right" style:leader-style="dotted" style:leader-text="."/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-  </style:style>
-  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Contents_20_1">
-   <style:paragraph-properties>
-    <style:tab-stops>
-     <style:tab-stop style:position="6.9181in" style:type="right" style:leader-style="dotted" style:leader-text="."/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-  </style:style>
-  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:rsid="00162396" officeooo:paragraph-rsid="00162396"/>
   </style:style>
-  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Contents_20_3">
+  <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties officeooo:rsid="00164ed5" officeooo:paragraph-rsid="00164ed5"/>
+  </style:style>
+  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties officeooo:rsid="002137d1" officeooo:paragraph-rsid="002137d1"/>
+  </style:style>
+  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties officeooo:rsid="002ba14c" officeooo:paragraph-rsid="002ba14c"/>
+  </style:style>
+  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Heading_20_1">
+   <style:paragraph-properties fo:break-before="page"/>
+  </style:style>
+  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Contents_20_2">
    <style:paragraph-properties>
     <style:tab-stops>
      <style:tab-stop style:position="6.9181in" style:type="right" style:leader-style="dotted" style:leader-text="."/>
     </style:tab-stops>
    </style:paragraph-properties>
   </style:style>
-  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Contents_20_4">
+  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Contents_20_1">
    <style:paragraph-properties>
     <style:tab-stops>
      <style:tab-stop style:position="6.9181in" style:type="right" style:leader-style="dotted" style:leader-text="."/>
     </style:tab-stops>
    </style:paragraph-properties>
   </style:style>
-  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="00162396" officeooo:paragraph-rsid="00162396"/>
+  </style:style>
+  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="00162396" officeooo:paragraph-rsid="001ff603"/>
+  </style:style>
+  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="001dd4d6" officeooo:paragraph-rsid="001dd4d6"/>
+  </style:style>
+  <style:style style:name="P22" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="001f15da" officeooo:paragraph-rsid="001f15da"/>
+  </style:style>
+  <style:style style:name="P23" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="002137d1" officeooo:paragraph-rsid="002137d1"/>
+  </style:style>
+  <style:style style:name="P24" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="002304ba" officeooo:paragraph-rsid="00297fb1"/>
+  </style:style>
+  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="00248109" officeooo:paragraph-rsid="00248109"/>
+  </style:style>
+  <style:style style:name="P26" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties officeooo:rsid="002bc57a" officeooo:paragraph-rsid="002bc57a"/>
+  </style:style>
+  <style:style style:name="P27" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="00162396" officeooo:paragraph-rsid="001ff603" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="P28" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="003b8eaa" officeooo:paragraph-rsid="003b8eaa" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="P29" style:family="paragraph" style:parent-style-name="No_20_Spacing">
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="003b8eaa" officeooo:paragraph-rsid="0041815a" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="P30" style:family="paragraph" style:parent-style-name="Contents_20_3">
+   <style:paragraph-properties>
+    <style:tab-stops>
+     <style:tab-stop style:position="6.9181in" style:type="right" style:leader-style="dotted" style:leader-text="."/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+  </style:style>
+  <style:style style:name="P31" style:family="paragraph" style:parent-style-name="Contents_20_4">
+   <style:paragraph-properties>
+    <style:tab-stops>
+     <style:tab-stop style:position="6.9181in" style:type="right" style:leader-style="dotted" style:leader-text="."/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+  </style:style>
+  <style:style style:name="P32" style:family="paragraph" style:parent-style-name="Heading_20_2">
    <style:text-properties fo:language="de" fo:country="DE"/>
   </style:style>
-  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Heading_20_3">
+  <style:style style:name="P33" style:family="paragraph" style:parent-style-name="Heading_20_3">
    <style:text-properties fo:language="de" fo:country="DE"/>
   </style:style>
-  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:master-page-name="">
+  <style:style style:name="P34" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:master-page-name="">
    <loext:graphic-properties draw:fill="none"/>
    <style:paragraph-properties fo:margin-left="-0.1252in" fo:margin-right="0in" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" style:page-number="auto" fo:background-color="transparent" style:writing-mode="lr-tb"/>
    <style:text-properties officeooo:rsid="00162396" officeooo:paragraph-rsid="001ff603" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
   </style:style>
-  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
+  <style:style style:name="P35" style:family="paragraph" style:parent-style-name="Title" style:master-page-name="">
+   <style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:page-number="auto"/>
+   <style:text-properties fo:language="en" fo:country="US"/>
+  </style:style>
+  <style:style style:name="P36" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
    <style:text-properties officeooo:rsid="00162396" officeooo:paragraph-rsid="00162396"/>
   </style:style>
-  <style:style style:name="P22" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
+  <style:style style:name="P37" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
    <style:text-properties officeooo:rsid="00164ed5" officeooo:paragraph-rsid="00164ed5"/>
   </style:style>
-  <style:style style:name="P23" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
+  <style:style style:name="P38" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
    <style:text-properties officeooo:rsid="002137d1" officeooo:paragraph-rsid="002137d1"/>
   </style:style>
-  <style:style style:name="P24" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
+  <style:style style:name="P39" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
    <style:text-properties officeooo:rsid="002ba14c" officeooo:paragraph-rsid="002ba14c"/>
   </style:style>
-  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
+  <style:style style:name="P40" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="001dd4d6" officeooo:paragraph-rsid="001dd4d6"/>
   </style:style>
-  <style:style style:name="P26" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
+  <style:style style:name="P41" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="001f15da" officeooo:paragraph-rsid="001f15da"/>
   </style:style>
-  <style:style style:name="P27" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
+  <style:style style:name="P42" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="002137d1" officeooo:paragraph-rsid="002137d1"/>
   </style:style>
-  <style:style style:name="P28" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
+  <style:style style:name="P43" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="002304ba" officeooo:paragraph-rsid="00297fb1"/>
   </style:style>
-  <style:style style:name="P29" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
+  <style:style style:name="P44" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="00248109" officeooo:paragraph-rsid="00248109"/>
   </style:style>
-  <style:style style:name="P30" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
+  <style:style style:name="P45" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="002bc57a" officeooo:paragraph-rsid="002bc57a"/>
   </style:style>
-  <style:style style:name="P31" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
+  <style:style style:name="P46" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
    <style:text-properties officeooo:rsid="00162396" officeooo:paragraph-rsid="001ff603"/>
   </style:style>
-  <style:style style:name="P32" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
+  <style:style style:name="P47" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="00162396" officeooo:paragraph-rsid="001ff603" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P33" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
+  <style:style style:name="P48" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="003b8eaa" officeooo:paragraph-rsid="003b8eaa" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P34" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
+  <style:style style:name="P49" style:family="paragraph" style:parent-style-name="No_20_Spacing" style:list-style-name="L3">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="003b8eaa" officeooo:paragraph-rsid="0041815a" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P35" style:family="paragraph" style:parent-style-name="Title" style:master-page-name="Standard">
+  <style:style style:name="P50" style:family="paragraph" style:parent-style-name="Title" style:master-page-name="Standard">
    <style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:page-number="auto"/>
    <style:text-properties fo:language="en" fo:country="US"/>
   </style:style>
@@ -3664,7 +3710,7 @@
        <text:p text:style-name="P5"><text:span text:style-name="T1">URL: </text:span><text:a xlink:type="simple" xlink:href="http://dias.epfl.ch/" text:style-name="ListLabel_20_88" text:visited-style-name="ListLabel_20_88"><text:span text:style-name="Internet_20_link"><text:span text:style-name="T1">http://dias.epfl.ch/</text:span></text:span></text:a><text:span text:style-name="T1"> </text:span></text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table1.A1" office:value-type="string">
-       <text:p text:style-name="P8"><draw:frame draw:style-name="fr1" draw:name="Picture" text:anchor-type="as-char" svg:width="1.6043in" svg:height="0.7189in" draw:z-index="7"><draw:image loext:mime-type="image/jpeg">
+       <text:p text:style-name="P8"><draw:frame draw:style-name="fr1" draw:name="Picture" text:anchor-type="as-char" svg:width="1.6043in" svg:height="0.7189in" draw:z-index="8"><draw:image loext:mime-type="image/jpeg">
           <office:binary-data>/9j/4AAQSkZJRgABAgEBLAEsAAD/4RCqRXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAAEa
            AAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAExAAIAAAAUAAAAcgEyAAIAAAAU
            AAAAhodpAAQAAAABAAAAnAAAAMgAAAEsAAAAAQAAASwAAAABQWRvYmUgUGhvdG9zaG9wIDcu
@@ -4465,7 +4511,7 @@
     <text:sequence-decl text:display-outline-level="0" text:name="Text"/>
     <text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
    </text:sequence-decls>
-   <text:p text:style-name="P35">Databases Project – Spring 2019<text:bookmark text:name="_GoBack"/></text:p>
+   <text:p text:style-name="P50">Databases Project – Spring 2019<text:bookmark text:name="_GoBack"/></text:p>
    <text:p text:style-name="P11">Team No:</text:p>
    <text:p text:style-name="P9"><text:span text:style-name="T2">Names: </text:span><text:span text:style-name="T3">Valentyna Pavliv , Yann Gaboud , Nazli Deniz Uzuner</text:span></text:p>
    <text:p text:style-name="Contents_20_Heading"><text:bookmark-start text:name="_Toc506900030"/>Contents<text:bookmark-end text:name="_Toc506900030"/></text:p>
@@ -4554,42 +4600,42 @@
      </text:table-of-content-entry-template>
     </text:table-of-content-source>
     <text:index-body>
-     <text:p text:style-name="P14">Contents<text:tab/>1</text:p>
-     <text:p text:style-name="P14">Deliverable 1<text:tab/>2</text:p>
-     <text:p text:style-name="P13">Assumptions<text:tab/>2</text:p>
-     <text:p text:style-name="P13">Entity Relationship Schema<text:tab/>2</text:p>
-     <text:p text:style-name="P16">Schema<text:tab/>2</text:p>
-     <text:p text:style-name="P16">Description<text:tab/>2</text:p>
-     <text:p text:style-name="P13"><text:span text:style-name="T4">Relational Schema</text:span><text:tab/>2</text:p>
-     <text:p text:style-name="P16"><text:span text:style-name="T4">ER schema to Relational schema</text:span><text:tab/>2</text:p>
-     <text:p text:style-name="P16">DDL<text:tab/>3</text:p>
-     <text:p text:style-name="P13">General Comments<text:tab/>3</text:p>
-     <text:p text:style-name="P14">Deliverable 2<text:tab/>4</text:p>
-     <text:p text:style-name="P13">Assumptions<text:tab/>4</text:p>
-     <text:p text:style-name="P13">Data Loading<text:tab/>4</text:p>
-     <text:p text:style-name="P13">Query Implementation<text:tab/>4</text:p>
-     <text:p text:style-name="P16">Query a:<text:tab/>4</text:p>
-     <text:p text:style-name="P17">Description of logic:<text:tab/>4</text:p>
-     <text:p text:style-name="P17">SQL statement<text:tab/>4</text:p>
-     <text:p text:style-name="P13">Interface<text:tab/>4</text:p>
-     <text:p text:style-name="P16">Design logic Description<text:tab/>4</text:p>
-     <text:p text:style-name="P16">Screenshots<text:tab/>4</text:p>
-     <text:p text:style-name="P13">General Comments<text:tab/>4</text:p>
-     <text:p text:style-name="P14">Deliverable 3<text:tab/>5</text:p>
-     <text:p text:style-name="P14"><text:soft-page-break/>Assumptions<text:tab/>5</text:p>
-     <text:p text:style-name="P13">Query Implementation<text:tab/>5</text:p>
-     <text:p text:style-name="P16">Query a:<text:tab/>5</text:p>
-     <text:p text:style-name="P17">Description of logic:<text:tab/>5</text:p>
-     <text:p text:style-name="P17">SQL statement<text:tab/>5</text:p>
-     <text:p text:style-name="P13">Query Analysis<text:tab/>5</text:p>
-     <text:p text:style-name="P16">Selected Queries (and why)<text:tab/>5</text:p>
-     <text:p text:style-name="P17">Query 1<text:tab/>5</text:p>
-     <text:p text:style-name="P17">Query 2<text:tab/>5</text:p>
-     <text:p text:style-name="P17">Query 3<text:tab/>5</text:p>
-     <text:p text:style-name="P14">Interface<text:tab/>6</text:p>
-     <text:p text:style-name="P16">Design logic Description<text:tab/>6</text:p>
-     <text:p text:style-name="P16">Screenshots<text:tab/>6</text:p>
-     <text:p text:style-name="P14">General Comments<text:tab/>6</text:p>
+     <text:p text:style-name="P18">Contents<text:tab/>1</text:p>
+     <text:p text:style-name="P18">Deliverable 1<text:tab/>2</text:p>
+     <text:p text:style-name="P17">Assumptions<text:tab/>2</text:p>
+     <text:p text:style-name="P17">Entity Relationship Schema<text:tab/>2</text:p>
+     <text:p text:style-name="P30">Schema<text:tab/>2</text:p>
+     <text:p text:style-name="P30">Description<text:tab/>2</text:p>
+     <text:p text:style-name="P17"><text:span text:style-name="T4">Relational Schema</text:span><text:tab/>2</text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="T4">ER schema to Relational schema</text:span><text:tab/>2</text:p>
+     <text:p text:style-name="P30">DDL<text:tab/>3</text:p>
+     <text:p text:style-name="P17">General Comments<text:tab/>3</text:p>
+     <text:p text:style-name="P18">Deliverable 2<text:tab/>4</text:p>
+     <text:p text:style-name="P17">Assumptions<text:tab/>4</text:p>
+     <text:p text:style-name="P17">Data Loading<text:tab/>4</text:p>
+     <text:p text:style-name="P17">Query Implementation<text:tab/>4</text:p>
+     <text:p text:style-name="P30">Query a:<text:tab/>4</text:p>
+     <text:p text:style-name="P31">Description of logic:<text:tab/>4</text:p>
+     <text:p text:style-name="P31">SQL statement<text:tab/>4</text:p>
+     <text:p text:style-name="P17">Interface<text:tab/>4</text:p>
+     <text:p text:style-name="P30">Design logic Description<text:tab/>4</text:p>
+     <text:p text:style-name="P30">Screenshots<text:tab/>4</text:p>
+     <text:p text:style-name="P17">General Comments<text:tab/>4</text:p>
+     <text:p text:style-name="P18">Deliverable 3<text:tab/>5</text:p>
+     <text:p text:style-name="P18">Assumptions<text:tab/>5</text:p>
+     <text:p text:style-name="P17"><text:soft-page-break/>Query Implementation<text:tab/>5</text:p>
+     <text:p text:style-name="P30">Query a:<text:tab/>5</text:p>
+     <text:p text:style-name="P31">Description of logic:<text:tab/>5</text:p>
+     <text:p text:style-name="P31">SQL statement<text:tab/>5</text:p>
+     <text:p text:style-name="P17">Query Analysis<text:tab/>5</text:p>
+     <text:p text:style-name="P30">Selected Queries (and why)<text:tab/>5</text:p>
+     <text:p text:style-name="P31">Query 1<text:tab/>5</text:p>
+     <text:p text:style-name="P31">Query 2<text:tab/>5</text:p>
+     <text:p text:style-name="P31">Query 3<text:tab/>5</text:p>
+     <text:p text:style-name="P18">Interface<text:tab/>6</text:p>
+     <text:p text:style-name="P30">Design logic Description<text:tab/>6</text:p>
+     <text:p text:style-name="P30">Screenshots<text:tab/>6</text:p>
+     <text:p text:style-name="P18">General Comments<text:tab/>6</text:p>
      <text:p text:style-name="Standard"/>
     </text:index-body>
    </text:table-of-content>
@@ -4597,18 +4643,18 @@
    <text:h text:style-name="Heading_20_1" text:outline-level="1"><text:bookmark-start text:name="_Toc506900031"/>Deliverable 1<text:bookmark-end text:name="_Toc506900031"/></text:h>
    <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:bookmark-start text:name="_Toc506900032"/>Assumptions<text:bookmark-end text:name="_Toc506900032"/></text:h>
    <text:h text:style-name="Heading_20_2" text:outline-level="2"/>
-   <text:list xml:id="list1548754221" text:style-name="L1">
+   <text:list xml:id="list1471251324" text:style-name="L1">
     <text:list-item>
-     <text:p text:style-name="P21">Each listing has a host.</text:p>
+     <text:p text:style-name="P36">Each listing has a host.</text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P22">Id ‘s of entities such as host_id, reviewer_id, listings_id are unique.</text:p>
+     <text:p text:style-name="P37">Id ‘s of entities such as host_id, reviewer_id, listings_id are unique.</text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P23">Each location(represented by latitude and longitude) has one listing</text:p>
+     <text:p text:style-name="P38">Each location(represented by latitude and longitude) has one listing</text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P24">Given a date and a listing we could have one pricing and availability informantion. </text:p>
+     <text:p text:style-name="P39">Given a date and a listing we could have one pricing and availability information. </text:p>
     </text:list-item>
    </text:list>
    <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:soft-page-break/></text:h>
@@ -4648,79 +4694,79 @@
    <text:h text:style-name="Heading_20_3" text:outline-level="3"><text:soft-page-break/></text:h>
    <text:h text:style-name="Heading_20_3" text:outline-level="3"/>
    <text:h text:style-name="Heading_20_3" text:outline-level="3"><text:bookmark-start text:name="_Toc506900035"/>Description<text:bookmark-end text:name="_Toc506900035"/></text:h>
-   <text:list xml:id="list2979468493" text:style-name="L2">
+   <text:list xml:id="list1267302341" text:style-name="L2">
     <text:list-item>
-     <text:p text:style-name="P25"><text:span text:style-name="T5">USER :</text:span> User is an entity that represents users reviewing and hosting in Airbnb. Each user may or may not have one or more than one review but each review has one and only one user. </text:p>
+     <text:p text:style-name="P40"><text:span text:style-name="T5">USER :</text:span> User is an entity that represents users reviewing and hosting in Airbnb. Each user may or may not have one or more than one review but each review has one and only one user. </text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P25"><text:span text:style-name="T5">HOST :</text:span> A host is a user since it has a unique id and a name. Each listing has one host but each host can host more than one listings. <text:span text:style-name="T23">A host’s existance doesn’t depend on listing. </text:span></text:p>
+     <text:p text:style-name="P40"><text:span text:style-name="T5">HOST :</text:span> A host is a user since it has a unique id and a name. Each listing has one host but each host can host more than one listings. <text:span text:style-name="T23">A host’s existance doesn’t depend on listing. </text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P25"><text:span text:style-name="T6">REVIEW SCORES :</text:span><text:span text:style-name="T21"> Review scores </text:span>is not a weak entity since it hasn’t got a unique id and since it could only be presented but an id of another entity. Each review score has one listing and each review <text:span text:style-name="T21">score has one listing</text:span></text:p>
+     <text:p text:style-name="P40"><text:span text:style-name="T6">REVIEW SCORES :</text:span><text:span text:style-name="T21"> Review scores </text:span>is not a weak entity since it hasn’t got a unique id and since it could only be presented but an id of another entity. Each review score has one listing and each review <text:span text:style-name="T21">score has one listing</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P26"><text:span text:style-name="T5">PRICING : </text:span>Pricing is a weak entity for the same reason as review scores. This weak entity represent payment informations such as price , cleaning fee ...Each listing has one pricing and each pricing has one listing . <text:span text:style-name="T24">If a listing is removed from the database the pricing information related to that listing should also be removed. </text:span></text:p>
+     <text:p text:style-name="P41"><text:span text:style-name="T5">PRICING : </text:span>Pricing is a weak entity for the same reason as review scores. This weak entity represent payment informations such as price , cleaning fee ...Each listing has one pricing and each pricing has one listing . <text:span text:style-name="T24">If a listing is removed from the database the pricing information related to that listing should also be removed. </text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P26"><text:span text:style-name="T5">BOOKING POLICY : </text:span><text:span text:style-name="T22">Booking policy is also a weak entity because of the same reasons given above(it has no unique id , it could only be presented by a unique id of another entity). Each listing has one booking policy and each booking policy has one listing. If a listing is removed from the database the relevant booking information should also be removed.</text:span></text:p>
+     <text:p text:style-name="P41"><text:span text:style-name="T5">BOOKING POLICY : </text:span><text:span text:style-name="T22">Booking policy is also a weak entity because of the same reasons given above(it has no unique id , it could only be presented by a unique id of another entity). Each listing has one booking policy and each booking policy has one listing. If a listing is removed from the database the relevant booking information should also be removed.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P27"><text:span text:style-name="T5">LOCATION : </text:span>Location is an entity representing location of the listing. It is an entity since it is a real world object, unlike pricing and booking policy a location has a unique id that could differ it from other locations : combination of <text:s/>latitude, longitude. Each listing has one location and each location has one listing(since we can’t have two listings in the same location)</text:p>
+     <text:p text:style-name="P42"><text:span text:style-name="T5">LOCATION : </text:span>Location is an entity representing location of the listing. It is an entity since it is a real world object, unlike pricing and booking policy a location has a unique id that could differ it from other locations : combination of <text:s/>latitude, longitude. Each listing has one location and each location has one listing(since we can’t have two listings in the same location)</text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P28"><text:span text:style-name="T5">HOUSE :</text:span> House is a weak entity since <text:span text:style-name="T23">houses doesn’t have their own key. If the listing no longer exists the house will no longer exist sincee each house has one listing.Each location has one house and each house has one location. If a location is removed from the database the house on that location should also be removed.</text:span></text:p>
+     <text:p text:style-name="P43"><text:span text:style-name="T5">HOUSE :</text:span> House is a weak entity since <text:span text:style-name="T23">houses doesn’t have their own key. If the listing no longer exists the house will no longer exist sincee each house has one listing.Each location has one house and each house has one location. If a location is removed from the database the house on that location should also be removed.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P29"><text:span text:style-name="T5">CALENDAR : </text:span>Calendar is an entity representing <text:s/><text:span text:style-name="T25">the avalabilities <text:s/>and pricing of a listing on a given date. Calender’s key is a combination of (date, listing_id) . Each Calendar has one and only listing but a listing may have multiple date informations.</text:span></text:p>
+     <text:p text:style-name="P44"><text:span text:style-name="T5">CALENDAR : </text:span>Calendar is an entity representing <text:s/><text:span text:style-name="T25">the avalabilities <text:s/>and pricing of a listing on a given date. Calender’s key is a combination of (date, listing_id) . Each Calendar has one and only listing but a listing may have multiple date informations.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="T5">AMENITIES :</text:span> Amenities is a weak entity representing the amenities of a given listing. Amenities has two attributes ,amenities and access , and a foreign key : listing_id. <text:s/>If a listing_id is removed from the database the amenities should also be removed. Each listing has exactly one amenity and an amenitiy has exactly one listing.</text:p>
+     <text:p text:style-name="P45"><text:span text:style-name="T5">AMENITIES :</text:span> Amenities is a weak entity representing the amenities of a given listing. Amenities has two attributes ,amenities and access , and a foreign key : listing_id. <text:s/>If a listing_id is removed from the database the amenities should also be removed. Each listing has exactly one amenity and an amenitiy has exactly one listing.</text:p>
     </text:list-item>
    </text:list>
-   <text:p text:style-name="P15"/>
-   <text:p text:style-name="P15"/>
-   <text:p text:style-name="P15"/>
-   <text:p text:style-name="P15"/>
-   <text:h text:style-name="P18" text:outline-level="2"><text:soft-page-break/></text:h>
-   <text:h text:style-name="P18" text:outline-level="2"><text:bookmark-start text:name="_Toc506900036"/>Relational Schema<text:bookmark-end text:name="_Toc506900036"/></text:h>
-   <text:h text:style-name="P19" text:outline-level="3"><text:bookmark-start text:name="_Toc506900037"/>ER schema to Relational schema<text:bookmark-end text:name="_Toc506900037"/></text:h>
-   <text:p text:style-name="P20"><text:tab/><text:span text:style-name="T8">TABLES:</text:span></text:p>
-   <text:list xml:id="list96297845" text:style-name="L3">
+   <text:p text:style-name="P19"/>
+   <text:p text:style-name="P19"/>
+   <text:p text:style-name="P19"/>
+   <text:p text:style-name="P19"/>
+   <text:h text:style-name="P32" text:outline-level="2"><text:soft-page-break/></text:h>
+   <text:h text:style-name="P32" text:outline-level="2"><text:bookmark-start text:name="_Toc506900036"/>Relational Schema<text:bookmark-end text:name="_Toc506900036"/></text:h>
+   <text:h text:style-name="P33" text:outline-level="3"><text:bookmark-start text:name="_Toc506900037"/>ER schema to Relational schema<text:bookmark-end text:name="_Toc506900037"/></text:h>
+   <text:p text:style-name="P34"><text:tab/><text:span text:style-name="T8">TABLES:</text:span></text:p>
+   <text:list xml:id="list3259267688" text:style-name="L3">
     <text:list-item>
-     <text:p text:style-name="P31"><text:span text:style-name="T7">USER </text:span><text:span text:style-name="T5"><text:s/>: </text:span>User entity has an <text:span text:style-name="T26">user_</text:span>id as a primary key and a name as an attribute. </text:p>
+     <text:p text:style-name="P46"><text:span text:style-name="T7">USER </text:span><text:span text:style-name="T5"><text:s/>: </text:span>User entity has an <text:span text:style-name="T26">user_</text:span>id as a primary key and a name as an attribute. </text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P31"><text:span text:style-name="T7">HOST </text:span><text:span text:style-name="T5"><text:s/>: </text:span>Host <text:span text:style-name="T20">has a primary key host_id ( = user_id since host is a user)and has attributes such as name , url, response time and rate, picture url, since( The</text:span> <text:s/>date that the host has started <text:s/>working with <text:s/>Airbnb<text:span text:style-name="T20">) , thumbnail_url, host_neighbourhood and verifications. HOST </text:span><text:span text:style-name="T19"><text:s/>IS A</text:span><text:span text:style-name="T5"> </text:span><text:span text:style-name="T11">USER</text:span> since <text:span text:style-name="T28">each</text:span> host is a user of Airbnb <text:span text:style-name="T20">that <text:s/>is caractarized by an id(host_id) and each host has a name .</text:span></text:p>
+     <text:p text:style-name="P46"><text:span text:style-name="T7">HOST </text:span><text:span text:style-name="T5"><text:s/>: </text:span>Host <text:span text:style-name="T20">has a primary key host_id ( = user_id since host is a user)and has attributes such as name , url, response time and rate, picture url, since( The</text:span> <text:s/>date that the host has started <text:s/>working with <text:s/>Airbnb<text:span text:style-name="T20">) , thumbnail_url, host_neighbourhood and verifications. HOST </text:span><text:span text:style-name="T19"><text:s/>IS A</text:span><text:span text:style-name="T5"> </text:span><text:span text:style-name="T11">USER</text:span> since <text:span text:style-name="T28">each</text:span> host is a user of Airbnb <text:span text:style-name="T20">that <text:s/>is caractarized by an id(host_id) and each host has a name .</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P32"><text:span text:style-name="T27">REVIEW : </text:span><text:span text:style-name="T10"><text:s text:c="2"/>Each review has a unique id which is the primary key of <text:s/>Review. Review has two foreign keys ,one of them is the reviewer id and the other one is the listings id. Both of these attributes are the principal keys of other entities : Reviewer and Listings. </text:span></text:p>
+     <text:p text:style-name="P47"><text:span text:style-name="T27">REVIEW : </text:span><text:span text:style-name="T10"><text:s text:c="2"/>Each review has a unique id which is the primary key of <text:s/>Review. Review has two foreign keys ,one of them is the reviewer id and the other one is the listings id. Both of these attributes are the principal keys of other entities : Reviewer and Listings. </text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P33">AMENITIES : <text:span text:style-name="T9">Table that represents weak entity Amenities that has a foreign key , id of the listing, and 2 other attributes named amenities and access. </text:span></text:p>
+     <text:p text:style-name="P48">AMENITIES : <text:span text:style-name="T9">Table that represents weak entity Amenities that has a foreign key , id of the listing, and 2 other attributes named amenities and access. </text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P33">BOOKING POLICY : <text:span text:style-name="T9">Table that represents weak entity booking policy. It has a foreign key, id of listing that it belongs to, and other attributes such as extra_people, <text:s/>is_business_travel_ready, require_guest_profile_picture, maximum_nights, minimum_nights, cancellation_policy and guests_included. We combined these attributes since they have a point in commun : they are all a part of the booking policy. They posses information about booking requirements and pricing.</text:span></text:p>
+     <text:p text:style-name="P48">BOOKING POLICY : <text:span text:style-name="T9">Table that represents weak entity booking policy. It has a foreign key, id of listing that it belongs to, and other attributes such as extra_people, <text:s/>is_business_travel_ready, require_guest_profile_picture, maximum_nights, minimum_nights, cancellation_policy and guests_included. We combined these attributes since they have a point in commun : they are all a part of the booking policy. They posses information about booking requirements and pricing.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P34">CALENDAR : <text:span text:style-name="T12">Table Calendar represents the table of entity Calendar. It contains a combination of an attribute and a foreign key as a primary key : (date, listing_id). Since we assumed that for a given date a listing can have one </text:span><text:span text:style-name="T13">entry on database </text:span><text:span text:style-name="T12">. </text:span><text:span text:style-name="T14">For a given date a listing can have one price and availability information. </text:span></text:p>
+     <text:p text:style-name="P49">CALENDAR : <text:span text:style-name="T12">Table Calendar represents the table of entity Calendar. It contains a combination of an attribute and a foreign key as a primary key : (date, listing_id). Since we assumed that for a given date a listing can have one </text:span><text:span text:style-name="T13">entry on database </text:span><text:span text:style-name="T12">. </text:span><text:span text:style-name="T14">For a given date a listing can have one price and availability information. </text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P34"><text:span text:style-name="T29">Date informations : </text:span><text:span text:style-name="T15">Date informations represents the relation between entities Calendar and Listings. It has two attributes : date and id.</text:span></text:p>
+     <text:p text:style-name="P49"><text:span text:style-name="T29">Date informations : </text:span><text:span text:style-name="T15">Date informations represents the relation between entities Calendar and Listings. It has two attributes : date and id.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P34"><text:span text:style-name="T30">Hosts : </text:span><text:span text:style-name="T16">Hosts represent</text:span><text:span text:style-name="T17">s</text:span><text:span text:style-name="T16"> the relation between a host and a listing. It</text:span> <text:span text:style-name="T16">contains <text:s/></text:span><text:span text:style-name="T17">two foreign keys such as id of the listings and id of the host.</text:span></text:p>
+     <text:p text:style-name="P49"><text:span text:style-name="T30">Hosts : </text:span><text:span text:style-name="T16">Hosts represent</text:span><text:span text:style-name="T17">s</text:span><text:span text:style-name="T16"> the relation between a host and a listing. It</text:span> <text:span text:style-name="T16">contains <text:s/></text:span><text:span text:style-name="T17">two foreign keys such as id of the listings and id of the host.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P34"><text:span text:style-name="T31">HOUSE</text:span> : <text:s/><text:span text:style-name="T17">Table house represents the weak entity House. It has a combination of two attributes as a foreign key (latitude, longitude) <text:s/>which is the primary key of entity Location. It contains attributes giving information about house such as : </text:span><text:span text:style-name="T18">neighbourhood, beds, space, property_type, room_type, bed_type, house_rules, accomodates, square_feet, bathrooms, bedrooms</text:span></text:p>
-     <text:p text:style-name="P31"/>
+     <text:p text:style-name="P49"><text:span text:style-name="T31">HOUSE</text:span> : <text:s/><text:span text:style-name="T17">Table house represents the weak entity House. It has a combination of two attributes as a foreign key (latitude, longitude) <text:s/>which is the primary key of entity Location. It contains attributes giving information about house such as : </text:span><text:span text:style-name="T18">neighbourhood, beds, space, property_type, room_type, bed_type, house_rules, accomodates, square_feet, bathrooms, bedrooms</text:span></text:p>
+     <text:p text:style-name="P46"/>
     </text:list-item>
    </text:list>
    <text:h text:style-name="Heading_20_3" text:outline-level="3"><text:bookmark-start text:name="_Toc506900038"/>DDL<text:bookmark-end text:name="_Toc506900038"/></text:h>
    <text:p text:style-name="No_20_Spacing">&lt;Provide the DDL&gt;</text:p>
-   <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:bookmark-start text:name="_Toc506900039"/>General Comments<text:bookmark-end text:name="_Toc506900039"/></text:h>
+   <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:bookmark-start text:name="_Toc506900039"/><text:soft-page-break/>General Comments<text:bookmark-end text:name="_Toc506900039"/></text:h>
    <text:p text:style-name="No_20_Spacing">&lt;In this section write general comments about your deliverable (comments and work allocation between team members&gt;</text:p>
    <text:p text:style-name="P7"/>
-   <text:h text:style-name="P12" text:outline-level="1"><text:bookmark-start text:name="_Toc506900040"/>Deliverable 2<text:bookmark-end text:name="_Toc506900040"/></text:h>
+   <text:h text:style-name="P16" text:outline-level="1"><text:bookmark-start text:name="_Toc506900040"/>Deliverable 2<text:bookmark-end text:name="_Toc506900040"/></text:h>
    <text:p text:style-name="Standard"/>
    <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:bookmark-start text:name="_Toc506900041"/>Assumptions<text:bookmark-end text:name="_Toc506900041"/></text:h>
    <text:p text:style-name="No_20_Spacing">&lt;In this section write down the assumptions you made about the data. Write a sentence for each assumption you made&gt;</text:p>
@@ -4740,7 +4786,7 @@
    <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:bookmark-start text:name="_Toc506900050"/>General Comments<text:bookmark-end text:name="_Toc506900050"/></text:h>
    <text:p text:style-name="P10">&lt;In this section write general comments about your deliverable (comments and work allocation between team members&gt;</text:p>
    <text:p text:style-name="P10"/>
-   <text:h text:style-name="P12" text:outline-level="1"><text:bookmark-start text:name="_Toc506900051"/>Deliverable 3<text:bookmark-end text:name="_Toc506900051"/></text:h>
+   <text:h text:style-name="P16" text:outline-level="1"><text:bookmark-start text:name="_Toc506900051"/>Deliverable 3<text:bookmark-end text:name="_Toc506900051"/></text:h>
    <text:h text:style-name="Heading_20_1" text:outline-level="1"><text:bookmark-start text:name="_Toc506900052"/>Assumptions<text:bookmark-end text:name="_Toc506900052"/></text:h>
    <text:p text:style-name="No_20_Spacing">&lt;In this section write down the assumptions you made about the data. Write a sentence for each assumption you made&gt;</text:p>
    <text:h text:style-name="Heading_20_2" text:outline-level="2"><text:bookmark-start text:name="_Toc506900053"/>Query Implementation<text:bookmark-end text:name="_Toc506900053"/></text:h>
