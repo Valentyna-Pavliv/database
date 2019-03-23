@@ -38,7 +38,7 @@ CREATE TABLE calendar (
     place        CHAR(20)
 );
 
-ALTER TABLE calendar ADD CONSTRAINT calendar_pk PRIMARY KEY ( "date" );
+ALTER TABLE calendar ADD CONSTRAINT calendar_pk PRIMARY KEY ( "date" , listing_id);
 
 CREATE TABLE date_informations (
     id       INTEGER NOT NULL,
@@ -221,8 +221,8 @@ ALTER TABLE review
 
 
 
--- Oracle SQL Developer Data Modeler Summary Report: 
--- 
+-- Oracle SQL Developer Data Modeler Summary Report:
+--
 -- CREATE TABLE                            12
 -- CREATE INDEX                             0
 -- ALTER TABLE                             30
@@ -251,15 +251,15 @@ ALTER TABLE review
 -- CREATE SYNONYM                           0
 -- CREATE TABLESPACE                        0
 -- CREATE USER                              0
--- 
+--
 -- DROP TABLESPACE                          0
 -- DROP DATABASE                            0
--- 
+--
 -- REDACTION POLICY                         0
--- 
+--
 -- ORDS DROP SCHEMA                         0
 -- ORDS ENABLE SCHEMA                       0
 -- ORDS ENABLE OBJECT                       0
--- 
+--
 -- ERRORS                                   0
 -- WARNINGS                                 0
