@@ -34,6 +34,20 @@
 <colAssociation fkAssociation="D80BE3C7-8D25-B611-F7EF-BEAF13757F85" referredColumn="1B875E87-B9AE-7FB1-4E3E-012FC4662DFD"/>
 </associations>
 </Column>
+<Column name="CALENDAR_listing_id" id="7275783B-2958-87C2-0142-4E8C1D1C894C">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-24 14:09:54 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D80BE3C7-8D25-B611-F7EF-BEAF13757F85" referredColumn="9ABE18E9-40DF-C36D-CA0E-88DD4BB05587"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C8470DEB-11A4-3D73-8258-0CFDA9788967" name="DATE_INFORMATIONS_PK">
@@ -56,6 +70,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="33CC095F-6DDE-1CA1-59F1-38D5BD05257E"/>
+<colUsage columnID="7275783B-2958-87C2-0142-4E8C1D1C894C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="4516EE15-8437-43AC-7E25-1E6C32371B8C" name="DATE_INFORMATIONS_LISTINGS_FK">
