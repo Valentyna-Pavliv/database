@@ -45,6 +45,19 @@
 <colAssociation fkAssociation="FA64F5F9-9EA4-78D1-7962-4155B48C91EA" referredColumn="9D400D9C-49FC-CDAC-26D0-2F0CCF398F69"/>
 </associations>
 </Column>
+<Column name="listings_id" id="13BD8294-0B71-C5DF-3F37-72775A3939F3">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-25 08:58:51 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="20520813-E58D-7F52-B598-78539E4E4CA2" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+</associations>
+</Column>
 <Column name="beds" id="1868C433-5656-6EDD-A475-43B18CF1A56B">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-20 11:11:19 UTC</createdTime>
@@ -184,6 +197,16 @@
 <indexColumnUsage>
 <colUsage columnID="5711F907-C712-5359-4D5F-B61FCDF8CB1C"/>
 <colUsage columnID="CD28CD3A-E887-267E-58FE-79DF7240146F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC18EC33-49E6-CE02-00DE-83E9A7AEA70D" name="HOUSE_LISTINGS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-25 08:59:59 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13BD8294-0B71-C5DF-3F37-72775A3939F3"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

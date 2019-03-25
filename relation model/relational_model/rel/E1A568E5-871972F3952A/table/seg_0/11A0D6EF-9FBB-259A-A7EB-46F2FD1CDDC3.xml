@@ -90,7 +90,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="describtion" id="BA252F52-F816-397B-DB89-E3D4CBF8DBF5">
+<Column name="description" id="BA252F52-F816-397B-DB89-E3D4CBF8DBF5">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-20 09:22:08 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
