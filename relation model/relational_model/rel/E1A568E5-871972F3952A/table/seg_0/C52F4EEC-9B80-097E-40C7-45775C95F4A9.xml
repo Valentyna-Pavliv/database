@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C52F4EEC-9B80-097E-40C7-45775C95F4A9" name="HAS_BEDS">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:35:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_26</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="longitude" id="877EA1AB-2049-BF26-50A9-B85AE5380870">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="CD28CD3A-E887-267E-58FE-79DF7240146F"/>
+</associations>
+</Column>
+<Column name="latitude" id="E3BF4EED-B1B5-6C2A-BEDD-44FCF9F3D9DE">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="5711F907-C712-5359-4D5F-B61FCDF8CB1C"/>
+</associations>
+</Column>
+<Column name="neighbourhood" id="AF01D28B-7A3A-7A14-467C-2B153F7B79DB">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="A5E1F300-53C5-354A-DC8B-DE9EE7F43A30"/>
+</associations>
+</Column>
+<Column name="bed_type" id="A749C15B-E12D-94A0-8885-7FB57B769394">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="112DB576-5579-AF01-7B8D-B031094D2C8B" referredColumn="88AD2036-CD19-9623-BF8F-B3674B2AB157"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C6FB3D86-7A46-58A7-C4A7-E16E65D2AA21" name="HAS_BEDS_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="877EA1AB-2049-BF26-50A9-B85AE5380870"/>
+<colUsage columnID="E3BF4EED-B1B5-6C2A-BEDD-44FCF9F3D9DE"/>
+<colUsage columnID="AF01D28B-7A3A-7A14-467C-2B153F7B79DB"/>
+<colUsage columnID="A749C15B-E12D-94A0-8885-7FB57B769394"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08C48FBA-3AAD-0A07-D44F-DB2FB3085277" name="HAS_BEDS_BEDS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A749C15B-E12D-94A0-8885-7FB57B769394"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="723CB559-DCCB-91E0-7295-603110BECB1D" name="HAS_BEDS_HOUSE_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="877EA1AB-2049-BF26-50A9-B85AE5380870"/>
+<colUsage columnID="E3BF4EED-B1B5-6C2A-BEDD-44FCF9F3D9DE"/>
+<colUsage columnID="AF01D28B-7A3A-7A14-467C-2B153F7B79DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

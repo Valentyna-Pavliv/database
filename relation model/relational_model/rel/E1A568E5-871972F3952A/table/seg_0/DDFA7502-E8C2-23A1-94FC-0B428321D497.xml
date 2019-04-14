@@ -27,9 +27,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="C428F2D7-1189-6A37-8EA2-31921454D3AB" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
-</associations>
 </Column>
 <Column name="available" id="42970CBB-468F-D220-95F3-86A98F6E8AB7">
 <createdBy>yann</createdBy>
@@ -54,18 +51,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="place" id="D796E8DF-7B51-3FF4-05E0-1B08EDC9AC2B">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-22 09:55:51 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="B88616A9-D1EA-A98D-348A-B2F6884C409C" name="CALENDAR_PK">
@@ -77,16 +62,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="1B875E87-B9AE-7FB1-4E3E-012FC4662DFD"/>
-<colUsage columnID="9ABE18E9-40DF-C36D-CA0E-88DD4BB05587"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="74108702-AD37-B49C-25E9-6BB20E0AA00A" name="CALENDAR_LISTINGS_FK">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-24 14:10:56 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
 <colUsage columnID="9ABE18E9-40DF-C36D-CA0E-88DD4BB05587"/>
 </indexColumnUsage>
 </ind_PK_UK>

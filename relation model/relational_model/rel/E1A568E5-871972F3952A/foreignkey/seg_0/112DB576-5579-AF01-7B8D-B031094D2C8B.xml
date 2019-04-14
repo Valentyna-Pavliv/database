@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="112DB576-5579-AF01-7B8D-B031094D2C8B" containerWithKeyObject="C52F4EEC-9B80-097E-40C7-45775C95F4A9" localFKIndex="08C48FBA-3AAD-0A07-D44F-DB2FB3085277" name="HAS_BEDS_BEDS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<referredTableLongName>BEDS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BAFDDD48-36F2-B1F3-19C0-BF5AF5A371C7</referredTableID>
+<keyObject>BC1A3CE6-2B53-406F-7E29-D9FECFA54094</keyObject>
+<referredKeyID>BC1A3CE6-2B53-406F-7E29-D9FECFA54094</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>bed_type</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

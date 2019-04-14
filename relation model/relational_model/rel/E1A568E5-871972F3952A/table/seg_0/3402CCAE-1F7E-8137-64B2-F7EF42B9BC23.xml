@@ -8,16 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="71022E15-2D15-6BB5-93E5-7FA0AC8EC0C0">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-22 10:21:04 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="listings_id" id="4F0EF3C1-8D37-081A-807E-E97673E51240">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-22 10:21:04 UTC</createdTime>
@@ -44,6 +34,16 @@
 <colAssociation fkAssociation="CC6D694D-0CD1-D600-2DD0-3419F92F904C" referredColumn="D6757606-24F9-DCE9-1433-806DB04E7DE7"/>
 </associations>
 </Column>
+<Column name="id" id="71022E15-2D15-6BB5-93E5-7FA0AC8EC0C0">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-22 10:21:04 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="reviewer_name" id="B21FA3C6-5281-99A8-1512-EF43EEE5EE24">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-22 10:21:04 UTC</createdTime>
@@ -65,18 +65,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="place" id="C41E1E50-30FD-A563-76EC-2D0F8B080D56">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-22 10:21:04 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="comments" id="4995A86F-42BE-F6CC-6505-691A282B56F6">
@@ -101,6 +89,8 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
+<colUsage columnID="4F0EF3C1-8D37-081A-807E-E97673E51240"/>
+<colUsage columnID="468D962A-6685-6ED6-7683-B57FE0C8DB58"/>
 <colUsage columnID="71022E15-2D15-6BB5-93E5-7FA0AC8EC0C0"/>
 </indexColumnUsage>
 </ind_PK_UK>

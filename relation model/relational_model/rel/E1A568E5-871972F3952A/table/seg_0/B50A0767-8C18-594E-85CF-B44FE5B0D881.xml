@@ -68,31 +68,7 @@
 <ownDataTypeParameters>500,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="neighbourhood" id="87FD5D7A-B08F-7CE7-D254-6E7D0FEA36DA">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-21 14:50:58 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="thumbnail_url" id="FB040AB8-B788-260C-C526-3E5AB0C3727B">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-21 14:50:58 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="verifications" id="74E92C58-3E81-8639-B902-4C8045E725F3">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-21 14:50:58 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>

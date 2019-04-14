@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27D7D913-0D87-D36A-83D4-90BFBBD0C6E1" name="HAS_VERIFICATIONS">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:15:03 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="verification_type" id="F58545EF-B9D6-3601-D56C-61B63A807B82">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:16:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6352691B-A357-F3ED-73EE-F3326E185C19" referredColumn="BDEFE25A-E84C-0B3E-9C76-40F7013406FE"/>
+</associations>
+</Column>
+<Column name="url" id="A4F2CCCA-E730-076A-4040-F53D47D0F38F">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:16:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="706AF63E-9D82-D34A-6A36-0941CC3E41DA" referredColumn="4A275E27-D33E-F630-7CAB-687CEA8BE182"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="78FFCEF0-09B8-72B2-84D6-59D00A532AE4" name="HAS_VERIFICATIONS_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:16:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F58545EF-B9D6-3601-D56C-61B63A807B82"/>
+<colUsage columnID="A4F2CCCA-E730-076A-4040-F53D47D0F38F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11198A4F-7A08-C889-39BF-293FC1BAEB63" name="HAS_VERIFICATIONS_HOSTS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:17:42 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A4F2CCCA-E730-076A-4040-F53D47D0F38F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70B781CC-A28E-1DDF-3EF6-E5209A290745" name="HAS_VERIFICATIONS_VERIFICATIONS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:18:05 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F58545EF-B9D6-3601-D56C-61B63A807B82"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

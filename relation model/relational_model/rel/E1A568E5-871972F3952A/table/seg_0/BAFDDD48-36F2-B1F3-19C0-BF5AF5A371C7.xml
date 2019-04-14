@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BAFDDD48-36F2-B1F3-19C0-BF5AF5A371C7" name="BEDS">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:34:01 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_22</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bed_type" id="88AD2036-CD19-9623-BF8F-B3674B2AB157">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:34:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC1A3CE6-2B53-406F-7E29-D9FECFA54094" name="BEDS_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:34:56 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88AD2036-CD19-9623-BF8F-B3674B2AB157"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

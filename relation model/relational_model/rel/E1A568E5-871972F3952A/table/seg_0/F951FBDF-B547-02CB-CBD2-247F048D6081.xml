@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F951FBDF-B547-02CB-CBD2-247F048D6081" name="VERIFICATIONS">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:13:06 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="verification_type" id="BDEFE25A-E84C-0B3E-9C76-40F7013406FE">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:14:22 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C1B6FE2B-5FC7-609F-E3B2-66E0EFDBB603" name="Verifications_PK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:14:22 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BDEFE25A-E84C-0B3E-9C76-40F7013406FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

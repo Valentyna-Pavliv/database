@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="722A0AAF-CAE4-87DD-4E9F-67A2017DCA15" containerWithKeyObject="02B33DE9-14E9-D75C-84D9-101AE8AEC40A" localFKIndex="A3BEDB73-8430-9EF3-4AE2-4C14290CDAB5" name="AMENITIES_LISTINGS_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="76650CC0-8101-F426-9B9D-3C71526AA0D7" containerWithKeyObject="4098E2E0-F469-06DF-656E-6AAA557599CE" localFKIndex="BE457158-44F9-8303-BAE6-488D297D6926" name="HAS_AMENITIES_LISTINGS_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-03-20 11:18:56 UTC</createdTime>
+<createdTime>2019-04-14 10:24:19 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <referredTableLongName>LISTINGS</referredTableLongName>
-<deleteRule>CASCADE</deleteRule>
+<deleteRule>NO ACTION</deleteRule>
 <referredTableID>11A0D6EF-9FBB-259A-A7EB-46F2FD1CDDC3</referredTableID>
 <keyObject>F90AE139-93F0-6D79-5360-0CB015450AEB</keyObject>
 <referredKeyID>F90AE139-93F0-6D79-5360-0CB015450AEB</referredKeyID>

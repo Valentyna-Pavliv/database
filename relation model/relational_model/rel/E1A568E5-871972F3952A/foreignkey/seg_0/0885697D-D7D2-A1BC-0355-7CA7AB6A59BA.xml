@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0885697D-D7D2-A1BC-0355-7CA7AB6A59BA" containerWithKeyObject="4098E2E0-F469-06DF-656E-6AAA557599CE" localFKIndex="3563A042-A49E-D0D1-9348-4D87AA26BF6C" name="HAS_AMENITIES_AMENITIES_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:24:19 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<referredTableLongName>AMENITIES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>822BB759-00B3-C8DC-FBA2-6F9ADC8F4EF0</referredTableID>
+<keyObject>6F7CB815-2DEB-D92C-7DA8-B9A64A6BEDD1</keyObject>
+<referredKeyID>6F7CB815-2DEB-D92C-7DA8-B9A64A6BEDD1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>amenity</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

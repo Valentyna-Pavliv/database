@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" containerWithKeyObject="C52F4EEC-9B80-097E-40C7-45775C95F4A9" localFKIndex="723CB559-DCCB-91E0-7295-603110BECB1D" name="HAS_BEDS_HOUSE_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<referredTableLongName>HOUSE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>ECB817ED-7696-8B81-6DCC-5C88C90FB24C</referredTableID>
+<keyObject>93B515C0-74E6-74B9-D606-C123F965E47C</keyObject>
+<referredKeyID>93B515C0-74E6-74B9-D606-C123F965E47C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>longitude,latitude,neighbourhood</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

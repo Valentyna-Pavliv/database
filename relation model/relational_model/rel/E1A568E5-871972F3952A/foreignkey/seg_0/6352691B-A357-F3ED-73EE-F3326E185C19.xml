@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6352691B-A357-F3ED-73EE-F3326E185C19" containerWithKeyObject="27D7D913-0D87-D36A-83D4-90BFBBD0C6E1" localFKIndex="70B781CC-A28E-1DDF-3EF6-E5209A290745" name="HAS_VERIFICATIONS_VERIFICATIONS_FK">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-14 10:18:05 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<referredTableLongName>VERIFICATIONS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F951FBDF-B547-02CB-CBD2-247F048D6081</referredTableID>
+<keyObject>C1B6FE2B-5FC7-609F-E3B2-66E0EFDBB603</keyObject>
+<referredKeyID>C1B6FE2B-5FC7-609F-E3B2-66E0EFDBB603</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>verification_type</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
