@@ -289,9 +289,49 @@ ALTER TABLE review
     ADD CONSTRAINT review_user_fk FOREIGN KEY ( reviewer_id )
         REFERENCES "USER" ( id );
 
+SELECT AVG(p.price)
+FROM pricing p, house h
+WHERE h.bedrooms >= 8 AND p.pricing_listings_fk = h.listings_id;
+
+SELECT  AVG(review_scores.rating)
+FROM review_scores rs, amenities a, listings l, has_amenities ra
+WHERE (a.amenity LIKE '%TV%'
+        OR a.amenity LIKE '%Television%'
+        OR l.summary LIKE '%TV%'
+        OR l.summary LIKE '%Television%')
+        AND (
+             (a.amenities_pk = ra.amenity AND ra.has_amenities_listings_fk = rs.review_scores_listings_fk)
+            OR l.id = rs.review_scores_listings_fk);
+
+SELECT  h.*
+FROM hosts h, calendar c, date_informations d
+WHERE h.hosts_listings_fk = d.date_informations_listings_fk
+    AND c.calendar_pk = d.calendar_listing_id
+    AND YEAR(c."date") = 2019 AND 3<=MONTH(c."date")<=9;
 
 
--- Oracle SQL Developer Data Modeler Summary Report: 
+SELECT COUNT(h1.id_listings)
+FROM "USER" u1, "USER" u2, hosts h1
+WHERE u1.name = u2.name AND u1.id != u2.id AND (h1.id_user = u1.id OR h1.id_user = u2.id);
+
+SELECT c."date"
+FROM calendar c, date_informations d, listings l, hosts h
+WHERE h.url LIKE '%Viajes Eco%'
+    AND h.id_listings = c.listing_id
+    AND c.available = 't';
+
+SELECT (u.id_user, u.name)
+FROM "USER" u,
+     (SELECT h.id
+FROM hosts h, "USER" u
+GROUP BY h.id_user
+HAVING COUNT(*) = 1
+)h
+WHERE u.id = h.id;
+
+
+
+-- Oracle SQL Developer Data Modeler Summary Report:
 -- 
 -- CREATE TABLE                            17
 -- CREATE INDEX                             0
