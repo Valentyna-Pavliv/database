@@ -299,9 +299,8 @@ WHERE (a.amenity LIKE '%TV%'
         OR a.amenity LIKE '%Television%'
         OR l.summary LIKE '%TV%'
         OR l.summary LIKE '%Television%')
-        AND (
-             (a.amenities_pk = ra.amenity AND ra.has_amenities_listings_fk = rs.review_scores_listings_fk)
-            OR l.id = rs.review_scores_listings_fk);
+        AND ( (a.amenity,rs.review_scores_listings_fk) =ra.has_amenities_pk
+              OR l.id = rs.review_scores_listings_fk);
 
 SELECT  h.*
 FROM hosts h, calendar c, date_informations d
@@ -328,6 +327,38 @@ GROUP BY h.id_user
 HAVING COUNT(*) = 1
 )h
 WHERE u.id = h.id;
+
+SELECT withWifi - withoutWifi
+FROM (SELECT AVG(p.price)
+        FROM pricing p, amenities a, has_amenities ha
+        WHERE (a.amenity LIKE '%Wifi%'
+            OR a.amenity LIKE '%WIFI%')
+            AND ha.amenity = a.amenity AND ha.listing_id = p.pricing_listings_fk) withWifi ,
+     (SELECT AVG(p.price)
+        FROM pricing p, amenities a, has_amenities ha
+        WHERE (NOT a.amenity LIKE '%Wifi%'
+            AND NOT a.amenity LIKE '%WIFI%')
+            AND ha.amenity = a.amenity AND ha.listing_id = p.pricing_listings_fk) withoutWifi;
+
+SELECT madridPricing - berlinPricing
+FROM (SELECT AVG(p.price)
+      FROM pricing p,
+           house h,
+           location l
+      WHERE h.beds = 8
+        AND l.city LIKE '%Madrid%'
+        AND l.location_listings_fk = h.listings_id
+        AND p.pricing_listings_fk = h.listings_id
+    )madridPricing ,
+     (SELECT AVG(p.price)
+      FROM pricing p,
+           house h,
+           location l
+      WHERE h.beds = 8
+        AND l.city LIKE '%Berlin%'
+        AND l.location_listings_fk = h.listings_id
+        AND p.pricing_listings_fk = h.listings_id
+    )berlinPricing;
 
 
 
