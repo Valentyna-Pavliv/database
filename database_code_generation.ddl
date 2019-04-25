@@ -360,8 +360,6 @@ FROM (SELECT AVG(p.price)
         AND p.pricing_listings_fk = h.listings_id
     )berlinPricing;
 
-
-
 -- Oracle SQL Developer Data Modeler Summary Report:
 -- 
 -- CREATE TABLE                            17
