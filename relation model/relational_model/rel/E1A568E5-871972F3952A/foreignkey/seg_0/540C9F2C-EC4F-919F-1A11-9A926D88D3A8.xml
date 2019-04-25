@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FA64F5F9-9EA4-78D1-7962-4155B48C91EA" containerWithKeyObject="ECB817ED-7696-8B81-6DCC-5C88C90FB24C" localFKIndex="3099C2F0-4BF8-2DF6-B1EB-7A403581270D" name="HOUSE_LOCATION_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="540C9F2C-EC4F-919F-1A11-9A926D88D3A8" containerWithKeyObject="ECB817ED-7696-8B81-6DCC-5C88C90FB24C" localFKIndex="1C6D7813-7F8A-4987-44FA-4CECCC8743E7" name="HOUSE_LOCATIONS_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-03-20 11:11:19 UTC</createdTime>
+<createdTime>2019-04-25 14:12:22 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
-<referredTableLongName>LOCATION</referredTableLongName>
+<referredTableLongName>LOCATIONS</referredTableLongName>
 <deleteRule>CASCADE</deleteRule>
 <referredTableID>2963F172-C8CE-3771-D36E-398457A2B971</referredTableID>
 <keyObject>24D87D77-9061-6499-128A-8D28B5E3AC24</keyObject>
 <referredKeyID>24D87D77-9061-6499-128A-8D28B5E3AC24</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>latitude,longitude</refColNames>
+<refColNames>longitude,latitude,id_listing</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

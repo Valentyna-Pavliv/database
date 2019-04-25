@@ -1,35 +1,35 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="822BB759-00B3-C8DC-FBA2-6F9ADC8F4EF0" name="AMENITIES">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="44DDD445-8874-3F90-9568-0AE92CE65A00" name="PROPERTIES">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:20:26 UTC</createdTime>
+<createdTime>2019-04-25 14:31:35 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
-<ordsAlias>table_16</ordsAlias>
+<ordsAlias>table_35</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="amenity_type" id="F9DDB1D2-6E84-60A3-25A3-5D9FDD256036">
+<Column name="property_type" id="8383B453-7D77-ED20-F048-A7283D6808C1">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:21:11 UTC</createdTime>
+<createdTime>2019-04-25 14:32:02 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="6F7CB815-2DEB-D92C-7DA8-B9A64A6BEDD1" name="AMENITIES_PK">
+<ind_PK_UK id="C5956520-D193-1BCD-9DAF-5331A9B53530" name="PROPERTIES_PK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:21:11 UTC</createdTime>
+<createdTime>2019-04-25 14:32:02 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="F9DDB1D2-6E84-60A3-25A3-5D9FDD256036"/>
+<colUsage columnID="8383B453-7D77-ED20-F048-A7283D6808C1"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

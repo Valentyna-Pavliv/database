@@ -1,30 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4098E2E0-F469-06DF-656E-6AAA557599CE" name="HAS_AMENITIES">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C379D3CC-13B9-1C5E-C73C-DD2E61955785" name="HAS_RESPONSE_TIME">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:21:57 UTC</createdTime>
+<createdTime>2019-04-25 12:32:13 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
-<ordsAlias>table_18</ordsAlias>
+<ordsAlias>table_20</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="amenity_type" id="525DC1E4-5B52-86A8-B377-9E9F2A5CC2E6">
+<Column name="reponse_time" id="23F5A3BD-584D-C52F-8023-29901C0CF321">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:23:31 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0885697D-D7D2-A1BC-0355-7CA7AB6A59BA" referredColumn="F9DDB1D2-6E84-60A3-25A3-5D9FDD256036"/>
-</associations>
-</Column>
-<Column name="id_listing" id="B9F5C50B-2B67-6BA8-7DF5-505736D0D4A1">
-<createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:23:31 UTC</createdTime>
+<createdTime>2019-04-25 12:33:47 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,41 +18,55 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="76650CC0-8101-F426-9B9D-3C71526AA0D7" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
+<colAssociation fkAssociation="40C630DE-7E5E-DD4E-5405-C7E7BE735DEA" referredColumn="8851913E-CFD0-BFFF-F9DB-3740D84727BA"/>
+</associations>
+</Column>
+<Column name="url" id="291078A1-DE34-5D8F-80F3-EA6166B4A126">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-25 12:44:49 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2989FFE3-CA42-F536-2EEF-68802F8627C5" referredColumn="4A275E27-D33E-F630-7CAB-687CEA8BE182"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="A3732946-14AA-FC80-1D41-C50DDC3DCF69" name="HAS_AMENITIES_PK">
+<ind_PK_UK id="83C6AEB1-E09A-0D0A-09D5-2ACE8D45D265" name="HAS_RESP_TIME_PK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:23:31 UTC</createdTime>
+<createdTime>2019-04-25 12:33:47 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="525DC1E4-5B52-86A8-B377-9E9F2A5CC2E6"/>
-<colUsage columnID="B9F5C50B-2B67-6BA8-7DF5-505736D0D4A1"/>
+<colUsage columnID="23F5A3BD-584D-C52F-8023-29901C0CF321"/>
+<colUsage columnID="291078A1-DE34-5D8F-80F3-EA6166B4A126"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3563A042-A49E-D0D1-9348-4D87AA26BF6C" name="HAS_AMENITIES_AMENITIES_FK">
+<ind_PK_UK id="34C9236C-8914-83F9-98BE-67045790EA2A" name="HAS_RESP_TIME_HOSTS_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:24:19 UTC</createdTime>
+<createdTime>2019-04-25 12:46:27 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="525DC1E4-5B52-86A8-B377-9E9F2A5CC2E6"/>
+<colUsage columnID="291078A1-DE34-5D8F-80F3-EA6166B4A126"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="BE457158-44F9-8303-BAE6-488D297D6926" name="HAS_AMENITIES_LISTINGS_FK">
+<ind_PK_UK id="D174D27E-AA53-3610-5359-5AA9380297B4" name="HAS_RESP_TIME_RESP_TIME_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:24:19 UTC</createdTime>
+<createdTime>2019-04-25 12:48:33 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="B9F5C50B-2B67-6BA8-7DF5-505736D0D4A1"/>
+<colUsage columnID="23F5A3BD-584D-C52F-8023-29901C0CF321"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

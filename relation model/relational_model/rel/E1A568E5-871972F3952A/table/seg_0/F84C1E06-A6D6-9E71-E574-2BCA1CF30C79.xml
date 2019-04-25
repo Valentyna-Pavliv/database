@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F84C1E06-A6D6-9E71-E574-2BCA1CF30C79" name="PRICING">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F84C1E06-A6D6-9E71-E574-2BCA1CF30C79" name="CALENDARS">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-20 09:24:52 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -8,7 +8,17 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="AF9C4B88-1C56-FED2-B13A-653C3B2DA169">
+<Column name="date" id="A9860E78-78E6-2297-6B66-1D045F6BEA32">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-25 13:30:55 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_listing" id="AF9C4B88-1C56-FED2-B13A-653C3B2DA169">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-20 09:27:06 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -22,7 +32,30 @@
 <colAssociation fkAssociation="551E9298-64F7-FF1F-12E0-F49A632F264D" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
 </associations>
 </Column>
-<Column name="price" id="C053A538-FEA8-DBAF-A6CF-4EF1E4260021">
+<Column name="available" id="05F44DA5-8A81-1526-0186-F2155EA5DA2A">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-25 13:30:55 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price" id="EB5E6607-44D5-8083-9D22-FA4A26F8960C">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-25 13:30:55 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="daily_price" id="C053A538-FEA8-DBAF-A6CF-4EF1E4260021">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-20 09:27:06 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -33,6 +66,28 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <notNullConstraintName>NNC_COSTS_PRICING_COSTS_PRICING_ID</notNullConstraintName>
+</Column>
+<Column name="weekly_price" id="D4A6ACF1-BED6-A2D0-92A6-468DE6E0FE6A">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 09:28:43 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="monthly_price" id="773EC8D0-A4EC-F611-F2E8-37B88F110011">
+<createdBy>yann</createdBy>
+<createdTime>2019-04-25 13:28:06 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="cleaning_fee" id="6B39D181-A6B9-6A28-621A-A978F7B700F1">
 <createdBy>yann</createdBy>
@@ -56,28 +111,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="monthly_price" id="85DD4FF8-370A-A464-EDCB-E48D86368217">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-20 09:28:43 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="weekly_price" id="D4A6ACF1-BED6-A2D0-92A6-468DE6E0FE6A">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-20 09:28:43 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="95E0DA57-6CD1-6278-3DB1-34C8A7D309AD" name="PRICING_PK">
@@ -89,16 +122,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="AF9C4B88-1C56-FED2-B13A-653C3B2DA169"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="BF4DD28F-5F39-30F0-ED8F-B806FC6B3D04" name="PRICING_ID_UN">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-20 10:15:38 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<indexState>Unique Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="AF9C4B88-1C56-FED2-B13A-653C3B2DA169"/>
+<colUsage columnID="A9860E78-78E6-2297-6B66-1D045F6BEA32"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="2F0291EA-0F1D-1F93-F07A-4C13F7FF5DED" name="PRICING_LISTINGS_FK">

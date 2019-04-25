@@ -9,7 +9,7 @@
 <keyObject>F90AE139-93F0-6D79-5360-0CB015450AEB</keyObject>
 <referredKeyID>F90AE139-93F0-6D79-5360-0CB015450AEB</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>id</refColNames>
+<refColNames>id_listing</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
