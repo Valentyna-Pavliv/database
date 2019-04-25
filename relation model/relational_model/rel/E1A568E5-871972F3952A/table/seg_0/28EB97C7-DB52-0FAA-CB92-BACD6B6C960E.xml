@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="28EB97C7-DB52-0FAA-CB92-BACD6B6C960E" name="USER">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="28EB97C7-DB52-0FAA-CB92-BACD6B6C960E" name="USERS">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-22 10:21:45 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="D6757606-24F9-DCE9-1433-806DB04E7DE7">
+<Column name="id_user" id="D6757606-24F9-DCE9-1433-806DB04E7DE7">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-22 10:22:22 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -26,8 +26,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<dataTypeSize>35</dataTypeSize>
+<ownDataTypeParameters>35,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

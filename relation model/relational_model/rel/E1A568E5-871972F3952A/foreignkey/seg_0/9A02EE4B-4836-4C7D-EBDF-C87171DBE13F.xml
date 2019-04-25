@@ -3,13 +3,13 @@
 <createdBy>yann</createdBy>
 <createdTime>2019-03-22 10:41:05 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
-<referredTableLongName>USER</referredTableLongName>
+<referredTableLongName>USERS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>28EB97C7-DB52-0FAA-CB92-BACD6B6C960E</referredTableID>
 <keyObject>E9E1E32A-B3D9-7702-D1D7-E65D07CA3E82</keyObject>
 <referredKeyID>E9E1E32A-B3D9-7702-D1D7-E65D07CA3E82</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>id</refColNames>
+<refColNames>id_user</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

@@ -8,7 +8,17 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="719ADDF5-5E9E-AA00-E235-A3026A5B31FC">
+<Column name="value" id="F78A7008-AD53-844A-598A-6B58D079C5DB">
+<createdBy>yann</createdBy>
+<createdTime>2019-03-20 09:59:25 UTC</createdTime>
+<ownerDesignName>relational_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_listing" id="719ADDF5-5E9E-AA00-E235-A3026A5B31FC">
 <createdBy>yann</createdBy>
 <createdTime>2019-03-20 09:59:25 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -20,17 +30,6 @@
 <associations>
 <colAssociation fkAssociation="0E612C23-3544-F5B5-062E-EEF56636A2A7" referredColumn="0A80A949-B347-FB15-9A7D-7B2DF47B88A3"/>
 </associations>
-</Column>
-<Column name="value" id="F78A7008-AD53-844A-598A-6B58D079C5DB">
-<createdBy>yann</createdBy>
-<createdTime>2019-03-20 09:59:25 UTC</createdTime>
-<ownerDesignName>relational_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="checking" id="1CEFC0AE-A3F7-0419-74FD-3AF9F8DFC686">
 <createdBy>yann</createdBy>
@@ -109,6 +108,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="719ADDF5-5E9E-AA00-E235-A3026A5B31FC"/>
+<colUsage columnID="F78A7008-AD53-844A-598A-6B58D079C5DB"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BD79FE8C-E09B-E342-3843-6D8B2E376A5C" name="REVIEW_SCORES_ID_UN">

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" containerWithKeyObject="C52F4EEC-9B80-097E-40C7-45775C95F4A9" localFKIndex="723CB559-DCCB-91E0-7295-603110BECB1D" name="HAS_BED_HOUSE_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3122E6A1-31E3-10AB-4645-F7816C1FAE5A" containerWithKeyObject="B68482E7-0A56-E637-DA6C-614BDAC0545F" localFKIndex="24F04382-1E67-50AD-3CAD-B95AF8F442E0" name="HAS_ROOM_HOUSES_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<createdTime>2019-04-25 14:25:57 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <referredTableLongName>HOUSES</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

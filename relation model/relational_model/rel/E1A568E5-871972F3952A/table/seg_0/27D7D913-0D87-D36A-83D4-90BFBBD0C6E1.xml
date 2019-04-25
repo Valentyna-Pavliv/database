@@ -30,7 +30,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
 <dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="706AF63E-9D82-D34A-6A36-0941CC3E41DA" referredColumn="4A275E27-D33E-F630-7CAB-687CEA8BE182"/>
@@ -38,7 +38,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="78FFCEF0-09B8-72B2-84D6-59D00A532AE4" name="HAS_VERIFICATIONS_PK">
+<ind_PK_UK id="78FFCEF0-09B8-72B2-84D6-59D00A532AE4" name="HAS_VERIF_PK">
 <createdBy>yann</createdBy>
 <createdTime>2019-04-14 10:16:26 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -50,7 +50,7 @@
 <colUsage columnID="A4F2CCCA-E730-076A-4040-F53D47D0F38F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="11198A4F-7A08-C889-39BF-293FC1BAEB63" name="HAS_VERIFICATIONS_HOSTS_FK">
+<ind_PK_UK id="11198A4F-7A08-C889-39BF-293FC1BAEB63" name="HAS_VERIFI_HOSTS_FK">
 <createdBy>yann</createdBy>
 <createdTime>2019-04-14 10:17:42 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
@@ -60,7 +60,7 @@
 <colUsage columnID="A4F2CCCA-E730-076A-4040-F53D47D0F38F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="70B781CC-A28E-1DDF-3EF6-E5209A290745" name="HAS_VERIFICATIONS_VERIFICATIONS_FK">
+<ind_PK_UK id="70B781CC-A28E-1DDF-3EF6-E5209A290745" name="HAS_VERIF_VERIF_FK">
 <createdBy>yann</createdBy>
 <createdTime>2019-04-14 10:18:05 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>

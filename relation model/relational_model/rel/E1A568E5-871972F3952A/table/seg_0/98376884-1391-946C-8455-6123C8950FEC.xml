@@ -1,35 +1,35 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="822BB759-00B3-C8DC-FBA2-6F9ADC8F4EF0" name="AMENITIES">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="98376884-1391-946C-8455-6123C8950FEC" name="ROOMS">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:20:26 UTC</createdTime>
+<createdTime>2019-04-25 14:22:30 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
-<ordsAlias>table_16</ordsAlias>
+<ordsAlias>table_32</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="amenity_type" id="F9DDB1D2-6E84-60A3-25A3-5D9FDD256036">
+<Column name="room_type" id="A8ECCF5C-9115-1CCF-080B-A83360F5A422">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:21:11 UTC</createdTime>
+<createdTime>2019-04-25 14:23:11 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="6F7CB815-2DEB-D92C-7DA8-B9A64A6BEDD1" name="AMENITIES_PK">
+<ind_PK_UK id="5017CB91-8222-2618-FD21-095FD42E007F" name="ROOMS_PK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:21:11 UTC</createdTime>
+<createdTime>2019-04-25 14:23:11 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="F9DDB1D2-6E84-60A3-25A3-5D9FDD256036"/>
+<colUsage columnID="A8ECCF5C-9115-1CCF-080B-A83360F5A422"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

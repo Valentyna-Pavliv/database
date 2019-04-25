@@ -1,42 +1,44 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C52F4EEC-9B80-097E-40C7-45775C95F4A9" name="HAS_BED">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3B2DFB8E-C5AD-6105-2759-30E39B63D838" name="HAS_PROPERTY">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:35:19 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <ordsAlias>table_26</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="longitude" id="877EA1AB-2049-BF26-50A9-B85AE5380870">
+<Column name="longitude" id="D28981A7-41E7-98F5-CD28-E094DBCE5B8E">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_HAS_ROOMv1_longitude</notNullConstraintName>
 <associations>
-<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="CD28CD3A-E887-267E-58FE-79DF7240146F"/>
+<colAssociation fkAssociation="E6348A1F-7A9A-9E32-6D43-3142B384DF58" referredColumn="CD28CD3A-E887-267E-58FE-79DF7240146F"/>
 </associations>
 </Column>
-<Column name="latitude" id="E3BF4EED-B1B5-6C2A-BEDD-44FCF9F3D9DE">
+<Column name="latitude" id="593213BC-660D-EF24-A0A5-D482C3551C51">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_HAS_ROOMv1_latitude</notNullConstraintName>
 <associations>
-<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="5711F907-C712-5359-4D5F-B61FCDF8CB1C"/>
+<colAssociation fkAssociation="E6348A1F-7A9A-9E32-6D43-3142B384DF58" referredColumn="5711F907-C712-5359-4D5F-B61FCDF8CB1C"/>
 </associations>
 </Column>
-<Column name="neighbourhood" id="AF01D28B-7A3A-7A14-467C-2B153F7B79DB">
+<Column name="neighbourhood" id="C1A8C098-B493-F1B0-5078-FFA6860F7FC9">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -44,13 +46,14 @@
 <dataTypeSize>35</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_HAS_ROOMv1_neighbourhood</notNullConstraintName>
 <associations>
-<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="A5E1F300-53C5-354A-DC8B-DE9EE7F43A30"/>
+<colAssociation fkAssociation="E6348A1F-7A9A-9E32-6D43-3142B384DF58" referredColumn="A5E1F300-53C5-354A-DC8B-DE9EE7F43A30"/>
 </associations>
 </Column>
-<Column name="id_listing" id="4701204C-A86C-16F9-4E2D-B1526021D32F">
+<Column name="id_listing" id="0F7E23A1-2813-51AA-989E-932C84622543">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-25 14:12:38 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -58,13 +61,14 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_HAS_ROOMv1_id_listing</notNullConstraintName>
 <associations>
-<colAssociation fkAssociation="5D3EE1FB-58DB-643F-A6E7-FFD9484E9C38" referredColumn="50B9F9D5-1EED-956B-BEAC-EBF5808AA6DC"/>
+<colAssociation fkAssociation="E6348A1F-7A9A-9E32-6D43-3142B384DF58" referredColumn="50B9F9D5-1EED-956B-BEAC-EBF5808AA6DC"/>
 </associations>
 </Column>
-<Column name="bed_type" id="A749C15B-E12D-94A0-8885-7FB57B769394">
+<Column name="property_type" id="B1263934-8DEF-4C1A-FF43-20527285F568">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -72,48 +76,49 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_HAS_ROOMv1_room_type</notNullConstraintName>
 <associations>
-<colAssociation fkAssociation="112DB576-5579-AF01-7B8D-B031094D2C8B" referredColumn="88AD2036-CD19-9623-BF8F-B3674B2AB157"/>
+<colAssociation fkAssociation="36AD1925-4B09-8B26-D5E2-EB375FDE4CA8" referredColumn="8383B453-7D77-ED20-F048-A7283D6808C1"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C6FB3D86-7A46-58A7-C4A7-E16E65D2AA21" name="HAS_BED_PK">
+<ind_PK_UK id="2E80CF22-1C61-C71A-DCCB-8D08C83DFAD5" name="HAS_PROPERTY_PK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:37:56 UTC</createdTime>
+<createdTime>2019-04-25 14:33:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="877EA1AB-2049-BF26-50A9-B85AE5380870"/>
-<colUsage columnID="E3BF4EED-B1B5-6C2A-BEDD-44FCF9F3D9DE"/>
-<colUsage columnID="AF01D28B-7A3A-7A14-467C-2B153F7B79DB"/>
-<colUsage columnID="A749C15B-E12D-94A0-8885-7FB57B769394"/>
-<colUsage columnID="4701204C-A86C-16F9-4E2D-B1526021D32F"/>
+<colUsage columnID="D28981A7-41E7-98F5-CD28-E094DBCE5B8E"/>
+<colUsage columnID="593213BC-660D-EF24-A0A5-D482C3551C51"/>
+<colUsage columnID="C1A8C098-B493-F1B0-5078-FFA6860F7FC9"/>
+<colUsage columnID="0F7E23A1-2813-51AA-989E-932C84622543"/>
+<colUsage columnID="B1263934-8DEF-4C1A-FF43-20527285F568"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="08C48FBA-3AAD-0A07-D44F-DB2FB3085277" name="HAS_BED_BED_FK">
+<ind_PK_UK id="3BD8BF0A-615D-ECBB-3B4C-AF1F260CD4D6" name="HAS_PROPERTY_HOUSES_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<createdTime>2019-04-25 14:32:24 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="A749C15B-E12D-94A0-8885-7FB57B769394"/>
+<colUsage columnID="D28981A7-41E7-98F5-CD28-E094DBCE5B8E"/>
+<colUsage columnID="593213BC-660D-EF24-A0A5-D482C3551C51"/>
+<colUsage columnID="C1A8C098-B493-F1B0-5078-FFA6860F7FC9"/>
+<colUsage columnID="0F7E23A1-2813-51AA-989E-932C84622543"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="723CB559-DCCB-91E0-7295-603110BECB1D" name="HAS_BED_HOUSE_FK">
+<ind_PK_UK id="F4248ACB-9017-9B05-F4C7-775C998282A6" name="HAS_PROPERTY_PROPERTIES_FK">
 <createdBy>yann</createdBy>
-<createdTime>2019-04-14 10:40:26 UTC</createdTime>
+<createdTime>2019-04-25 14:33:57 UTC</createdTime>
 <ownerDesignName>relational_model</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="877EA1AB-2049-BF26-50A9-B85AE5380870"/>
-<colUsage columnID="E3BF4EED-B1B5-6C2A-BEDD-44FCF9F3D9DE"/>
-<colUsage columnID="AF01D28B-7A3A-7A14-467C-2B153F7B79DB"/>
-<colUsage columnID="4701204C-A86C-16F9-4E2D-B1526021D32F"/>
+<colUsage columnID="B1263934-8DEF-4C1A-FF43-20527285F568"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
