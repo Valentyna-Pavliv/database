@@ -73,9 +73,9 @@ ALTER TABLE has_bed
                                             id_listing );
 
 CREATE TABLE has_property (
-    longitude       INTEGER
+    longitude       REAL
         CONSTRAINT nnc_has_roomv1_longitude NOT NULL,
-    latitude        INTEGER
+    latitude        REAL
         CONSTRAINT nnc_has_roomv1_latitude NOT NULL,
     neighbourhood   CHAR(35)
         CONSTRAINT nnc_has_roomv1_neighbourhood NOT NULL,
@@ -93,7 +93,7 @@ ALTER TABLE has_property
                                                  property_type );
 
 CREATE TABLE has_response_time (
-    reponse_time   INTEGER NOT NULL,
+    reponse_time   CHAR(18),
     url            CHAR(50) NOT NULL
 );
 
@@ -143,8 +143,8 @@ ALTER TABLE hosts ADD CONSTRAINT hosts_id_un UNIQUE ( id_listing );
 
 CREATE TABLE houses (
     neighbourhood   CHAR(35) NOT NULL,
-    longitude       INTEGER NOT NULL,
-    latitude        INTEGER NOT NULL,
+    longitude       REAL NOT NULL,
+    latitude        REAL NOT NULL,
     id_listing      INTEGER NOT NULL,
     beds            INTEGER,
     space           CHAR(1000),
@@ -163,7 +163,7 @@ ALTER TABLE houses
 
 CREATE TABLE listings (
     id_listing               INTEGER NOT NULL,
-    name                     CHAR(35),
+    name_listing             CHAR(90),
     url                      CHAR(40),
     space                    CHAR(1000),
     interaction              CHAR(1000),
@@ -173,15 +173,14 @@ CREATE TABLE listings (
     neighbourhood_overview   CHAR(1000),
     summary                  CHAR(1000),
     transit                  CHAR(1000),
-    place                    CHAR(30),
-    "access"                 CHAR(1000)
+    listing_access           CHAR(1000)
 );
 
 ALTER TABLE listings ADD CONSTRAINT listings_pk PRIMARY KEY ( id_listing );
 
 CREATE TABLE locations (
-    latitude       INTEGER NOT NULL,
-    longitude      INTEGER NOT NULL,
+    latitude       REAL NOT NULL,
+    longitude      REAL NOT NULL,
     id_listing     INTEGER NOT NULL,
     country        CHAR(20),
     country_code   CHAR(2),
@@ -202,7 +201,7 @@ CREATE TABLE properties (
 ALTER TABLE properties ADD CONSTRAINT properties_pk PRIMARY KEY ( property_type );
 
 CREATE TABLE response_times (
-    response_time INTEGER NOT NULL
+    response_time CHAR(18)
 );
 
 ALTER TABLE response_times ADD CONSTRAINT response_time_pk PRIMARY KEY ( response_time );
@@ -365,76 +364,7 @@ ALTER TABLE review
     ADD CONSTRAINT review_user_fk FOREIGN KEY ( reviewer_id )
         REFERENCES "USER" ( id );
 
-SELECT AVG(p.price)
-FROM pricing p, house h
-WHERE h.bedrooms >= 8 AND p.pricing_listings_fk = h.listings_id;
 
-SELECT  AVG(review_scores.rating)
-FROM review_scores rs, amenities a, listings l, has_amenities ra
-WHERE (a.amenity LIKE '%TV%'
-        OR a.amenity LIKE '%Television%'
-        OR l.summary LIKE '%TV%'
-        OR l.summary LIKE '%Television%')
-        AND ( (a.amenity,rs.review_scores_listings_fk) =ra.has_amenities_pk
-              OR l.id = rs.review_scores_listings_fk);
-
-SELECT  h.*
-FROM hosts h, calendar c, date_informations d
-WHERE h.hosts_listings_fk = d.date_informations_listings_fk
-    AND c.calendar_pk = d.calendar_listing_id
-    AND YEAR(c."date") = 2019 AND 3<=MONTH(c."date")<=9;
-
-
-SELECT COUNT(h1.id_listings)
-FROM "USER" u1, "USER" u2, hosts h1
-WHERE u1.name = u2.name AND u1.id != u2.id AND (h1.id_user = u1.id OR h1.id_user = u2.id);
-
-SELECT c."date"
-FROM calendar c, date_informations d, listings l, hosts h
-WHERE h.url LIKE '%Viajes Eco%'
-    AND h.id_listings = c.listing_id
-    AND c.available = 't';
-
-SELECT (u.id_user, u.name)
-FROM "USER" u,
-     (SELECT h.id
-FROM hosts h, "USER" u
-GROUP BY h.id_user
-HAVING COUNT(*) = 1
-)h
-WHERE u.id = h.id;
-
-SELECT withWifi - withoutWifi
-FROM (SELECT AVG(p.price)
-        FROM pricing p, amenities a, has_amenities ha
-        WHERE (a.amenity LIKE '%Wifi%'
-            OR a.amenity LIKE '%WIFI%')
-            AND ha.amenity = a.amenity AND ha.listing_id = p.pricing_listings_fk) withWifi ,
-     (SELECT AVG(p.price)
-        FROM pricing p, amenities a, has_amenities ha
-        WHERE (NOT a.amenity LIKE '%Wifi%'
-            AND NOT a.amenity LIKE '%WIFI%')
-            AND ha.amenity = a.amenity AND ha.listing_id = p.pricing_listings_fk) withoutWifi;
-
-SELECT madridPricing - berlinPricing
-FROM (SELECT AVG(p.price)
-      FROM pricing p,
-           house h,
-           location l
-      WHERE h.beds = 8
-        AND l.city LIKE '%Madrid%'
-        AND l.location_listings_fk = h.listings_id
-        AND p.pricing_listings_fk = h.listings_id
-    )madridPricing ,
-     (SELECT AVG(p.price)
-      FROM pricing p,
-           house h,
-           location l
-      WHERE h.beds = 8
-        AND l.city LIKE '%Berlin%'
-        AND l.location_listings_fk = h.listings_id
-        AND p.pricing_listings_fk = h.listings_id
-    )berlinPricing;
 
 -- Oracle SQL Developer Data Modeler Summary Report:
 ALTER TABLE reviews
