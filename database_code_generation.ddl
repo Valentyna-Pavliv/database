@@ -366,6 +366,21 @@ ALTER TABLE review
 
 
 
+SELECT(u.id_user, u.name)
+FROM users u
+     INNER JOIN (SELECT hosts_user_fk, count(hosts_user_fk) as cnt
+                     FROM hosts
+                    GROUP BY hosts_user_fk) cou ON u.id_user = cou.hosts_user_fk
+                    ORDER BY cnt DESC ;
+
+SELECT (l.id_listing, l.name)
+FROM listings l
+     RIGHT JOIN (SELECT id_listing FROM review_scores rs) s ON l.id_listing = s.id_listing
+        INNER JOIN (SELECT review_scores_listings_fk, count(review_scores_listings_fk) as cnt
+                     FROM review_scores
+                    GROUP BY review_scores_listings_fk) cou ON rs.id_listing = cou.review_scores_listings_fk
+                    ORDER BY cnt DESC;
+
 -- Oracle SQL Developer Data Modeler Summary Report:
 ALTER TABLE reviews
     ADD CONSTRAINT review_user_fk FOREIGN KEY ( id_reviewer )
