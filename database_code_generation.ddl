@@ -73,9 +73,9 @@ ALTER TABLE has_bed
                                             id_listing );
 
 CREATE TABLE has_property (
-    longitude       INTEGER
+    longitude       REAL
         CONSTRAINT nnc_has_roomv1_longitude NOT NULL,
-    latitude        INTEGER
+    latitude        REAL
         CONSTRAINT nnc_has_roomv1_latitude NOT NULL,
     neighbourhood   CHAR(35)
         CONSTRAINT nnc_has_roomv1_neighbourhood NOT NULL,
@@ -93,7 +93,7 @@ ALTER TABLE has_property
                                                  property_type );
 
 CREATE TABLE has_response_time (
-    reponse_time   INTEGER NOT NULL,
+    reponse_time   CHAR(18),
     url            CHAR(50) NOT NULL
 );
 
@@ -143,8 +143,8 @@ ALTER TABLE hosts ADD CONSTRAINT hosts_id_un UNIQUE ( id_listing );
 
 CREATE TABLE houses (
     neighbourhood   CHAR(35) NOT NULL,
-    longitude       INTEGER NOT NULL,
-    latitude        INTEGER NOT NULL,
+    longitude       REAL NOT NULL,
+    latitude        REAL NOT NULL,
     id_listing      INTEGER NOT NULL,
     beds            INTEGER,
     space           CHAR(1000),
@@ -163,7 +163,7 @@ ALTER TABLE houses
 
 CREATE TABLE listings (
     id_listing               INTEGER NOT NULL,
-    name                     CHAR(35),
+    name_listing             CHAR(90),
     url                      CHAR(40),
     space                    CHAR(1000),
     interaction              CHAR(1000),
@@ -173,15 +173,14 @@ CREATE TABLE listings (
     neighbourhood_overview   CHAR(1000),
     summary                  CHAR(1000),
     transit                  CHAR(1000),
-    place                    CHAR(30),
-    "access"                 CHAR(1000)
+    listing_access           CHAR(1000)
 );
 
 ALTER TABLE listings ADD CONSTRAINT listings_pk PRIMARY KEY ( id_listing );
 
 CREATE TABLE locations (
-    latitude       INTEGER NOT NULL,
-    longitude      INTEGER NOT NULL,
+    latitude       REAL NOT NULL,
+    longitude      REAL NOT NULL,
     id_listing     INTEGER NOT NULL,
     country        CHAR(20),
     country_code   CHAR(2),
@@ -202,7 +201,7 @@ CREATE TABLE properties (
 ALTER TABLE properties ADD CONSTRAINT properties_pk PRIMARY KEY ( property_type );
 
 CREATE TABLE response_times (
-    response_time INTEGER NOT NULL
+    response_time CHAR(18)
 );
 
 ALTER TABLE response_times ADD CONSTRAINT response_time_pk PRIMARY KEY ( response_time );
