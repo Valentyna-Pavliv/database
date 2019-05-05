@@ -1,0 +1,178 @@
+﻿1)
+ALTER TABLE users
+ALTER COLUMN user_name type CHAR(38);
+
+
+\copy users(id_user, user_name)
+from '/home/valia/Documents/databaseSystems/projet/csv/users.csv'
+with (format csv);
+
+
+2)
+ALTER TABLE hosts
+ADD COLUMN response_rate INTEGER
+ADD COLUMN picture_url CHAR(110);
+
+
+ALTER TABLE hosts
+ALTER COLUMN about TYPE CHAR(12610);
+
+
+\copy hosts(url, id_user, since, about, thumbnail_url, response_rate, picture_url)
+from  '/home/valia/Documents/databaseSystems/projet/csv/hosts_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+3)
+\copy response_time(response_time, host_id)
+from '/home/valia/Documents/databaseSystems/projet/csv/response_time.csv'
+with(format csv);
+
+
+4)
+\copy verifications(verification_type)
+from '/home/valia/Documents/databaseSystems/projet/csv/verifications.csv'
+with(format csv);
+
+
+5)
+\copy has_verifications(verification_type, user_id)
+from '/home/valia/Documents/databaseSystems/projet/csv/has_verifications.csv'
+with(format csv);
+
+
+6)
+ALTER TABLE listings
+ALTER COLUMN name_listing TYPE CHAR(138);
+
+
+ALTER TABLE listings
+ALTER COLUMN url TYPE CHAR(37);
+
+
+ALTER TABLE listings 
+ALTER COLUMN picture_url TYPE CHAR(116);
+
+
+
+
+\copy listings(id_listing, name_listing, url, space, interaction, notes, picture_url, description, neighbourhood_overview, summary, transit, listing_access, host_id)
+from  '/home/valia/Documents/databaseSystems/projet/csv/listings_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+
+
+7)
+ALTER TABLE locations
+ALTER COLUMN country TYPE CHAR(7),
+ALTER COLUMN city TYPE CHAR(9);
+
+
+\copy locations(latitude, longitude, id_listing, country, country_code, city)
+from '/home/valia/Documents/databaseSystems/projet/csv/locations.csv'
+with(format csv);
+
+
+8)
+\copy calendars(calendar_date, id_listing, available, price, daily_price, weekly_price, monthly_price, cleaning_fee, security_deposit)
+from '/home/valia/Documents/databaseSystems/projet/csv/calendars.csv'
+with(format csv);
+
+
+9)
+ALTER TABLE amenities
+ALTER COLUMN amenity_type TYPE CHAR(26);
+
+
+\copy amenities(amenity_type)
+from '/home/valia/Documents/databaseSystems/projet/csv/amenities.csv'
+with(format csv);
+
+
+10)
+ALTER TABLE has_amenities
+ALTER COLUMN amenity_type TYPE CHAR(26);
+
+
+\copy has_amenities(amenity_type, id_listing)
+from '/home/valia/Documents/databaseSystems/projet/csv/has_amenities.csv'
+with(format csv);
+
+
+11)
+\copy review_scores(value, id_listing, checking, rating, location, accuracy, communication, cleanliness)
+from '/home/valia/Documents/databaseSystems/projet/csv/review_scores.csv'
+with(format csv);
+
+
+
+
+
+
+
+
+12)
+\copy booking_policies(id_listing, extra_people, is_business_travel_ready, require_guest_profile_picture, require_guest_phone_verification, maximum_nights, minimum_nights, guests_included)
+from '/home/valia/Documents/databaseSystems/projet/csv/booking_policies.csv'
+with(format csv);
+
+
+13)
+\copy cancellation_policy (cancellation_policy, id_listing)
+from '/home/valia/Documents/databaseSystems/projet/csv/cancellation_policy.csv'
+with(format csv);
+
+
+14)
+\copy  houses (neighbourhood , id_listing, beds, space, house_rules, accommodates, square_feet, bathrooms, bedrooms)
+from  '/home/valia/Documents/databaseSystems/projet/csv/houses_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+15)
+\copy property (id_listing, property_type)
+from '/home/valia/Documents/databaseSystems/projet/csv/property.csv'
+with(format csv);
+
+
+16)
+\copy  room_type (id_listing, room_type)
+from '/home/valia/Documents/databaseSystems/projet/csv/room_type.csv'
+with(format csv);
+
+
+17)
+CREATE TABLE bed_type (
+        id_listing          INTEGER
+            CONSTRAINT nnc_has_bed_id_listing NOT NULL,
+        bed_type           CHAR(13)
+            CONSTRAINT nnc_has_bed_room_type NOT NULL
+);
+
+
+ALTER TABLE bed_type
+        ADD CONSTRAINT has_bed_pk PRIMARY KEY ( id_listing);
+
+
+ALTER TABLE bed_type
+        ADD CONSTRAINT has_bed_houses_fk FOREIGN KEY ( id_listing )
+            REFERENCES houses ( id_listing ) ON DELETE CASCADE;
+
+
+\copy  bed_type (id_listing, bed_type)
+from '/home/valia/Documents/databaseSystems/projet/csv/bed_type.csv'
+with(format csv);
+18)
+ALTER TABLE reviews
+ALTER COLUMN review_comment TYPE CHAR(6414);
+
+
+\copy reviews (id_review, id_listing, id_reviewer, review_date, review_comment)
+from  '/home/valia/Documents/databaseSystems/projet/csv/reviews_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+19)#parce que en fait c’est déjà dans house cette column
+ALTER TABLE listings
+DROP COLUMN space;
