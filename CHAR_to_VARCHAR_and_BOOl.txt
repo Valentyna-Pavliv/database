@@ -1,0 +1,60 @@
+﻿1) #en vrai on peut utiliser les boolean donc je vais changer les char(1) en boolean
+
+
+ALTER TABLE booking_policies ALTER is_business_travel_ready TYPE boolean
+USING CASE is_business_travel_ready WHEN 't' THEN TRUE 
+               WHEN 'f' THEN FALSE 
+      END;
+
+
+ALTER TABLE booking_policies ALTER is_business_travel_ready TYPE boolean
+USING CASE is_business_travel_ready WHEN 't' THEN TRUE 
+               WHEN 'f' THEN FALSE 
+      END;
+
+
+ALTER TABLE booking_policies ALTER require_guest_phone_verification TYPE boolean
+USING CASE require_guest_phone_verification WHEN 't' THEN TRUE 
+               WHEN 'f' THEN FALSE 
+      END;
+
+
+ALTER TABLE calendars ALTER available TYPE boolean
+USING CASE available WHEN 't' THEN TRUE 
+               WHEN 'f' THEN FALSE 
+      END;
+
+
+2)#et changer presque tous les CHAR en VARCHAR
+
+
+ALTER TABLE reviews ALTER COLUMN review_comment TYPE VARCHAR(6414);
+ALTER TABLE bed_type ALTER COLUMN bed_type TYPE VARCHAR(13);
+ALTER TABLE room_type ALTER COLUMN room_type TYPE VARCHAR(15);
+ALTER TABLE property ALTER COLUMN property_type TYPE VARCHAR(22);
+ALTER TABLE houses ALTER COLUMN neighbourhood TYPE VARCHAR(35);
+ALTER TABLE houses ALTER COLUMN space TYPE VARCHAR(1000);
+ALTER TABLE houses ALTER COLUMN house_rules TYPE VARCHAR(1000);
+ALTER TABLE cancellation_policy ALTER COLUMN cancellation_policy TYPE VARCHAR(27);
+ALTER TABLE amenities ALTER COLUMN amenity_type TYPE VARCHAR(26);
+ALTER TABLE has_amenities ALTER COLUMN amenity_type TYPE VARCHAR(26);
+ALTER TABLE locations ALTER COLUMN country TYPE VARCHAR(7);
+ALTER TABLE locations ALTER COLUMN city TYPE VARCHAR(9);
+ALTER TABLE listings ALTER COLUMN name_listing TYPE VARCHAR(138);
+ALTER TABLE listings ALTER COLUMN url TYPE VARCHAR(37);
+ALTER TABLE listings ALTER COLUMN interaction TYPE VARCHAR(1000);
+ALTER TABLE listings ALTER COLUMN notes TYPE VARCHAR(1000);
+ALTER TABLE listings ALTER COLUMN picture_url TYPE VARCHAR(116);
+ALTER TABLE listings ALTER COLUMN description TYPE VARCHAR(1000);
+ALTER TABLE listings ALTER COLUMN neighbourhood_overview TYPE VARCHAR(1000);
+ALTER TABLE listings ALTER COLUMN summary TYPE VARCHAR(1000);
+ALTER TABLE listings ALTER COLUMN transit TYPE VARCHAR(1000);
+ALTER TABLE listings ALTER COLUMN listing_access TYPE VARCHAR(1000);
+ALTER TABLE users ALTER COLUMN user_name TYPE VARCHAR(38);
+ALTER TABLE verifications ALTER COLUMN verification_type TYPE VARCHAR(21);
+ALTER TABLE has_verifications ALTER COLUMN verification_type TYPE VARCHAR(21);
+ALTER TABLE response_time ALTER COLUMN response_time TYPE VARCHAR(18);
+ALTER TABLE hosts ALTER COLUMN url TYPE VARCHAR(50);
+ALTER TABLE hosts ALTER COLUMN about TYPE VARCHAR(12610);
+ALTER TABLE hosts ALTER COLUMN thumbnail_url TYPE VARCHAR(110);
+ALTER TABLE hosts ALTER COLUMN picture_url TYPE VARCHAR(110);
