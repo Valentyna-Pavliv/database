@@ -4,12 +4,11 @@
 
 package ch.epfl.database;
 
-import java.awt.*;
+import net.miginfocom.swing.MigLayout;
+
 import javax.swing.*;
-import javax.swing.border.*;
-import com.jgoodies.forms.factories.*;
-import net.miginfocom.swing.*;
-import org.jdesktop.swingx.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 /**
  * @author Yann Gabbud
@@ -78,19 +77,6 @@ public class App extends JPanel {
         formattedTextField45 = new JFormattedTextField();
         button6 = new JButton();
         label5 = new JLabel();
-        panel28 = new JPanel();
-        panel29 = new JPanel();
-        formattedTextField82 = new JFormattedTextField();
-        formattedTextField83 = new JFormattedTextField();
-        formattedTextField84 = new JFormattedTextField();
-        formattedTextField85 = new JFormattedTextField();
-        formattedTextField86 = new JFormattedTextField();
-        formattedTextField87 = new JFormattedTextField();
-        formattedTextField88 = new JFormattedTextField();
-        formattedTextField89 = new JFormattedTextField();
-        formattedTextField90 = new JFormattedTextField();
-        button11 = new JButton();
-        label10 = new JLabel();
         panel20 = new JPanel();
         panel21 = new JPanel();
         formattedTextField46 = new JFormattedTextField();
@@ -143,6 +129,19 @@ public class App extends JPanel {
         formattedTextField81 = new JFormattedTextField();
         button10 = new JButton();
         label9 = new JLabel();
+        panel28 = new JPanel();
+        panel29 = new JPanel();
+        formattedTextField82 = new JFormattedTextField();
+        formattedTextField83 = new JFormattedTextField();
+        formattedTextField84 = new JFormattedTextField();
+        formattedTextField85 = new JFormattedTextField();
+        formattedTextField86 = new JFormattedTextField();
+        formattedTextField87 = new JFormattedTextField();
+        formattedTextField88 = new JFormattedTextField();
+        formattedTextField89 = new JFormattedTextField();
+        formattedTextField90 = new JFormattedTextField();
+        button11 = new JButton();
+        label10 = new JLabel();
         panel30 = new JPanel();
         panel31 = new JPanel();
         formattedTextField91 = new JFormattedTextField();
@@ -169,6 +168,19 @@ public class App extends JPanel {
         formattedTextField108 = new JFormattedTextField();
         button13 = new JButton();
         label12 = new JLabel();
+        panel54 = new JPanel();
+        panel55 = new JPanel();
+        formattedTextField199 = new JFormattedTextField();
+        formattedTextField200 = new JFormattedTextField();
+        formattedTextField201 = new JFormattedTextField();
+        formattedTextField202 = new JFormattedTextField();
+        formattedTextField203 = new JFormattedTextField();
+        formattedTextField204 = new JFormattedTextField();
+        formattedTextField205 = new JFormattedTextField();
+        formattedTextField206 = new JFormattedTextField();
+        formattedTextField207 = new JFormattedTextField();
+        button25 = new JButton();
+        label23 = new JLabel();
         tabbedPane3 = new JTabbedPane();
         panel34 = new JPanel();
         panel35 = new JPanel();
@@ -196,6 +208,7 @@ public class App extends JPanel {
         formattedTextField125 = new JFormattedTextField();
         formattedTextField126 = new JFormattedTextField();
         button15 = new JButton();
+        button3 = new JButton();
         label14 = new JLabel();
         panel38 = new JPanel();
         panel39 = new JPanel();
@@ -209,6 +222,7 @@ public class App extends JPanel {
         formattedTextField134 = new JFormattedTextField();
         formattedTextField135 = new JFormattedTextField();
         button16 = new JButton();
+        button17 = new JButton();
         label15 = new JLabel();
         panel40 = new JPanel();
         panel41 = new JPanel();
@@ -221,7 +235,8 @@ public class App extends JPanel {
         formattedTextField142 = new JFormattedTextField();
         formattedTextField143 = new JFormattedTextField();
         formattedTextField144 = new JFormattedTextField();
-        button17 = new JButton();
+        button18 = new JButton();
+        button19 = new JButton();
         label16 = new JLabel();
         panel42 = new JPanel();
         panel43 = new JPanel();
@@ -234,20 +249,10 @@ public class App extends JPanel {
         formattedTextField151 = new JFormattedTextField();
         formattedTextField152 = new JFormattedTextField();
         formattedTextField153 = new JFormattedTextField();
-        button18 = new JButton();
+        button20 = new JButton();
+        button21 = new JButton();
         label17 = new JLabel();
         panel44 = new JPanel();
-        panel45 = new JPanel();
-        formattedTextField154 = new JFormattedTextField();
-        formattedTextField155 = new JFormattedTextField();
-        formattedTextField156 = new JFormattedTextField();
-        formattedTextField157 = new JFormattedTextField();
-        formattedTextField158 = new JFormattedTextField();
-        formattedTextField159 = new JFormattedTextField();
-        formattedTextField160 = new JFormattedTextField();
-        formattedTextField161 = new JFormattedTextField();
-        formattedTextField162 = new JFormattedTextField();
-        button19 = new JButton();
         label18 = new JLabel();
         panel46 = new JPanel();
         panel47 = new JPanel();
@@ -260,49 +265,9 @@ public class App extends JPanel {
         formattedTextField169 = new JFormattedTextField();
         formattedTextField170 = new JFormattedTextField();
         formattedTextField171 = new JFormattedTextField();
-        button20 = new JButton();
-        label19 = new JLabel();
-        panel48 = new JPanel();
-        panel49 = new JPanel();
-        formattedTextField172 = new JFormattedTextField();
-        formattedTextField173 = new JFormattedTextField();
-        formattedTextField174 = new JFormattedTextField();
-        formattedTextField175 = new JFormattedTextField();
-        formattedTextField176 = new JFormattedTextField();
-        formattedTextField177 = new JFormattedTextField();
-        formattedTextField178 = new JFormattedTextField();
-        formattedTextField179 = new JFormattedTextField();
-        formattedTextField180 = new JFormattedTextField();
-        button21 = new JButton();
-        label20 = new JLabel();
-        panel50 = new JPanel();
-        panel51 = new JPanel();
-        formattedTextField181 = new JFormattedTextField();
-        formattedTextField182 = new JFormattedTextField();
-        formattedTextField183 = new JFormattedTextField();
-        formattedTextField184 = new JFormattedTextField();
-        formattedTextField185 = new JFormattedTextField();
-        formattedTextField186 = new JFormattedTextField();
-        formattedTextField187 = new JFormattedTextField();
-        formattedTextField188 = new JFormattedTextField();
-        formattedTextField189 = new JFormattedTextField();
-        button22 = new JButton();
         button24 = new JButton();
-        label21 = new JLabel();
-        panel52 = new JPanel();
-        panel53 = new JPanel();
-        formattedTextField190 = new JFormattedTextField();
-        formattedTextField191 = new JFormattedTextField();
-        formattedTextField192 = new JFormattedTextField();
-        formattedTextField193 = new JFormattedTextField();
-        formattedTextField194 = new JFormattedTextField();
-        formattedTextField195 = new JFormattedTextField();
-        formattedTextField196 = new JFormattedTextField();
-        formattedTextField197 = new JFormattedTextField();
-        formattedTextField198 = new JFormattedTextField();
-        button23 = new JButton();
-        button3 = new JButton();
-        label22 = new JLabel();
+        button26 = new JButton();
+        label19 = new JLabel();
 
         //======== frame2 ========
         {
@@ -325,63 +290,84 @@ public class App extends JPanel {
                             javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
                             java.awt.Color.red), panel12.getBorder())); panel12.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
-                    panel12.setLayout(new VerticalLayout());
+                    panel12.setLayout(new MigLayout(
+                        "fill,insets 0,hidemode 3,gap 0 0",
+                        // columns
+                        "[grow,left]",
+                        // rows
+                        "[fill]" +
+                        "[fill]" +
+                        "[fill]" +
+                        "[fill]"));
 
                     //---- textField7 ----
                     textField7.setBorder(new TitledBorder("Search bar"));
-                    panel12.add(textField7);
+                    panel12.add(textField7, "cell 0 0,growx");
 
                     //======== panel13 ========
                     {
                         panel13.setBorder(new TitledBorder("Tables"));
-                        panel13.setLayout(new HorizontalLayout());
+                        panel13.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]" +
+                            "[fill]",
+                            // rows
+                            "[grow,center]"));
 
                         //---- checkBox2 ----
                         checkBox2.setText("Table 1");
-                        panel13.add(checkBox2);
+                        panel13.add(checkBox2, "cell 0 0");
 
                         //---- checkBox3 ----
                         checkBox3.setText("Table 2");
-                        panel13.add(checkBox3);
+                        panel13.add(checkBox3, "cell 1 0");
 
                         //---- checkBox4 ----
                         checkBox4.setText("text");
-                        panel13.add(checkBox4);
+                        panel13.add(checkBox4, "cell 2 0");
 
                         //---- checkBox5 ----
                         checkBox5.setText("text");
-                        panel13.add(checkBox5);
+                        panel13.add(checkBox5, "cell 3 0");
 
                         //---- checkBox6 ----
                         checkBox6.setText("text");
-                        panel13.add(checkBox6);
+                        panel13.add(checkBox6, "cell 4 0");
 
                         //---- checkBox7 ----
                         checkBox7.setText("text");
-                        panel13.add(checkBox7);
+                        panel13.add(checkBox7, "cell 5 0");
 
                         //---- checkBox8 ----
                         checkBox8.setText("text");
-                        panel13.add(checkBox8);
+                        panel13.add(checkBox8, "cell 6 0");
 
                         //---- checkBox9 ----
                         checkBox9.setText("text");
-                        panel13.add(checkBox9);
+                        panel13.add(checkBox9, "cell 7 0");
 
                         //---- checkBox10 ----
                         checkBox10.setText("text");
-                        panel13.add(checkBox10);
+                        panel13.add(checkBox10, "cell 8 0");
                     }
-                    panel12.add(panel13);
+                    panel12.add(panel13, "cell 0 1,growx");
 
                     //---- button2 ----
                     button2.setText("Search");
-                    panel12.add(button2);
+                    panel12.add(button2, "cell 0 2");
 
                     //---- label1 ----
                     label1.setPreferredSize(new Dimension(672, 500));
                     label1.setBorder(new TitledBorder("Result"));
-                    panel12.add(label1);
+                    panel12.add(label1, "cell 0 3,grow");
                 }
                 tabbedPane2.addTab("Search", panel12);
 
@@ -390,333 +376,586 @@ public class App extends JPanel {
 
                     //======== panel14 ========
                     {
-                        panel14.setLayout(new VerticalLayout());
+                        panel14.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel15 ========
                         {
                             panel15.setBorder(new TitledBorder("field"));
-                            panel15.setLayout(new HorizontalLayout());
-                            panel15.add(formattedTextField19);
-                            panel15.add(formattedTextField20);
-                            panel15.add(formattedTextField21);
-                            panel15.add(formattedTextField22);
-                            panel15.add(formattedTextField23);
-                            panel15.add(formattedTextField24);
-                            panel15.add(formattedTextField25);
-                            panel15.add(formattedTextField26);
-                            panel15.add(formattedTextField27);
+                            panel15.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel15.add(formattedTextField19, "cell 0 0");
+                            panel15.add(formattedTextField20, "cell 1 0");
+                            panel15.add(formattedTextField21, "cell 2 0");
+                            panel15.add(formattedTextField22, "cell 3 0");
+                            panel15.add(formattedTextField23, "cell 4 0");
+                            panel15.add(formattedTextField24, "cell 5 0");
+                            panel15.add(formattedTextField25, "cell 6 0");
+                            panel15.add(formattedTextField26, "cell 7 0");
+                            panel15.add(formattedTextField27, "cell 8 0");
 
                             //---- button4 ----
                             button4.setText("Execute");
-                            panel15.add(button4);
+                            panel15.add(button4, "cell 9 0");
                         }
-                        panel14.add(panel15);
+                        panel14.add(panel15, "cell 0 0,growx");
 
                         //---- label3 ----
                         label3.setPreferredSize(new Dimension(672, 500));
                         label3.setBorder(new TitledBorder("Result"));
                         label3.setMinimumSize(new Dimension(672, 500));
                         label3.setMaximumSize(new Dimension(32767, 32767));
-                        panel14.add(label3);
+                        panel14.add(label3, "cell 0 1,dock center");
                     }
                     tabbedPane1.addTab("Query 1", panel14);
 
                     //======== panel16 ========
                     {
-                        panel16.setLayout(new VerticalLayout());
+                        panel16.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel17 ========
                         {
                             panel17.setBorder(new TitledBorder("field"));
-                            panel17.setLayout(new HorizontalLayout());
-                            panel17.add(formattedTextField28);
-                            panel17.add(formattedTextField29);
-                            panel17.add(formattedTextField30);
-                            panel17.add(formattedTextField31);
-                            panel17.add(formattedTextField32);
-                            panel17.add(formattedTextField33);
-                            panel17.add(formattedTextField34);
-                            panel17.add(formattedTextField35);
-                            panel17.add(formattedTextField36);
+                            panel17.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel17.add(formattedTextField28, "cell 0 0");
+                            panel17.add(formattedTextField29, "cell 1 0");
+                            panel17.add(formattedTextField30, "cell 2 0");
+                            panel17.add(formattedTextField31, "cell 3 0");
+                            panel17.add(formattedTextField32, "cell 4 0");
+                            panel17.add(formattedTextField33, "cell 5 0");
+                            panel17.add(formattedTextField34, "cell 6 0");
+                            panel17.add(formattedTextField35, "cell 7 0");
+                            panel17.add(formattedTextField36, "cell 8 0");
 
                             //---- button5 ----
                             button5.setText("Execute");
-                            panel17.add(button5);
+                            panel17.add(button5, "cell 9 0");
                         }
-                        panel16.add(panel17);
+                        panel16.add(panel17, "cell 0 0,growx");
 
                         //---- label4 ----
                         label4.setPreferredSize(new Dimension(672, 500));
                         label4.setBorder(new TitledBorder("Result"));
                         label4.setMinimumSize(new Dimension(672, 500));
                         label4.setMaximumSize(new Dimension(32767, 32767));
-                        panel16.add(label4);
+                        panel16.add(label4, "cell 0 1,dock center");
                     }
                     tabbedPane1.addTab("Query 2", panel16);
 
                     //======== panel18 ========
                     {
-                        panel18.setLayout(new VerticalLayout());
+                        panel18.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel19 ========
                         {
                             panel19.setBorder(new TitledBorder("field"));
-                            panel19.setLayout(new HorizontalLayout());
-                            panel19.add(formattedTextField37);
-                            panel19.add(formattedTextField38);
-                            panel19.add(formattedTextField39);
-                            panel19.add(formattedTextField40);
-                            panel19.add(formattedTextField41);
-                            panel19.add(formattedTextField42);
-                            panel19.add(formattedTextField43);
-                            panel19.add(formattedTextField44);
-                            panel19.add(formattedTextField45);
+                            panel19.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel19.add(formattedTextField37, "cell 0 0");
+                            panel19.add(formattedTextField38, "cell 1 0");
+                            panel19.add(formattedTextField39, "cell 2 0");
+                            panel19.add(formattedTextField40, "cell 3 0");
+                            panel19.add(formattedTextField41, "cell 4 0");
+                            panel19.add(formattedTextField42, "cell 5 0");
+                            panel19.add(formattedTextField43, "cell 6 0");
+                            panel19.add(formattedTextField44, "cell 7 0");
+                            panel19.add(formattedTextField45, "cell 8 0");
 
                             //---- button6 ----
                             button6.setText("Execute");
-                            panel19.add(button6);
+                            panel19.add(button6, "cell 9 0");
                         }
-                        panel18.add(panel19);
+                        panel18.add(panel19, "cell 0 0,growx");
 
                         //---- label5 ----
                         label5.setPreferredSize(new Dimension(672, 500));
                         label5.setBorder(new TitledBorder("Result"));
                         label5.setMinimumSize(new Dimension(672, 500));
                         label5.setMaximumSize(new Dimension(32767, 32767));
-                        panel18.add(label5);
+                        panel18.add(label5, "cell 0 1,dock center");
                     }
                     tabbedPane1.addTab("Query 3", panel18);
 
-                    //======== panel28 ========
-                    {
-                        panel28.setLayout(new VerticalLayout());
-
-                        //======== panel29 ========
-                        {
-                            panel29.setBorder(new TitledBorder("field"));
-                            panel29.setLayout(new HorizontalLayout());
-                            panel29.add(formattedTextField82);
-                            panel29.add(formattedTextField83);
-                            panel29.add(formattedTextField84);
-                            panel29.add(formattedTextField85);
-                            panel29.add(formattedTextField86);
-                            panel29.add(formattedTextField87);
-                            panel29.add(formattedTextField88);
-                            panel29.add(formattedTextField89);
-                            panel29.add(formattedTextField90);
-
-                            //---- button11 ----
-                            button11.setText("Execute");
-                            panel29.add(button11);
-                        }
-                        panel28.add(panel29);
-
-                        //---- label10 ----
-                        label10.setPreferredSize(new Dimension(672, 500));
-                        label10.setBorder(new TitledBorder("Result"));
-                        label10.setMinimumSize(new Dimension(672, 500));
-                        label10.setMaximumSize(new Dimension(32767, 32767));
-                        panel28.add(label10);
-                    }
-                    tabbedPane1.addTab("Query 4", panel28);
-
                     //======== panel20 ========
                     {
-                        panel20.setLayout(new VerticalLayout());
+                        panel20.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel21 ========
                         {
                             panel21.setBorder(new TitledBorder("field"));
-                            panel21.setLayout(new HorizontalLayout());
-                            panel21.add(formattedTextField46);
-                            panel21.add(formattedTextField47);
-                            panel21.add(formattedTextField48);
-                            panel21.add(formattedTextField49);
-                            panel21.add(formattedTextField50);
-                            panel21.add(formattedTextField51);
-                            panel21.add(formattedTextField52);
-                            panel21.add(formattedTextField53);
-                            panel21.add(formattedTextField54);
+                            panel21.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel21.add(formattedTextField46, "cell 0 0");
+                            panel21.add(formattedTextField47, "cell 1 0");
+                            panel21.add(formattedTextField48, "cell 2 0");
+                            panel21.add(formattedTextField49, "cell 3 0");
+                            panel21.add(formattedTextField50, "cell 4 0");
+                            panel21.add(formattedTextField51, "cell 5 0");
+                            panel21.add(formattedTextField52, "cell 6 0");
+                            panel21.add(formattedTextField53, "cell 7 0");
+                            panel21.add(formattedTextField54, "cell 8 0");
 
                             //---- button7 ----
                             button7.setText("Execute");
-                            panel21.add(button7);
+                            panel21.add(button7, "cell 9 0");
                         }
-                        panel20.add(panel21);
+                        panel20.add(panel21, "cell 0 0,growx");
 
                         //---- label6 ----
                         label6.setPreferredSize(new Dimension(672, 500));
                         label6.setBorder(new TitledBorder("Result"));
                         label6.setMinimumSize(new Dimension(672, 500));
                         label6.setMaximumSize(new Dimension(32767, 32767));
-                        panel20.add(label6);
+                        panel20.add(label6, "cell 0 1,dock center");
                     }
-                    tabbedPane1.addTab("Query 5", panel20);
+                    tabbedPane1.addTab("Query 4", panel20);
 
                     //======== panel22 ========
                     {
-                        panel22.setLayout(new VerticalLayout());
+                        panel22.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel23 ========
                         {
                             panel23.setBorder(new TitledBorder("field"));
-                            panel23.setLayout(new HorizontalLayout());
-                            panel23.add(formattedTextField55);
-                            panel23.add(formattedTextField56);
-                            panel23.add(formattedTextField57);
-                            panel23.add(formattedTextField58);
-                            panel23.add(formattedTextField59);
-                            panel23.add(formattedTextField60);
-                            panel23.add(formattedTextField61);
-                            panel23.add(formattedTextField62);
-                            panel23.add(formattedTextField63);
+                            panel23.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel23.add(formattedTextField55, "cell 0 0");
+                            panel23.add(formattedTextField56, "cell 1 0");
+                            panel23.add(formattedTextField57, "cell 2 0");
+                            panel23.add(formattedTextField58, "cell 3 0");
+                            panel23.add(formattedTextField59, "cell 4 0");
+                            panel23.add(formattedTextField60, "cell 5 0");
+                            panel23.add(formattedTextField61, "cell 6 0");
+                            panel23.add(formattedTextField62, "cell 7 0");
+                            panel23.add(formattedTextField63, "cell 8 0");
 
                             //---- button8 ----
                             button8.setText("Execute");
-                            panel23.add(button8);
+                            panel23.add(button8, "cell 9 0");
                         }
-                        panel22.add(panel23);
+                        panel22.add(panel23, "cell 0 0,growx");
 
                         //---- label7 ----
                         label7.setPreferredSize(new Dimension(672, 500));
                         label7.setBorder(new TitledBorder("Result"));
                         label7.setMinimumSize(new Dimension(672, 500));
                         label7.setMaximumSize(new Dimension(32767, 32767));
-                        panel22.add(label7);
+                        panel22.add(label7, "cell 0 1,dock center");
                     }
-                    tabbedPane1.addTab("Query 6", panel22);
+                    tabbedPane1.addTab("Query 1", panel22);
 
                     //======== panel24 ========
                     {
-                        panel24.setLayout(new VerticalLayout());
+                        panel24.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel25 ========
                         {
                             panel25.setBorder(new TitledBorder("field"));
-                            panel25.setLayout(new HorizontalLayout());
-                            panel25.add(formattedTextField64);
-                            panel25.add(formattedTextField65);
-                            panel25.add(formattedTextField66);
-                            panel25.add(formattedTextField67);
-                            panel25.add(formattedTextField68);
-                            panel25.add(formattedTextField69);
-                            panel25.add(formattedTextField70);
-                            panel25.add(formattedTextField71);
-                            panel25.add(formattedTextField72);
+                            panel25.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel25.add(formattedTextField64, "cell 0 0");
+                            panel25.add(formattedTextField65, "cell 1 0");
+                            panel25.add(formattedTextField66, "cell 2 0");
+                            panel25.add(formattedTextField67, "cell 3 0");
+                            panel25.add(formattedTextField68, "cell 4 0");
+                            panel25.add(formattedTextField69, "cell 5 0");
+                            panel25.add(formattedTextField70, "cell 6 0");
+                            panel25.add(formattedTextField71, "cell 7 0");
+                            panel25.add(formattedTextField72, "cell 8 0");
 
                             //---- button9 ----
                             button9.setText("Execute");
-                            panel25.add(button9);
+                            panel25.add(button9, "cell 9 0");
                         }
-                        panel24.add(panel25);
+                        panel24.add(panel25, "cell 0 0,growx");
 
                         //---- label8 ----
                         label8.setPreferredSize(new Dimension(672, 500));
                         label8.setBorder(new TitledBorder("Result"));
                         label8.setMinimumSize(new Dimension(672, 500));
                         label8.setMaximumSize(new Dimension(32767, 32767));
-                        panel24.add(label8);
+                        panel24.add(label8, "cell 0 1,dock center");
                     }
-                    tabbedPane1.addTab("Query 7", panel24);
+                    tabbedPane1.addTab("Query 1", panel24);
 
                     //======== panel26 ========
                     {
-                        panel26.setLayout(new VerticalLayout());
+                        panel26.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel27 ========
                         {
                             panel27.setBorder(new TitledBorder("field"));
-                            panel27.setLayout(new HorizontalLayout());
-                            panel27.add(formattedTextField73);
-                            panel27.add(formattedTextField74);
-                            panel27.add(formattedTextField75);
-                            panel27.add(formattedTextField76);
-                            panel27.add(formattedTextField77);
-                            panel27.add(formattedTextField78);
-                            panel27.add(formattedTextField79);
-                            panel27.add(formattedTextField80);
-                            panel27.add(formattedTextField81);
+                            panel27.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel27.add(formattedTextField73, "cell 0 0");
+                            panel27.add(formattedTextField74, "cell 1 0");
+                            panel27.add(formattedTextField75, "cell 2 0");
+                            panel27.add(formattedTextField76, "cell 3 0");
+                            panel27.add(formattedTextField77, "cell 4 0");
+                            panel27.add(formattedTextField78, "cell 5 0");
+                            panel27.add(formattedTextField79, "cell 6 0");
+                            panel27.add(formattedTextField80, "cell 7 0");
+                            panel27.add(formattedTextField81, "cell 8 0");
 
                             //---- button10 ----
                             button10.setText("Execute");
-                            panel27.add(button10);
+                            panel27.add(button10, "cell 9 0");
                         }
-                        panel26.add(panel27);
+                        panel26.add(panel27, "cell 0 0,growx");
 
                         //---- label9 ----
                         label9.setPreferredSize(new Dimension(672, 500));
                         label9.setBorder(new TitledBorder("Result"));
                         label9.setMinimumSize(new Dimension(672, 500));
                         label9.setMaximumSize(new Dimension(32767, 32767));
-                        panel26.add(label9);
+                        panel26.add(label9, "cell 0 1,dock center");
                     }
-                    tabbedPane1.addTab("Query 8", panel26);
+                    tabbedPane1.addTab("Query 1", panel26);
+
+                    //======== panel28 ========
+                    {
+                        panel28.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
+
+                        //======== panel29 ========
+                        {
+                            panel29.setBorder(new TitledBorder("field"));
+                            panel29.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel29.add(formattedTextField82, "cell 0 0");
+                            panel29.add(formattedTextField83, "cell 1 0");
+                            panel29.add(formattedTextField84, "cell 2 0");
+                            panel29.add(formattedTextField85, "cell 3 0");
+                            panel29.add(formattedTextField86, "cell 4 0");
+                            panel29.add(formattedTextField87, "cell 5 0");
+                            panel29.add(formattedTextField88, "cell 6 0");
+                            panel29.add(formattedTextField89, "cell 7 0");
+                            panel29.add(formattedTextField90, "cell 8 0");
+
+                            //---- button11 ----
+                            button11.setText("Execute");
+                            panel29.add(button11, "cell 9 0");
+                        }
+                        panel28.add(panel29, "cell 0 0,growx");
+
+                        //---- label10 ----
+                        label10.setPreferredSize(new Dimension(672, 500));
+                        label10.setBorder(new TitledBorder("Result"));
+                        label10.setMinimumSize(new Dimension(672, 500));
+                        label10.setMaximumSize(new Dimension(32767, 32767));
+                        panel28.add(label10, "cell 0 1,dock center");
+                    }
+                    tabbedPane1.addTab("Query 1", panel28);
 
                     //======== panel30 ========
                     {
-                        panel30.setLayout(new VerticalLayout());
+                        panel30.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel31 ========
                         {
                             panel31.setBorder(new TitledBorder("field"));
-                            panel31.setLayout(new HorizontalLayout());
-                            panel31.add(formattedTextField91);
-                            panel31.add(formattedTextField92);
-                            panel31.add(formattedTextField93);
-                            panel31.add(formattedTextField94);
-                            panel31.add(formattedTextField95);
-                            panel31.add(formattedTextField96);
-                            panel31.add(formattedTextField97);
-                            panel31.add(formattedTextField98);
-                            panel31.add(formattedTextField99);
+                            panel31.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel31.add(formattedTextField91, "cell 0 0");
+                            panel31.add(formattedTextField92, "cell 1 0");
+                            panel31.add(formattedTextField93, "cell 2 0");
+                            panel31.add(formattedTextField94, "cell 3 0");
+                            panel31.add(formattedTextField95, "cell 4 0");
+                            panel31.add(formattedTextField96, "cell 5 0");
+                            panel31.add(formattedTextField97, "cell 6 0");
+                            panel31.add(formattedTextField98, "cell 7 0");
+                            panel31.add(formattedTextField99, "cell 8 0");
 
                             //---- button12 ----
                             button12.setText("Execute");
-                            panel31.add(button12);
+                            panel31.add(button12, "cell 9 0");
                         }
-                        panel30.add(panel31);
+                        panel30.add(panel31, "cell 0 0,growx");
 
                         //---- label11 ----
                         label11.setPreferredSize(new Dimension(672, 500));
                         label11.setBorder(new TitledBorder("Result"));
                         label11.setMinimumSize(new Dimension(672, 500));
                         label11.setMaximumSize(new Dimension(32767, 32767));
-                        panel30.add(label11);
+                        panel30.add(label11, "cell 0 1,dock center");
                     }
-                    tabbedPane1.addTab("Query 9", panel30);
+                    tabbedPane1.addTab("Query 1", panel30);
 
                     //======== panel32 ========
                     {
-                        panel32.setLayout(new VerticalLayout());
+                        panel32.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel33 ========
                         {
                             panel33.setBorder(new TitledBorder("field"));
-                            panel33.setLayout(new HorizontalLayout());
-                            panel33.add(formattedTextField100);
-                            panel33.add(formattedTextField101);
-                            panel33.add(formattedTextField102);
-                            panel33.add(formattedTextField103);
-                            panel33.add(formattedTextField104);
-                            panel33.add(formattedTextField105);
-                            panel33.add(formattedTextField106);
-                            panel33.add(formattedTextField107);
-                            panel33.add(formattedTextField108);
+                            panel33.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel33.add(formattedTextField100, "cell 0 0");
+                            panel33.add(formattedTextField101, "cell 1 0");
+                            panel33.add(formattedTextField102, "cell 2 0");
+                            panel33.add(formattedTextField103, "cell 3 0");
+                            panel33.add(formattedTextField104, "cell 4 0");
+                            panel33.add(formattedTextField105, "cell 5 0");
+                            panel33.add(formattedTextField106, "cell 6 0");
+                            panel33.add(formattedTextField107, "cell 7 0");
+                            panel33.add(formattedTextField108, "cell 8 0");
 
                             //---- button13 ----
                             button13.setText("Execute");
-                            panel33.add(button13);
+                            panel33.add(button13, "cell 9 0");
                         }
-                        panel32.add(panel33);
+                        panel32.add(panel33, "cell 0 0,growx");
 
                         //---- label12 ----
                         label12.setPreferredSize(new Dimension(672, 500));
                         label12.setBorder(new TitledBorder("Result"));
                         label12.setMinimumSize(new Dimension(672, 500));
                         label12.setMaximumSize(new Dimension(32767, 32767));
-                        panel32.add(label12);
+                        panel32.add(label12, "cell 0 1,dock center");
                     }
-                    tabbedPane1.addTab("Query 10", panel32);
+                    tabbedPane1.addTab("Query 1", panel32);
+
+                    //======== panel54 ========
+                    {
+                        panel54.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
+
+                        //======== panel55 ========
+                        {
+                            panel55.setBorder(new TitledBorder("field"));
+                            panel55.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel55.add(formattedTextField199, "cell 0 0");
+                            panel55.add(formattedTextField200, "cell 1 0");
+                            panel55.add(formattedTextField201, "cell 2 0");
+                            panel55.add(formattedTextField202, "cell 3 0");
+                            panel55.add(formattedTextField203, "cell 4 0");
+                            panel55.add(formattedTextField204, "cell 5 0");
+                            panel55.add(formattedTextField205, "cell 6 0");
+                            panel55.add(formattedTextField206, "cell 7 0");
+                            panel55.add(formattedTextField207, "cell 8 0");
+
+                            //---- button25 ----
+                            button25.setText("Execute");
+                            panel55.add(button25, "cell 9 0");
+                        }
+                        panel54.add(panel55, "cell 0 0,growx");
+
+                        //---- label23 ----
+                        label23.setPreferredSize(new Dimension(672, 500));
+                        label23.setBorder(new TitledBorder("Result"));
+                        label23.setMinimumSize(new Dimension(672, 500));
+                        label23.setMaximumSize(new Dimension(32767, 32767));
+                        panel54.add(label23, "cell 0 1,dock center");
+                    }
+                    tabbedPane1.addTab("Query 1", panel54);
                 }
                 tabbedPane2.addTab("Queries", tabbedPane1);
 
@@ -725,345 +964,371 @@ public class App extends JPanel {
 
                     //======== panel34 ========
                     {
-                        panel34.setLayout(new VerticalLayout());
+                        panel34.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel35 ========
                         {
                             panel35.setBorder(new TitledBorder("field"));
-                            panel35.setLayout(new HorizontalLayout());
-                            panel35.add(formattedTextField109);
-                            panel35.add(formattedTextField110);
-                            panel35.add(formattedTextField111);
-                            panel35.add(formattedTextField112);
-                            panel35.add(formattedTextField113);
-                            panel35.add(formattedTextField114);
-                            panel35.add(formattedTextField115);
-                            panel35.add(formattedTextField116);
-                            panel35.add(formattedTextField117);
+                            panel35.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel35.add(formattedTextField109, "cell 0 0");
+                            panel35.add(formattedTextField110, "cell 1 0");
+                            panel35.add(formattedTextField111, "cell 2 0");
+                            panel35.add(formattedTextField112, "cell 3 0");
+                            panel35.add(formattedTextField113, "cell 4 0");
+                            panel35.add(formattedTextField114, "cell 5 0");
+                            panel35.add(formattedTextField115, "cell 6 0");
+                            panel35.add(formattedTextField116, "cell 7 0");
+                            panel35.add(formattedTextField117, "cell 8 0");
 
                             //---- button14 ----
                             button14.setText("Insert");
-                            panel35.add(button14);
+                            panel35.add(button14, "cell 9 0");
 
                             //---- button1 ----
                             button1.setText("Delete");
-                            panel35.add(button1);
+                            panel35.add(button1, "cell 10 0");
                         }
-                        panel34.add(panel35);
+                        panel34.add(panel35, "cell 0 0,growx");
 
                         //---- label13 ----
                         label13.setPreferredSize(new Dimension(672, 500));
                         label13.setBorder(new TitledBorder("Result"));
                         label13.setMinimumSize(new Dimension(672, 500));
                         label13.setMaximumSize(new Dimension(32767, 32767));
-                        panel34.add(label13);
+                        panel34.add(label13, "cell 0 1,dock center");
                     }
                     tabbedPane3.addTab("Table 1", panel34);
 
                     //======== panel36 ========
                     {
-                        panel36.setLayout(new VerticalLayout());
+                        panel36.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel37 ========
                         {
                             panel37.setBorder(new TitledBorder("field"));
-                            panel37.setLayout(new HorizontalLayout());
-                            panel37.add(formattedTextField118);
-                            panel37.add(formattedTextField119);
-                            panel37.add(formattedTextField120);
-                            panel37.add(formattedTextField121);
-                            panel37.add(formattedTextField122);
-                            panel37.add(formattedTextField123);
-                            panel37.add(formattedTextField124);
-                            panel37.add(formattedTextField125);
-                            panel37.add(formattedTextField126);
+                            panel37.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel37.add(formattedTextField118, "cell 0 0");
+                            panel37.add(formattedTextField119, "cell 1 0");
+                            panel37.add(formattedTextField120, "cell 2 0");
+                            panel37.add(formattedTextField121, "cell 3 0");
+                            panel37.add(formattedTextField122, "cell 4 0");
+                            panel37.add(formattedTextField123, "cell 5 0");
+                            panel37.add(formattedTextField124, "cell 6 0");
+                            panel37.add(formattedTextField125, "cell 7 0");
+                            panel37.add(formattedTextField126, "cell 8 0");
 
                             //---- button15 ----
-                            button15.setText("Execute");
-                            panel37.add(button15);
+                            button15.setText("Insert");
+                            panel37.add(button15, "cell 9 0");
+
+                            //---- button3 ----
+                            button3.setText("Delete");
+                            panel37.add(button3, "cell 10 0");
                         }
-                        panel36.add(panel37);
+                        panel36.add(panel37, "cell 0 0,growx");
 
                         //---- label14 ----
                         label14.setPreferredSize(new Dimension(672, 500));
                         label14.setBorder(new TitledBorder("Result"));
                         label14.setMinimumSize(new Dimension(672, 500));
                         label14.setMaximumSize(new Dimension(32767, 32767));
-                        panel36.add(label14);
+                        panel36.add(label14, "cell 0 1,dock center");
                     }
                     tabbedPane3.addTab("Table 2", panel36);
 
                     //======== panel38 ========
                     {
-                        panel38.setLayout(new VerticalLayout());
+                        panel38.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel39 ========
                         {
                             panel39.setBorder(new TitledBorder("field"));
-                            panel39.setLayout(new HorizontalLayout());
-                            panel39.add(formattedTextField127);
-                            panel39.add(formattedTextField128);
-                            panel39.add(formattedTextField129);
-                            panel39.add(formattedTextField130);
-                            panel39.add(formattedTextField131);
-                            panel39.add(formattedTextField132);
-                            panel39.add(formattedTextField133);
-                            panel39.add(formattedTextField134);
-                            panel39.add(formattedTextField135);
+                            panel39.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel39.add(formattedTextField127, "cell 0 0");
+                            panel39.add(formattedTextField128, "cell 1 0");
+                            panel39.add(formattedTextField129, "cell 2 0");
+                            panel39.add(formattedTextField130, "cell 3 0");
+                            panel39.add(formattedTextField131, "cell 4 0");
+                            panel39.add(formattedTextField132, "cell 5 0");
+                            panel39.add(formattedTextField133, "cell 6 0");
+                            panel39.add(formattedTextField134, "cell 7 0");
+                            panel39.add(formattedTextField135, "cell 8 0");
 
                             //---- button16 ----
-                            button16.setText("Execute");
-                            panel39.add(button16);
+                            button16.setText("Insert");
+                            panel39.add(button16, "cell 9 0");
+
+                            //---- button17 ----
+                            button17.setText("Delete");
+                            panel39.add(button17, "cell 10 0");
                         }
-                        panel38.add(panel39);
+                        panel38.add(panel39, "cell 0 0,growx");
 
                         //---- label15 ----
                         label15.setPreferredSize(new Dimension(672, 500));
                         label15.setBorder(new TitledBorder("Result"));
                         label15.setMinimumSize(new Dimension(672, 500));
                         label15.setMaximumSize(new Dimension(32767, 32767));
-                        panel38.add(label15);
+                        panel38.add(label15, "cell 0 1,dock center");
                     }
                     tabbedPane3.addTab("Table 3", panel38);
 
                     //======== panel40 ========
                     {
-                        panel40.setLayout(new VerticalLayout());
+                        panel40.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel41 ========
                         {
                             panel41.setBorder(new TitledBorder("field"));
-                            panel41.setLayout(new HorizontalLayout());
-                            panel41.add(formattedTextField136);
-                            panel41.add(formattedTextField137);
-                            panel41.add(formattedTextField138);
-                            panel41.add(formattedTextField139);
-                            panel41.add(formattedTextField140);
-                            panel41.add(formattedTextField141);
-                            panel41.add(formattedTextField142);
-                            panel41.add(formattedTextField143);
-                            panel41.add(formattedTextField144);
+                            panel41.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel41.add(formattedTextField136, "cell 0 0");
+                            panel41.add(formattedTextField137, "cell 1 0");
+                            panel41.add(formattedTextField138, "cell 2 0");
+                            panel41.add(formattedTextField139, "cell 3 0");
+                            panel41.add(formattedTextField140, "cell 4 0");
+                            panel41.add(formattedTextField141, "cell 5 0");
+                            panel41.add(formattedTextField142, "cell 6 0");
+                            panel41.add(formattedTextField143, "cell 7 0");
+                            panel41.add(formattedTextField144, "cell 8 0");
 
-                            //---- button17 ----
-                            button17.setText("Execute");
-                            panel41.add(button17);
+                            //---- button18 ----
+                            button18.setText("Insert");
+                            panel41.add(button18, "cell 9 0");
+
+                            //---- button19 ----
+                            button19.setText("Delete");
+                            panel41.add(button19, "cell 10 0");
                         }
-                        panel40.add(panel41);
+                        panel40.add(panel41, "cell 0 0,growx");
 
                         //---- label16 ----
                         label16.setPreferredSize(new Dimension(672, 500));
                         label16.setBorder(new TitledBorder("Result"));
                         label16.setMinimumSize(new Dimension(672, 500));
                         label16.setMaximumSize(new Dimension(32767, 32767));
-                        panel40.add(label16);
+                        panel40.add(label16, "cell 0 1,dock center");
                     }
                     tabbedPane3.addTab("Table 4", panel40);
 
                     //======== panel42 ========
                     {
-                        panel42.setLayout(new VerticalLayout());
+                        panel42.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]"));
 
                         //======== panel43 ========
                         {
                             panel43.setBorder(new TitledBorder("field"));
-                            panel43.setLayout(new HorizontalLayout());
-                            panel43.add(formattedTextField145);
-                            panel43.add(formattedTextField146);
-                            panel43.add(formattedTextField147);
-                            panel43.add(formattedTextField148);
-                            panel43.add(formattedTextField149);
-                            panel43.add(formattedTextField150);
-                            panel43.add(formattedTextField151);
-                            panel43.add(formattedTextField152);
-                            panel43.add(formattedTextField153);
+                            panel43.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]" +
+                                "[fill]",
+                                // rows
+                                "[grow,center]"));
+                            panel43.add(formattedTextField145, "cell 0 0");
+                            panel43.add(formattedTextField146, "cell 1 0");
+                            panel43.add(formattedTextField147, "cell 2 0");
+                            panel43.add(formattedTextField148, "cell 3 0");
+                            panel43.add(formattedTextField149, "cell 4 0");
+                            panel43.add(formattedTextField150, "cell 5 0");
+                            panel43.add(formattedTextField151, "cell 6 0");
+                            panel43.add(formattedTextField152, "cell 7 0");
+                            panel43.add(formattedTextField153, "cell 8 0");
 
-                            //---- button18 ----
-                            button18.setText("Execute");
-                            panel43.add(button18);
+                            //---- button20 ----
+                            button20.setText("Insert");
+                            panel43.add(button20, "cell 9 0");
+
+                            //---- button21 ----
+                            button21.setText("Delete");
+                            panel43.add(button21, "cell 10 0");
                         }
-                        panel42.add(panel43);
+                        panel42.add(panel43, "cell 0 0,growx");
 
                         //---- label17 ----
                         label17.setPreferredSize(new Dimension(672, 500));
                         label17.setBorder(new TitledBorder("Result"));
                         label17.setMinimumSize(new Dimension(672, 500));
                         label17.setMaximumSize(new Dimension(32767, 32767));
-                        panel42.add(label17);
+                        panel42.add(label17, "cell 0 1,dock center");
                     }
                     tabbedPane3.addTab("Table 5", panel42);
 
                     //======== panel44 ========
                     {
-                        panel44.setLayout(new VerticalLayout());
-
-                        //======== panel45 ========
-                        {
-                            panel45.setBorder(new TitledBorder("field"));
-                            panel45.setLayout(new HorizontalLayout());
-                            panel45.add(formattedTextField154);
-                            panel45.add(formattedTextField155);
-                            panel45.add(formattedTextField156);
-                            panel45.add(formattedTextField157);
-                            panel45.add(formattedTextField158);
-                            panel45.add(formattedTextField159);
-                            panel45.add(formattedTextField160);
-                            panel45.add(formattedTextField161);
-                            panel45.add(formattedTextField162);
-
-                            //---- button19 ----
-                            button19.setText("Execute");
-                            panel45.add(button19);
-                        }
-                        panel44.add(panel45);
+                        panel44.setLayout(new MigLayout(
+                            "insets 0,hidemode 3,gap 0 0",
+                            // columns
+                            "[grow,left]",
+                            // rows
+                            "[fill]" +
+                            "[fill]" +
+                            "[]"));
 
                         //---- label18 ----
                         label18.setPreferredSize(new Dimension(672, 500));
                         label18.setBorder(new TitledBorder("Result"));
                         label18.setMinimumSize(new Dimension(672, 500));
                         label18.setMaximumSize(new Dimension(32767, 32767));
-                        panel44.add(label18);
+                        panel44.add(label18, "cell 0 1,dock center");
+
+                        //======== panel46 ========
+                        {
+                            panel46.setLayout(new MigLayout(
+                                "insets 0,hidemode 3,gap 0 0",
+                                // columns
+                                "[grow,left]",
+                                // rows
+                                "[fill]" +
+                                "[fill]"));
+
+                            //======== panel47 ========
+                            {
+                                panel47.setBorder(new TitledBorder("field"));
+                                panel47.setLayout(new MigLayout(
+                                    "insets 0,hidemode 3,gap 0 0",
+                                    // columns
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]" +
+                                    "[fill]",
+                                    // rows
+                                    "[grow,center]"));
+                                panel47.add(formattedTextField163, "cell 0 0");
+                                panel47.add(formattedTextField164, "cell 1 0");
+                                panel47.add(formattedTextField165, "cell 2 0");
+                                panel47.add(formattedTextField166, "cell 3 0");
+                                panel47.add(formattedTextField167, "cell 4 0");
+                                panel47.add(formattedTextField168, "cell 5 0");
+                                panel47.add(formattedTextField169, "cell 6 0");
+                                panel47.add(formattedTextField170, "cell 7 0");
+                                panel47.add(formattedTextField171, "cell 8 0");
+
+                                //---- button24 ----
+                                button24.setText("Insert");
+                                panel47.add(button24, "cell 9 0");
+
+                                //---- button26 ----
+                                button26.setText("Delete");
+                                panel47.add(button26, "cell 10 0");
+                            }
+                            panel46.add(panel47, "cell 0 0,growx");
+
+                            //---- label19 ----
+                            label19.setPreferredSize(new Dimension(672, 500));
+                            label19.setBorder(new TitledBorder("Result"));
+                            label19.setMinimumSize(new Dimension(672, 500));
+                            label19.setMaximumSize(new Dimension(32767, 32767));
+                            panel46.add(label19, "cell 0 1,dock center");
+                        }
+                        panel44.add(panel46, "cell 0 2");
                     }
                     tabbedPane3.addTab("Table 6", panel44);
-
-                    //======== panel46 ========
-                    {
-                        panel46.setLayout(new VerticalLayout());
-
-                        //======== panel47 ========
-                        {
-                            panel47.setBorder(new TitledBorder("field"));
-                            panel47.setLayout(new HorizontalLayout());
-                            panel47.add(formattedTextField163);
-                            panel47.add(formattedTextField164);
-                            panel47.add(formattedTextField165);
-                            panel47.add(formattedTextField166);
-                            panel47.add(formattedTextField167);
-                            panel47.add(formattedTextField168);
-                            panel47.add(formattedTextField169);
-                            panel47.add(formattedTextField170);
-                            panel47.add(formattedTextField171);
-
-                            //---- button20 ----
-                            button20.setText("Execute");
-                            panel47.add(button20);
-                        }
-                        panel46.add(panel47);
-
-                        //---- label19 ----
-                        label19.setPreferredSize(new Dimension(672, 500));
-                        label19.setBorder(new TitledBorder("Result"));
-                        label19.setMinimumSize(new Dimension(672, 500));
-                        label19.setMaximumSize(new Dimension(32767, 32767));
-                        panel46.add(label19);
-                    }
-                    tabbedPane3.addTab("Table 7", panel46);
-
-                    //======== panel48 ========
-                    {
-                        panel48.setLayout(new VerticalLayout());
-
-                        //======== panel49 ========
-                        {
-                            panel49.setBorder(new TitledBorder("field"));
-                            panel49.setLayout(new HorizontalLayout());
-                            panel49.add(formattedTextField172);
-                            panel49.add(formattedTextField173);
-                            panel49.add(formattedTextField174);
-                            panel49.add(formattedTextField175);
-                            panel49.add(formattedTextField176);
-                            panel49.add(formattedTextField177);
-                            panel49.add(formattedTextField178);
-                            panel49.add(formattedTextField179);
-                            panel49.add(formattedTextField180);
-
-                            //---- button21 ----
-                            button21.setText("Execute");
-                            panel49.add(button21);
-                        }
-                        panel48.add(panel49);
-
-                        //---- label20 ----
-                        label20.setPreferredSize(new Dimension(672, 500));
-                        label20.setBorder(new TitledBorder("Result"));
-                        label20.setMinimumSize(new Dimension(672, 500));
-                        label20.setMaximumSize(new Dimension(32767, 32767));
-                        panel48.add(label20);
-                    }
-                    tabbedPane3.addTab("Table 8", panel48);
-
-                    //======== panel50 ========
-                    {
-                        panel50.setLayout(new VerticalLayout());
-
-                        //======== panel51 ========
-                        {
-                            panel51.setBorder(new TitledBorder("field"));
-                            panel51.setLayout(new HorizontalLayout());
-                            panel51.add(formattedTextField181);
-                            panel51.add(formattedTextField182);
-                            panel51.add(formattedTextField183);
-                            panel51.add(formattedTextField184);
-                            panel51.add(formattedTextField185);
-                            panel51.add(formattedTextField186);
-                            panel51.add(formattedTextField187);
-                            panel51.add(formattedTextField188);
-                            panel51.add(formattedTextField189);
-
-                            //---- button22 ----
-                            button22.setText("Insert");
-                            panel51.add(button22);
-
-                            //---- button24 ----
-                            button24.setText("Delete");
-                            panel51.add(button24);
-                        }
-                        panel50.add(panel51);
-
-                        //---- label21 ----
-                        label21.setPreferredSize(new Dimension(672, 500));
-                        label21.setBorder(new TitledBorder("Result"));
-                        label21.setMinimumSize(new Dimension(672, 500));
-                        label21.setMaximumSize(new Dimension(32767, 32767));
-                        panel50.add(label21);
-                    }
-                    tabbedPane3.addTab("Table 9", panel50);
-
-                    //======== panel52 ========
-                    {
-                        panel52.setLayout(new VerticalLayout());
-
-                        //======== panel53 ========
-                        {
-                            panel53.setBorder(new TitledBorder("field"));
-                            panel53.setLayout(new HorizontalLayout());
-                            panel53.add(formattedTextField190);
-                            panel53.add(formattedTextField191);
-                            panel53.add(formattedTextField192);
-                            panel53.add(formattedTextField193);
-                            panel53.add(formattedTextField194);
-                            panel53.add(formattedTextField195);
-                            panel53.add(formattedTextField196);
-                            panel53.add(formattedTextField197);
-                            panel53.add(formattedTextField198);
-
-                            //---- button23 ----
-                            button23.setText("Insert");
-                            panel53.add(button23);
-
-                            //---- button3 ----
-                            button3.setText("Delete");
-                            panel53.add(button3);
-                        }
-                        panel52.add(panel53);
-
-                        //---- label22 ----
-                        label22.setPreferredSize(new Dimension(672, 500));
-                        label22.setBorder(new TitledBorder("Result"));
-                        label22.setMinimumSize(new Dimension(672, 500));
-                        label22.setMaximumSize(new Dimension(32767, 32767));
-                        panel52.add(label22);
-                    }
-                    tabbedPane3.addTab("Table 10", panel52);
                 }
                 tabbedPane2.addTab("Insert/Delete", tabbedPane3);
             }
@@ -1132,19 +1397,6 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField45;
     private JButton button6;
     private JLabel label5;
-    private JPanel panel28;
-    private JPanel panel29;
-    private JFormattedTextField formattedTextField82;
-    private JFormattedTextField formattedTextField83;
-    private JFormattedTextField formattedTextField84;
-    private JFormattedTextField formattedTextField85;
-    private JFormattedTextField formattedTextField86;
-    private JFormattedTextField formattedTextField87;
-    private JFormattedTextField formattedTextField88;
-    private JFormattedTextField formattedTextField89;
-    private JFormattedTextField formattedTextField90;
-    private JButton button11;
-    private JLabel label10;
     private JPanel panel20;
     private JPanel panel21;
     private JFormattedTextField formattedTextField46;
@@ -1197,6 +1449,19 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField81;
     private JButton button10;
     private JLabel label9;
+    private JPanel panel28;
+    private JPanel panel29;
+    private JFormattedTextField formattedTextField82;
+    private JFormattedTextField formattedTextField83;
+    private JFormattedTextField formattedTextField84;
+    private JFormattedTextField formattedTextField85;
+    private JFormattedTextField formattedTextField86;
+    private JFormattedTextField formattedTextField87;
+    private JFormattedTextField formattedTextField88;
+    private JFormattedTextField formattedTextField89;
+    private JFormattedTextField formattedTextField90;
+    private JButton button11;
+    private JLabel label10;
     private JPanel panel30;
     private JPanel panel31;
     private JFormattedTextField formattedTextField91;
@@ -1223,6 +1488,19 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField108;
     private JButton button13;
     private JLabel label12;
+    private JPanel panel54;
+    private JPanel panel55;
+    private JFormattedTextField formattedTextField199;
+    private JFormattedTextField formattedTextField200;
+    private JFormattedTextField formattedTextField201;
+    private JFormattedTextField formattedTextField202;
+    private JFormattedTextField formattedTextField203;
+    private JFormattedTextField formattedTextField204;
+    private JFormattedTextField formattedTextField205;
+    private JFormattedTextField formattedTextField206;
+    private JFormattedTextField formattedTextField207;
+    private JButton button25;
+    private JLabel label23;
     private JTabbedPane tabbedPane3;
     private JPanel panel34;
     private JPanel panel35;
@@ -1250,6 +1528,7 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField125;
     private JFormattedTextField formattedTextField126;
     private JButton button15;
+    private JButton button3;
     private JLabel label14;
     private JPanel panel38;
     private JPanel panel39;
@@ -1263,6 +1542,7 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField134;
     private JFormattedTextField formattedTextField135;
     private JButton button16;
+    private JButton button17;
     private JLabel label15;
     private JPanel panel40;
     private JPanel panel41;
@@ -1275,7 +1555,8 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField142;
     private JFormattedTextField formattedTextField143;
     private JFormattedTextField formattedTextField144;
-    private JButton button17;
+    private JButton button18;
+    private JButton button19;
     private JLabel label16;
     private JPanel panel42;
     private JPanel panel43;
@@ -1288,20 +1569,10 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField151;
     private JFormattedTextField formattedTextField152;
     private JFormattedTextField formattedTextField153;
-    private JButton button18;
+    private JButton button20;
+    private JButton button21;
     private JLabel label17;
     private JPanel panel44;
-    private JPanel panel45;
-    private JFormattedTextField formattedTextField154;
-    private JFormattedTextField formattedTextField155;
-    private JFormattedTextField formattedTextField156;
-    private JFormattedTextField formattedTextField157;
-    private JFormattedTextField formattedTextField158;
-    private JFormattedTextField formattedTextField159;
-    private JFormattedTextField formattedTextField160;
-    private JFormattedTextField formattedTextField161;
-    private JFormattedTextField formattedTextField162;
-    private JButton button19;
     private JLabel label18;
     private JPanel panel46;
     private JPanel panel47;
@@ -1314,48 +1585,8 @@ public class App extends JPanel {
     private JFormattedTextField formattedTextField169;
     private JFormattedTextField formattedTextField170;
     private JFormattedTextField formattedTextField171;
-    private JButton button20;
-    private JLabel label19;
-    private JPanel panel48;
-    private JPanel panel49;
-    private JFormattedTextField formattedTextField172;
-    private JFormattedTextField formattedTextField173;
-    private JFormattedTextField formattedTextField174;
-    private JFormattedTextField formattedTextField175;
-    private JFormattedTextField formattedTextField176;
-    private JFormattedTextField formattedTextField177;
-    private JFormattedTextField formattedTextField178;
-    private JFormattedTextField formattedTextField179;
-    private JFormattedTextField formattedTextField180;
-    private JButton button21;
-    private JLabel label20;
-    private JPanel panel50;
-    private JPanel panel51;
-    private JFormattedTextField formattedTextField181;
-    private JFormattedTextField formattedTextField182;
-    private JFormattedTextField formattedTextField183;
-    private JFormattedTextField formattedTextField184;
-    private JFormattedTextField formattedTextField185;
-    private JFormattedTextField formattedTextField186;
-    private JFormattedTextField formattedTextField187;
-    private JFormattedTextField formattedTextField188;
-    private JFormattedTextField formattedTextField189;
-    private JButton button22;
     private JButton button24;
-    private JLabel label21;
-    private JPanel panel52;
-    private JPanel panel53;
-    private JFormattedTextField formattedTextField190;
-    private JFormattedTextField formattedTextField191;
-    private JFormattedTextField formattedTextField192;
-    private JFormattedTextField formattedTextField193;
-    private JFormattedTextField formattedTextField194;
-    private JFormattedTextField formattedTextField195;
-    private JFormattedTextField formattedTextField196;
-    private JFormattedTextField formattedTextField197;
-    private JFormattedTextField formattedTextField198;
-    private JButton button23;
-    private JButton button3;
-    private JLabel label22;
+    private JButton button26;
+    private JLabel label19;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
