@@ -11,102 +11,166 @@ new FormModel {
 				name: "tabbedPane2"
 				"preferredSize": new java.awt.Dimension( 1024, 700 )
 				"minimumSize": new java.awt.Dimension( 1024, 700 )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+					"$layoutConstraints": "fill,insets 0,hidemode 3,gap 0 0"
+					"$columnConstraints": "[grow,left]"
+					"$rowConstraints": "[fill][fill][fill][fill]"
+				} ) {
 					name: "panel12"
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textField7"
 						"border": new javax.swing.border.TitledBorder( "Search bar" )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 0,growx"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+						"$rowConstraints": "[grow,center]"
+					} ) {
 						name: "panel13"
 						"border": new javax.swing.border.TitledBorder( "Tables" )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox2"
 							"text": "Table 1"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox3"
 							"text": "Table 2"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 1 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox4"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 2 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox5"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 3 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox6"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 4 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox7"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 5 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox8"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 6 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox9"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 7 0"
 						} )
 						add( new FormComponent( "javax.swing.JCheckBox" ) {
 							name: "checkBox10"
 							"text": "text"
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 8 0"
 						} )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 1,growx"
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button2"
 						"text": "Search"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 2"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label1"
 						"preferredSize": new java.awt.Dimension( 672, 500 )
 						"border": new javax.swing.border.TitledBorder( "Result" )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 3,grow"
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": "Search"
 				} )
 				add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
 					name: "tabbedPane1"
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel14"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel15"
 							"border": &TitledBorder0 new javax.swing.border.TitledBorder( "field" )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField19"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField20"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField21"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField22"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField23"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField24"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField25"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField26"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField27"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button4"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label3"
@@ -114,46 +178,78 @@ new FormModel {
 							"border": &TitledBorder1 new javax.swing.border.TitledBorder( "Result" )
 							"minimumSize": &Dimension1 new java.awt.Dimension( 672, 500 )
 							"maximumSize": &Dimension2 new java.awt.Dimension( 32767, 32767 )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Query 1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel16"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel17"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField28"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField29"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField30"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField31"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField32"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField33"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField34"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField35"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField36"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button5"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label4"
@@ -161,46 +257,78 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Query 2"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel18"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel19"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField37"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField38"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField39"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField40"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField41"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField42"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField43"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField44"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField45"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button6"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label5"
@@ -208,93 +336,78 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Query 3"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
-						name: "panel28"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
-							name: "panel29"
-							"border": #TitledBorder0
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField82"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField83"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField84"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField85"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField86"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField87"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField88"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField89"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField90"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button11"
-								"text": "Execute"
-							} )
-						} )
-						add( new FormComponent( "javax.swing.JLabel" ) {
-							name: "label10"
-							"preferredSize": #Dimension0
-							"border": #TitledBorder1
-							"minimumSize": #Dimension1
-							"maximumSize": #Dimension2
-						} )
-					}, new FormLayoutConstraints( null ) {
-						"title": "Query 4"
-					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel20"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel21"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField46"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField47"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField48"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField49"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField50"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField51"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField52"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField53"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField54"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button7"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label6"
@@ -302,46 +415,78 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
-						"title": "Query 5"
+						"title": "Query 4"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel22"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel23"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField55"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField56"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField57"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField58"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField59"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField60"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField61"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField62"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField63"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button8"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label7"
@@ -349,46 +494,78 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
-						"title": "Query 6"
+						"title": "Query 1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel24"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel25"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField64"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField65"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField66"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField67"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField68"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField69"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField70"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField71"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField72"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button9"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label8"
@@ -396,46 +573,78 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
-						"title": "Query 7"
+						"title": "Query 1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel26"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel27"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField73"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField74"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField75"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField76"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField77"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField78"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField79"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField80"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField81"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button10"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label9"
@@ -443,46 +652,157 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
-						"title": "Query 8"
+						"title": "Query 1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
+						name: "panel28"
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
+							name: "panel29"
+							"border": #TitledBorder0
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField82"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField83"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField84"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField85"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField86"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField87"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField88"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField89"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField90"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "button11"
+								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label10"
+							"preferredSize": #Dimension0
+							"border": #TitledBorder1
+							"minimumSize": #Dimension1
+							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
+						} )
+					}, new FormLayoutConstraints( null ) {
+						"title": "Query 1"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel30"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel31"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField91"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField92"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField93"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField94"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField95"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField96"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField97"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField98"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField99"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button12"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label11"
@@ -490,46 +810,78 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
-						"title": "Query 9"
+						"title": "Query 1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel32"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel33"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField100"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField101"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField102"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField103"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField104"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField105"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField106"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField107"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField108"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button13"
 								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label12"
@@ -537,55 +889,168 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
-						"title": "Query 10"
+						"title": "Query 1"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
+						name: "panel54"
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
+							name: "panel55"
+							"border": #TitledBorder0
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField199"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField200"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField201"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField202"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField203"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField204"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField205"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField206"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
+							} )
+							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+								name: "formattedTextField207"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "button25"
+								"text": "Execute"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label23"
+							"preferredSize": #Dimension0
+							"border": #TitledBorder1
+							"minimumSize": #Dimension1
+							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
+						} )
+					}, new FormLayoutConstraints( null ) {
+						"title": "Query 1"
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": "Queries"
 				} )
 				add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
 					name: "tabbedPane3"
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel34"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel35"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField109"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField110"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField111"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField112"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField113"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField114"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField115"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField116"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField117"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button14"
 								"text": "Insert"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button1"
 								"text": "Delete"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 10 0"
 							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label13"
@@ -593,46 +1058,84 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Table 1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel36"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel37"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField118"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField119"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField120"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField121"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField122"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField123"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField124"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField125"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField126"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button15"
-								"text": "Execute"
+								"text": "Insert"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "button3"
+								"text": "Delete"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 10 0"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label14"
@@ -640,46 +1143,84 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Table 2"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel38"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel39"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField127"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField128"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField129"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField130"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField131"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField132"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField133"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField134"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField135"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
 								name: "button16"
-								"text": "Execute"
+								"text": "Insert"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "button17"
+								"text": "Delete"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 10 0"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label15"
@@ -687,46 +1228,84 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Table 3"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel40"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel41"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField136"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField137"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField138"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField139"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField140"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField141"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField142"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField143"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField144"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button17"
-								"text": "Execute"
+								name: "button18"
+								"text": "Insert"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "button19"
+								"text": "Delete"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 10 0"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label16"
@@ -734,46 +1313,84 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Table 4"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill]"
+					} ) {
 						name: "panel42"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+							"$rowConstraints": "[grow,center]"
+						} ) {
 							name: "panel43"
 							"border": #TitledBorder0
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField145"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField146"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 1 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField147"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 2 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField148"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 3 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField149"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 4 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField150"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 5 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField151"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 6 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField152"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 7 0"
 							} )
 							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 								name: "formattedTextField153"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 8 0"
 							} )
 							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button18"
-								"text": "Execute"
+								name: "button20"
+								"text": "Insert"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 9 0"
 							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "button21"
+								"text": "Delete"
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 10 0"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 0,growx"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label17"
@@ -781,252 +1398,114 @@ new FormModel {
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Table 5"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+						"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+						"$columnConstraints": "[grow,left]"
+						"$rowConstraints": "[fill][fill][]"
+					} ) {
 						name: "panel44"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
-							name: "panel45"
-							"border": #TitledBorder0
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField154"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField155"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField156"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField157"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField158"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField159"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField160"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField161"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField162"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button19"
-								"text": "Execute"
-							} )
-						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "label18"
 							"preferredSize": #Dimension0
 							"border": #TitledBorder1
 							"minimumSize": #Dimension1
 							"maximumSize": #Dimension2
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 1,dock center"
+						} )
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+							"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+							"$columnConstraints": "[grow,left]"
+							"$rowConstraints": "[fill][fill]"
+						} ) {
+							name: "panel46"
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+								"$layoutConstraints": "insets 0,hidemode 3,gap 0 0"
+								"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+								"$rowConstraints": "[grow,center]"
+							} ) {
+								name: "panel47"
+								"border": #TitledBorder0
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField163"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 0 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField164"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 1 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField165"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 2 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField166"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 3 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField167"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 4 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField168"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 5 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField169"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 6 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField170"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 7 0"
+								} )
+								add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+									name: "formattedTextField171"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 8 0"
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button24"
+									"text": "Insert"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 9 0"
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button26"
+									"text": "Delete"
+								}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+									"value": "cell 10 0"
+								} )
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 0,growx"
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "label19"
+								"preferredSize": #Dimension0
+								"border": #TitledBorder1
+								"minimumSize": #Dimension1
+								"maximumSize": #Dimension2
+							}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+								"value": "cell 0 1,dock center"
+							} )
+						}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+							"value": "cell 0 2"
 						} )
 					}, new FormLayoutConstraints( null ) {
 						"title": "Table 6"
-					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
-						name: "panel46"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
-							name: "panel47"
-							"border": #TitledBorder0
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField163"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField164"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField165"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField166"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField167"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField168"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField169"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField170"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField171"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button20"
-								"text": "Execute"
-							} )
-						} )
-						add( new FormComponent( "javax.swing.JLabel" ) {
-							name: "label19"
-							"preferredSize": #Dimension0
-							"border": #TitledBorder1
-							"minimumSize": #Dimension1
-							"maximumSize": #Dimension2
-						} )
-					}, new FormLayoutConstraints( null ) {
-						"title": "Table 7"
-					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
-						name: "panel48"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
-							name: "panel49"
-							"border": #TitledBorder0
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField172"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField173"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField174"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField175"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField176"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField177"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField178"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField179"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField180"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button21"
-								"text": "Execute"
-							} )
-						} )
-						add( new FormComponent( "javax.swing.JLabel" ) {
-							name: "label20"
-							"preferredSize": #Dimension0
-							"border": #TitledBorder1
-							"minimumSize": #Dimension1
-							"maximumSize": #Dimension2
-						} )
-					}, new FormLayoutConstraints( null ) {
-						"title": "Table 8"
-					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
-						name: "panel50"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
-							name: "panel51"
-							"border": #TitledBorder0
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField181"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField182"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField183"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField184"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField185"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField186"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField187"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField188"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField189"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button22"
-								"text": "Insert"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button24"
-								"text": "Delete"
-							} )
-						} )
-						add( new FormComponent( "javax.swing.JLabel" ) {
-							name: "label21"
-							"preferredSize": #Dimension0
-							"border": #TitledBorder1
-							"minimumSize": #Dimension1
-							"maximumSize": #Dimension2
-						} )
-					}, new FormLayoutConstraints( null ) {
-						"title": "Table 9"
-					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
-						name: "panel52"
-						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.HorizontalLayout ) ) {
-							name: "panel53"
-							"border": #TitledBorder0
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField190"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField191"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField192"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField193"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField194"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField195"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField196"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField197"
-							} )
-							add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-								name: "formattedTextField198"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button23"
-								"text": "Insert"
-							} )
-							add( new FormComponent( "javax.swing.JButton" ) {
-								name: "button3"
-								"text": "Delete"
-							} )
-						} )
-						add( new FormComponent( "javax.swing.JLabel" ) {
-							name: "label22"
-							"preferredSize": #Dimension0
-							"border": #TitledBorder1
-							"minimumSize": #Dimension1
-							"maximumSize": #Dimension2
-						} )
-					}, new FormLayoutConstraints( null ) {
-						"title": "Table 10"
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": "Insert/Delete"
@@ -1035,7 +1514,7 @@ new FormModel {
 				"value": "North"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 35, 30 )
+			"location": new java.awt.Point( 30, 25 )
 			"size": new java.awt.Dimension( 870, 730 )
 		} )
 	}

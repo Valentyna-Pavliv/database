@@ -13,9 +13,20 @@ import java.awt.*;
 /**
  * @author Yann Gabbud
  */
-public class App extends JPanel {
+public class App extends JFrame {
     public App() {
         initComponents();
+    }
+
+    public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                App GUI = new App();
+                GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                GUI.pack(); // <=========== PACK
+                GUI.setVisible(true);
+            }
+        });
     }
 
     private void initComponents() {

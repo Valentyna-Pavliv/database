@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e45414e-c1f7-4ba2-8d04-9e04828eb5dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../interface/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../interface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../interface/out/production/interface/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/out/production/interface/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../interface/out/production/interface/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/out/production/interface/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../interface/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../interface/src/sample/interface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../interface/src/sample/interface.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_interface/ch/epfl/database/App.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_interface/ch/epfl/database/App.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/epfl/database/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/epfl/database/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/epfl/database/App.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/epfl/database/App.jfd" afterDir="false" />
     </list>
@@ -21,25 +28,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/App.jfd">
           <provider selected="true" editor-type-id="JFormDesigner">
-            <state paletteWidth="209" propertiesWidth="370" />
+            <state propertiesWidth="383" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16071">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="200">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="n#!!doc;n#frame1#0;n#App#0" />
-                <marker date="1557782377423" expanded="true" signature="379:65085" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1557782377423" expanded="true" signature="65097:76394" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+                <element signature="e#300#301#0" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <marker date="1558803256057" expanded="true" signature="747:65453" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1558803256057" expanded="true" signature="65465:76762" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/jfxrt.jar!/javafx/stage/Stage.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/jfxrt.jar!/javafx/scene/Scene.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/src.zip!/javax/swing/JFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="696" column="16" selection-start-line="696" selection-start-column="16" selection-end-line="696" selection-end-column="16" />
+              <folding>
+                <element signature="e#25493#25494#0" expanded="true" />
+                <element signature="e#25550#25551#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,23 +109,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ch/epfl/database/App.java" />
         <option value="$PROJECT_DIR$/src/ch/epfl/database/App.jfd" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" />
+        <option value="$PROJECT_DIR$/src/ch/epfl/database/App.java" />
+        <option value="$PROJECT_DIR$/src/ch/epfl/database/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="1107" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -111,24 +153,24 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/org-jdesktop-swingx-1.6-201002261215.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../interface" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.scala.settings.ScalaProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -142,6 +184,40 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch.epfl.database.App" />
+      <module name="java_interface" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.epfl.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch.epfl.database.Main" />
+      <module name="java_interface" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.epfl.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -153,27 +229,27 @@
       <option name="presentableId" value="Default" />
       <updated>1557768576209</updated>
       <workItem from="1557768577607" duration="1548000" />
-      <workItem from="1557770400854" duration="6786000" />
+      <workItem from="1557770400854" duration="6904000" />
+      <workItem from="1558795123833" duration="1496000" />
+      <workItem from="1558801751912" duration="2285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8334000" />
+    <option name="totallyTimeSpent" value="12233000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="1107" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17235859" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17609392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Dependency Viewer" weight="0.32979852" />
-      <window_info anchor="bottom" id="Messages" weight="0.32979852" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33951965" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -183,6 +259,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="12" weight="0.32979852" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -203,24 +281,61 @@
     <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/Test.form" />
     <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/sad.java" />
     <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/sad.form" />
-    <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/App.java">
+    <entry file="file://$PROJECT_DIR$/java_interface.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/src.zip!/javax/swing/JFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16071">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="655">
+          <caret line="696" column="16" selection-start-line="696" selection-start-column="16" selection-end-line="696" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="n#!!doc;n#frame1#0;n#App#0" />
-            <marker date="1557782377423" expanded="true" signature="379:65085" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1557782377423" expanded="true" signature="65097:76394" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <element signature="e#25493#25494#0" expanded="true" />
+            <element signature="e#25550#25551#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/App.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="209" propertiesWidth="370" />
+        <state propertiesWidth="383" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <marker date="1558803256057" expanded="true" signature="747:65453" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1558803256057" expanded="true" signature="65465:76762" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/jfxrt.jar!/javafx/stage/Stage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/jfxrt.jar!/javafx/scene/Scene.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/epfl/database/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
@@ -240,6 +355,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -262,6 +378,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -278,6 +395,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
