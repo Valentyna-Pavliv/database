@@ -37,11 +37,47 @@ public class Main extends Application {
         ChoiceBox table_selection_search = (ChoiceBox) scene.lookup("#table_selection_search");
         TextField search_bar = (TextField) scene.lookup("#search_bar");
 
+        // Selection table
         ObservableList table_name = FXCollections.observableArrayList("Has_response_time", "Has_verifications", "Verifications",
                 "Response_times", "Hosts", "Review_scores", "Users", "Amenities", "Has_amenites", "Listings", "Reviews", "Booking_polices",
                 "Calendars", "Locations", "Houses", "Properties", "Has_property", "Rooms", "Has_room", "Beds", "Has_bed");
         table_selection_search.setItems(table_name);
-        table_selection_search.
+
+        // Search button
+        search_button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                Statement stmt = null;
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    c = DriverManager
+                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                    "postgres", "database2019");
+
+                    c.setAutoCommit(false);
+
+                    stmt = c.createStatement();
+                    ResultSet rs = stmt.executeQuery( "SELECT AVG(c.price)\n" +
+                            "FROM calendars c, houses h\n" +
+                            "WHERE h.bedrooms >= 8 AND c.id_listing = h.id_listing LIMIT 50;" );
+                    while ( rs.next() ) {
+                        int avgPrice = rs.getInt(1);
+                        builder.append( "Average price : " + avgPrice);
+                        builder.append(System.lineSeparator());
+                    }
+                    rs.close();
+                    stmt.close();
+                    c.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println(e.getClass().getName()+": "+e.getMessage());
+                    System.exit(0);
+                }
+                String string = builder.toString();
+                result_search_queries.setText(string);
+            }
+        });
 
 
         // CONFIGURATION PREDEFINED QUERIES
