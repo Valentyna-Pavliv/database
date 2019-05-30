@@ -1,13 +1,18 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -24,8 +29,19 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+
+        // CONFIGURATION SEARCH
+        Text result_search_queries = (Text) scene.lookup("#result_search_queries");
+        Button search_button = (Button) scene.lookup("#search_button");
+        ChoiceBox table_selection_search = (ChoiceBox) scene.lookup("#table_selection_search");
+        TextField search_bar = (TextField) scene.lookup("#search_bar");
+
+        ObservableList table_name = FXCollections.observableArrayList("Listings", "", "C")
+        table_selection_search.setItems();
+
+
         // CONFIGURATION PREDEFINED QUERIES
-        Text test_text = (Text) scene.lookup("#resultPredefinedQueries");
+        Text result_predefined_queries = (Text) scene.lookup("#result_predefined_queries");
 
         Button query1 = (Button) scene.lookup("#query1");
         Button query2 = (Button) scene.lookup("#query2");
@@ -69,7 +85,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -106,7 +122,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -143,7 +159,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -178,7 +194,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -218,7 +234,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -258,7 +274,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -301,7 +317,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -353,7 +369,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -403,7 +419,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -452,7 +468,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
 
@@ -494,7 +510,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                test_text.setText(string);
+                result_predefined_queries.setText(string);
             }
         });
     }
