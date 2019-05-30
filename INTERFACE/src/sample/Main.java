@@ -18,6 +18,7 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.sql.*;
+import java.util.Properties;
 
 public class Main extends Application {
 
@@ -36,8 +37,11 @@ public class Main extends Application {
         ChoiceBox table_selection_search = (ChoiceBox) scene.lookup("#table_selection_search");
         TextField search_bar = (TextField) scene.lookup("#search_bar");
 
-        ObservableList table_name = FXCollections.observableArrayList("Listings", "", "C")
-        table_selection_search.setItems();
+        ObservableList table_name = FXCollections.observableArrayList("Has_response_time", "Has_verifications", "Verifications",
+                "Response_times", "Hosts", "Review_scores", "Users", "Amenities", "Has_amenites", "Listings", "Reviews", "Booking_polices",
+                "Calendars", "Locations", "Houses", "Properties", "Has_property", "Rooms", "Has_room", "Beds", "Has_bed");
+        table_selection_search.setItems(table_name);
+        table_selection_search.
 
 
         // CONFIGURATION PREDEFINED QUERIES
