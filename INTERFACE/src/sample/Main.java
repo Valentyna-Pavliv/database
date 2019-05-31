@@ -916,9 +916,9 @@ public class Main extends Application {
                                 break;
                             }
                             case "booking_polices": {
-                                String selectStatement = "DELETE FROM review_scores WHERE value = ? AND id_listing = ? AND checking = ? AND rating = ? AND location = ? " +
-                                        "AND accuracy = ? AND communication = ? AND cleanliness = ?;";
-                                String selectStatement = "INSERT INTO booking_polices VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+                                String selectStatement = "DELETE FROM booking_polices WHERE id_listing = ? AND extra_people = ? AND is_business_travel_ready = ? " +
+                                        "AND require_guest_profile_picture = ? AND require_guest_phone_verification = ? " +
+                                        "AND maximum_nights = ? AND minimum_nights = ? AND guests_included = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 try {
                                     stmt.setObject(1, Integer.parseInt(input1_insdel.getText()));
@@ -948,7 +948,9 @@ public class Main extends Application {
                                 break;
                             }
                             case "calendars": {
-                                String selectStatement = "INSERT INTO calendars VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                String selectStatement = "DELETE FROM calendars WHERE calendar_date = ? AND id_listing = ? AND available = ? " +
+                                        "AND price = ? AND daily_price = ? " +
+                                        "AND weekly_price = ? AND monthly_price = ? AND cleaning_fee = ? AND security_deposit = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 Date date = null;
                                 try {
@@ -987,7 +989,9 @@ public class Main extends Application {
                                 break;
                             }
                             case "locations": {
-                                String selectStatement = "INSERT INTO locations VALUES (?, ?, ?, ?, ?, ?);";
+                                String selectStatement = "DELETE FROM locations WHERE latitude = ? AND longitude = ? AND id_listing = ? " +
+                                        "AND country = ? AND country_code = ? " +
+                                        "AND city = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(4, input4_insdel.getText());
                                 stmt.setObject(5, input5_insdel.getText());
@@ -1015,7 +1019,9 @@ public class Main extends Application {
                                 break;
                             }
                             case "houses": {
-                                String selectStatement = "INSERT INTO houses VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                String selectStatement = "DELETE FROM houses WHERE neighbourhood = ? AND id_listing = ? AND beds = ? " +
+                                        "AND space = ? AND house_rules = ? " +
+                                        "AND accommodates = ? AND square_feet = ? AND bathrooms = ? AND bedrooms = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(3, input3_insdel.getText());
                                 stmt.setObject(4, input4_insdel.getText());
@@ -1045,7 +1051,7 @@ public class Main extends Application {
                                 break;
                             }
                             case "property": {
-                                String selectStatement = "INSERT INTO property VALUES (?, ?);";
+                                String selectStatement = "DELETE FROM property WHERE id_listing = ? AND property_type = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(2, input2_insdel.getText());
 
@@ -1070,7 +1076,7 @@ public class Main extends Application {
                                 break;
                             }
                             case "cancellation_policy": {
-                                String selectStatement = "INSERT INTO cancellation_policy VALUES (?, ?);";
+                                String selectStatement = "DELETE FROM cancellation_policy WHERE cancellation_policy = ? AND id_listing = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, input1_insdel.getText());
 
@@ -1095,7 +1101,7 @@ public class Main extends Application {
                                 break;
                             }
                             case "room_type": {
-                                String selectStatement = "INSERT INTO room_type VALUES (?, ?);";
+                                String selectStatement = "DELETE FROM room_type WHERE id_listing = ? AND room_type = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(2, input2_insdel.getText());
 
@@ -1120,7 +1126,7 @@ public class Main extends Application {
                                 break;
                             }
                             case "bed_type": {
-                                String selectStatement = "INSERT INTO bed_type VALUES (?, ?);";
+                                String selectStatement = "DELETE FROM bed_type WHERE id_listing = ? AND bed_type = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(2, input2_insdel.getText());
 

@@ -253,11 +253,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="838" column="110" selection-start-line="838" selection-start-column="110" selection-end-line="838" selection-end-column="110" />
+            <state relative-caret-position="769">
+              <caret line="1128" column="112" selection-start-line="1128" selection-start-column="112" selection-end-line="1128" selection-end-column="112" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#116315#116316#0" expanded="true" />
+                <element signature="e#117446#117447#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -482,12 +482,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1559219844814" duration="129000" />
       <workItem from="1559220033998" duration="7222000" />
-      <workItem from="1559231653598" duration="30871000" />
+      <workItem from="1559231653598" duration="31610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39524000" />
+    <option name="totallyTimeSpent" value="40263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -636,11 +636,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="838" column="110" selection-start-line="838" selection-start-column="110" selection-end-line="838" selection-end-column="110" />
+        <state relative-caret-position="769">
+          <caret line="1128" column="112" selection-start-line="1128" selection-start-column="112" selection-end-line="1128" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#116315#116316#0" expanded="true" />
+            <element signature="e#117446#117447#0" expanded="true" />
           </folding>
         </state>
       </provider>
