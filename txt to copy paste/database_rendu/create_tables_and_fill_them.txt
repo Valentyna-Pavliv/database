@@ -1,0 +1,477 @@
+﻿0)
+CREATE TEMPORARY TABLE t (id INTEGER,                                                                                                                                                
+listing_url CHAR(40),                                                                                                                                                               
+listing_name CHAR(90),                                                                                                                                                               
+summary CHAR(1000),                                                                                                                                                                   
+space CHAR(1000),                                                                                                                                                                     
+description CHAR(1000),               
+neighborhood_overview CHAR(1000),                                                                 
+notes CHAR(1000),
+transit CHAR(1000),
+listing_access CHAR(1000),
+interaction CHAR(1000),                                                                                                                                                               
+house_rules CHAR(1000),
+picture_url CHAR(120),
+host_id INTEGER,
+host_url CHAR(50),
+host_name CHAR(35),
+host_since DATE,
+host_about CHAR(5730),
+host_response_time CHAR(18),
+host_response_rate INTEGER,
+host_thumbnail_url CHAR(110),
+host_picture_url CHAR(110),
+neighbourhood CHAR(35),
+city CHAR(20),
+country_code CHAR(2),
+country CHAR(20),
+latitude REAL,
+longitude REAL,
+property_type CHAR(22),
+room_type CHAR(15),
+accomodates INTEGER,
+bathrooms INTEGER,
+bedrooms INTEGER,
+beds INTEGER,
+bed_type CHAR(13),
+square_feet INTEGER,
+price INTEGER,
+weekly_price INTEGER,
+monthly_price INTEGER,
+security_deposit INTEGER,
+cleaning_fee INTEGER,
+guests_included INTEGER,
+extra_people INTEGER,
+minimum_nights INTEGER,
+maximum_nights INTEGER,
+review_scores_rating INTEGER,
+review_scores_accuracy INTEGER,
+review_scores_cleanliness INTEGER,
+review_scores_checking INTEGER,
+review_scores_communication INTEGER,
+review_scores_location INTEGER,
+review_scores_value INTEGER,
+is_business_travel_ready CHAR(1),
+cancellation_policy CHAR(27),
+require_guest_profile_picture CHAR(1),
+require_guest_phone_verification CHAR(1));
+
+
+\copy t (id, listing_url, listing_name, summary, space, description, neighborhood_overview, notes, transit, listing_access, interaction, house_rules, picture_url, host_id, host_url, host_name, host_since, host_about, host_response_time, host_response_rate, host_thumbnail_url, host_picture_url, neighbourhood, city, country_code, country, latitude, longitude, property_type, room_type, accomodates, bathrooms, bedrooms, beds, bed_type, square_feet, price, weekly_price, monthly_price, security_deposit, cleaning_fee, guests_included, extra_people, minimum_nights, maximum_nights, review_scores_rating, review_scores_accuracy , review_scores_cleanliness, review_scores_checking, review_scores_communication, review_scores_location, review_scores_value, is_business_travel_ready, cancellation_policy, require_guest_profile_picture, require_guest_phone_verification)
+from '/home/valia/Documents/databaseSystems/projet/final_csv/listings_cleaned_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+1)
+CREATE TABLE users (
+        id_user   INTEGER NOT NULL,
+        user_name          CHAR(35)
+);
+
+
+ALTER TABLE users ADD CONSTRAINT user_pk PRIMARY KEY ( id_user );
+
+
+\copy users(id_user, user_name)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/user_clean.csv'
+with (format csv);
+
+
+2)
+CREATE TABLE hosts (
+        url                 CHAR(50) NOT NULL,
+        id_user             INTEGER NOT NULL,
+        since               DATE,
+        about               CHAR(5730),
+        thumbnail_url   CHAR(110)
+);
+
+
+ALTER TABLE hosts ADD CONSTRAINT hosts_pk PRIMARY KEY ( id_user );
+
+
+ALTER TABLE hosts
+        ADD CONSTRAINT hosts_user_fk FOREIGN KEY ( id_user )
+            REFERENCES users ( id_user ) ON DELETE CASCADE;
+
+
+\copy hosts(url, id_user, since, about, thumbnail_url)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/hosts_newDelimiter.csv'
+with (format csv, delimiter '|');
+
+
+
+
+3) 
+
+
+CREATE TABLE verifications (
+        verification_type CHAR(21) NOT NULL
+);
+
+
+ALTER TABLE verifications ADD CONSTRAINT verifications_pk PRIMARY KEY ( verification_type );
+
+
+\copy verifications (verification_type)
+from '/home/valia/Documents/databaseSystems/projet/final_csv/verifications.csv'
+with (format csv);
+
+
+4)
+
+
+CREATE TABLE has_verifications (
+        verification_type   CHAR(21) NOT NULL,
+        user_id                      INTEGER NOT NULL
+);
+
+
+ALTER TABLE has_verifications ADD CONSTRAINT has_verif_pk PRIMARY KEY ( verification_type,
+                                                                            user_id );
+
+
+ALTER TABLE has_verifications
+        ADD CONSTRAINT has_verif_verif_fk FOREIGN KEY ( verification_type )
+            REFERENCES verifications ( verification_type );
+
+
+ALTER TABLE has_verifications
+        ADD CONSTRAINT has_verifi_hosts_fk FOREIGN KEY ( user_id )
+            REFERENCES hosts ( id_user ) ON DELETE CASCADE;
+
+
+\copy has_verifications(verification_type, user_id)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/host_verification.csv'
+with (format csv);
+
+
+
+
+5)
+CREATE TABLE response_time (
+        response_time   CHAR(18),
+        host_id                 INTEGER NOT NULL
+);
+
+
+ALTER TABLE response_time ADD CONSTRAINT has_resp_time_pk PRIMARY KEY ( host_id );
+
+
+ALTER TABLE response_time
+        ADD CONSTRAINT has_resp_time_hosts_fk FOREIGN KEY ( host_id  )
+            REFERENCES hosts ( id_user )
+                ON DELETE CASCADE;
+
+
+\copy response_time (response_time, host_id)
+from '/home/valia/Documents/databaseSystems/projet/final_csv/host_response_time.csv'
+with (format csv);
+
+
+
+
+6) 
+CREATE TABLE listings (
+        id_listing                   INTEGER NOT NULL,
+        name_listing                 CHAR(90),
+        url                          CHAR(40),
+        space                        CHAR(1000),
+        interaction                  CHAR(1000),
+        notes                        CHAR(1000),
+        picture_url                  CHAR(120),
+        description                  CHAR(1000),
+        neighbourhood_overview   CHAR(1000),
+        summary                      CHAR(1000),
+        transit                      CHAR(1000),
+        listing_access               CHAR(1000),
+        host_id                INTEGER NOT NULL
+);
+
+
+ALTER TABLE listings ADD CONSTRAINT listings_pk PRIMARY KEY ( id_listing );
+ALTER TABLE listings ADD CONSTRAINT listing_fk FOREIGN KEY (host_id)
+        REFERENCES hosts ( id_user )
+                ON DELETE CASCADE;
+
+
+insert into listings (id_listing, name_listing, url, space, interaction, notes, picture_url, description, neighbourhood_overview, summary, transit, listing_access, host_id)
+select id, listing_name, listing_url, space, interaction, notes, picture_url, description, neighborhood_overview, summary, transit, listing_access, host_id                                         
+from t; 
+
+
+7)
+CREATE TABLE amenities (
+        amenity_type CHAR(42) NOT NULL
+);
+
+
+ALTER TABLE amenities ADD CONSTRAINT amenities_pk PRIMARY KEY ( amenity_type );
+
+
+\copy amenities (amenity_type)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/amenity.csv'
+with (format csv);
+
+
+8)
+CREATE TABLE has_amenities (
+        amenity_type   CHAR(42) NOT NULL,
+        id_listing         INTEGER NOT NULL
+);
+
+
+ALTER TABLE has_amenities ADD CONSTRAINT has_amenities_pk PRIMARY KEY ( amenity_type,
+                                                                            id_listing );
+
+
+ALTER TABLE has_amenities
+        ADD CONSTRAINT has_amenities_amenities_fk FOREIGN KEY ( amenity_type )
+            REFERENCES amenities ( amenity_type );
+
+
+ALTER TABLE has_amenities
+        ADD CONSTRAINT has_amenities_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+ON DELETE CASCADE;
+
+
+\copy has_amenities(amenity_type, id_listing)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/has_amenities.csv'
+with (format csv);
+
+
+9)
+CREATE TABLE booking_policies (
+        id_listing                          INTEGER NOT NULL,
+        extra_people                        INTEGER,
+        is_business_travel_ready            CHAR(1),
+        require_guest_profile_picture   CHAR(1),
+        require_guest_phone_verification CHAR(1),
+        maximum_nights                      INTEGER,
+        minimum_nights                      INTEGER,
+        guests_included                     INTEGER
+);
+
+
+ALTER TABLE booking_policies ADD CONSTRAINT booking_policy_pk PRIMARY KEY ( id_listing );
+
+
+
+
+ALTER TABLE booking_policies
+        ADD CONSTRAINT booking_policy_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+insert into booking_policies(id_listing, extra_people, is_business_travel_ready, require_guest_profile_picture, require_guest_phone_verification, maximum_nights, minimum_nights, guests_included)
+select id, extra_people, is_business_travel_ready, require_guest_profile_picture, require_guest_phone_verification, maximum_nights, minimum_nights, guests_included
+from t;
+
+
+10)
+CREATE TABLE cancellation_policy (
+        cancellation_policy CHAR(27),
+        id_listing              INTEGER NOT NULL
+);
+
+
+ALTER TABLE cancellation_policy ADD CONSTRAINT cancellation_policy_pk PRIMARY KEY ( id_listing);
+
+
+ALTER TABLE cancellation_policy
+        ADD CONSTRAINT cancellation_policy_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES booking_policies ( id_listing )
+                ON DELETE CASCADE;
+ 
+insert into cancellation_policy (cancellation_policy, id_listing)
+select cancellation_policy, id
+from t;
+
+
+11)
+CREATE TABLE review_scores (
+        value               INTEGER,
+        id_listing          INTEGER NOT NULL,
+        checking            INTEGER,
+        rating              INTEGER,
+        location            INTEGER,
+        accuracy            INTEGER,
+        communication   INTEGER,
+        cleanliness         INTEGER
+);
+
+
+ALTER TABLE review_scores ADD CONSTRAINT review_scores_pk PRIMARY KEY ( id_listing );
+
+
+ALTER TABLE review_scores
+        ADD CONSTRAINT review_scores_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+insert into review_scores(value, id_listing, checking, rating, location, accuracy, communication, cleanliness)
+select review_scores_value, id, review_scores_checking, review_scores_rating, review_scores_location, review_scores_accuracy,  review_scores_communication,  review_scores_cleanliness
+from t;
+
+
+12)
+CREATE TABLE locations (
+        latitude           REAL,
+        longitude          REAL,
+        id_listing         INTEGER NOT NULL,
+        country            CHAR(20),
+        country_code   CHAR(2),
+        city               CHAR(20)
+);
+
+
+ALTER TABLE locations
+        ADD CONSTRAINT location_pk PRIMARY KEY ( id_listing );
+
+
+ALTER TABLE locations
+        ADD CONSTRAINT location_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+ON DELETE CASCADE;
+
+
+insert into locations(latitude, longitude, id_listing, country, country_code, city )
+select latitude, longitude, id, country, country_code, city
+from t;
+
+
+13)
+CREATE TABLE houses (
+        neighbourhood   CHAR(35) ,
+        id_listing          INTEGER NOT NULL,
+        beds                INTEGER,
+        space               CHAR(1000),
+        house_rules         CHAR(1000),
+        accommodates        INTEGER,
+        square_feet         INTEGER,
+        bathrooms           INTEGER,
+        bedrooms            INTEGER
+);
+
+
+ALTER TABLE houses
+        ADD CONSTRAINT house_pk PRIMARY KEY (id_listing );
+
+
+ALTER TABLE houses
+        ADD CONSTRAINT house_locations_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+insert into houses (neighbourhood , id_listing, beds, space, house_rules, accommodates, square_feet, bathrooms, bedrooms)
+select neighbourhood , id, beds, space,  house_rules, accomodates, square_feet, bathrooms, bedrooms
+from t;
+
+
+14)
+CREATE TABLE property (
+        id_listing          INTEGER
+            CONSTRAINT nnc_has_roomv1_id_listing NOT NULL,
+        property_type   CHAR(22)
+            CONSTRAINT nnc_has_roomv1_room_type NOT NULL
+);
+
+
+ALTER TABLE property
+        ADD CONSTRAINT has_property_pk PRIMARY KEY ( id_listing );
+
+
+ALTER TABLE property
+        ADD CONSTRAINT has_property_houses_fk FOREIGN KEY ( id_listing )
+            REFERENCES houses ( id_listing ) ON DELETE CASCADE;
+
+
+insert into property (id_listing, property_type)
+select id, property_type
+from t;
+
+
+15)
+CREATE TABLE room_type (
+        id_listing          INTEGER
+            CONSTRAINT nnc_has_room_id_listing NOT NULL,
+        room_type           CHAR(15)
+            CONSTRAINT nnc_has_room_room_type NOT NULL
+);
+
+
+ALTER TABLE room_type
+        ADD CONSTRAINT has_room_pk PRIMARY KEY ( id_listing);
+
+
+ALTER TABLE room_type
+        ADD CONSTRAINT has_room_houses_fk FOREIGN KEY ( id_listing )
+            REFERENCES houses ( id_listing ) ON DELETE CASCADE;
+
+
+insert into room_type (id_listing, room_type)
+select id, room_type
+from t;
+
+
+16)
+CREATE TABLE reviews (
+        id_review         INTEGER NOT NULL,
+        id_listing        INTEGER NOT NULL,
+        id_reviewer   INTEGER NOT NULL,
+        review_date            DATE,
+        review_comment        CHAR(6505)
+);
+
+
+ALTER TABLE reviews
+        ADD CONSTRAINT review_pk PRIMARY KEY (id_review );
+
+
+ALTER TABLE reviews
+        ADD CONSTRAINT review_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing );
+
+
+ALTER TABLE reviews
+        ADD CONSTRAINT review_user_fk FOREIGN KEY ( id_reviewer )
+            REFERENCES users ( id_user );
+
+
+\copy reviews (id_review, id_listing, id_reviewer, review_date, review_comment)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/reviews_cleaned_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+17)
+CREATE TABLE calendars (
+        calendar_date                DATE NOT NULL,
+        id_listing             INTEGER
+            CONSTRAINT nnc_pricing_id NOT NULL,
+        available              CHAR(1),
+        price                  INTEGER,
+        daily_price            INTEGER,
+        weekly_price           INTEGER,
+        monthly_price          INTEGER,
+        cleaning_fee           INTEGER,
+        security_deposit   INTEGER
+);
+
+
+ALTER TABLE calendars ADD CONSTRAINT pricing_pk PRIMARY KEY ( id_listing,
+                                                                  calendar_date );
+
+
+ALTER TABLE calendars
+        ADD CONSTRAINT pricing_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+\copy calendars (calendar_date, id_listing, available, price, daily_price, weekly_price, monthly_price, cleaning_fee, security_deposit)
+from  '/home/valia/Documents/databaseSystems/projet/final_csv/calendar_merged_clean.csv'
+with (format csv);
