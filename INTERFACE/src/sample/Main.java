@@ -72,7 +72,6 @@ public class Main extends Application {
         // Insert button
         insert_button_insdel.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
-                StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 PreparedStatement stmt = null;
                 if (choicebox_insdel.getValue() == null) {
@@ -116,107 +115,85 @@ public class Main extends Application {
                                 break;
                             }
 
-//                            case "verifications": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM verifications x\n" +
-//                                        "                WHERE x.verification_type LIKE ?;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                            case "verifications": {
+                                String selectStatement = "INSERT INTO verifications VALUES (?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+
+                            case "response_time": {
+                                String selectStatement = "INSERT INTO response_time VALUES (?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input2_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
 //
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                while (rs.next()) {
-//                                    String verification_type = rs.getString("verification_type");
-//                                    builder.append("Verification type : " + verification_type);
-//                                    builder.append(System.lineSeparator());
-//                                }
-//                                break;
-//                            }
-//
-//                            case "response_time": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM response_time x\n" +
-//                                        "                WHERE x.response_time LIKE ? OR x.host_id = ?;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-//                                int foo;
-//                                try {
-//                                    foo = Integer.parseInt(search_bar.getText());
-//                                }
-//                                catch (NumberFormatException e)
-//                                {
-//                                    foo = 0;
-//                                }
-//                                stmt.setObject(2, foo);
-//
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                while (rs.next()) {
-//                                    String response_time = rs.getString("response_time");
-//                                    int host_id = rs.getInt("host_id");
-//                                    builder.append("Response time : " + response_time + ", Host id : " + host_id);
-//                                    builder.append(System.lineSeparator());
-//                                }
-//                                break;
-//                            }
-//
-//                            case "hosts": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM hosts x\n" +
-//                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-//                                int foo;
-//                                try {
-//                                    foo = Integer.parseInt(search_bar.getText());
-//                                }
-//                                catch (NumberFormatException e)
-//                                {
-//                                    foo = 0;
-//                                }
-//                                stmt.setObject(2, foo);
-//                                Date date = null;
-//                                try {
-//                                    date = (Date) Date.valueOf(search_bar.getText());
-//                                }
-//                                catch (Exception e){
-//                                    date = new Date(System.currentTimeMillis());
-//                                }
-//                                stmt.setDate(3, date);
-//                                stmt.setObject(4, '%'+search_bar.getText()+'%');
-//                                stmt.setObject(5, '%'+search_bar.getText()+'%');
-//
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                int counter = 1;
-//                                while (rs.next()) {
-//                                    builder.append("Entry " + counter + " : ");
-//                                    builder.append(System.lineSeparator());
-//                                    String url = rs.getString("url");
-//                                    int id_user = rs.getInt("id_user");
-//                                    String since = rs.getString("since");
-//                                    String about = rs.getString("about");
-//                                    String thumbnail_url = rs.getString("thumbnail_url");
-//                                    builder.append("Url : " + url);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("User id : " + id_user);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Since : " + since);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("About : " + about);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Thumbnail_url : " + thumbnail_url);
-//                                    builder.append(System.lineSeparator());
-//                                    counter++;
-//                                }
-//                                break;
-//                            }
+                            case "hosts": {
+                                String selectStatement = "INSERT INTO hosts VALUES (?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input2_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(input3_insdel.getText());
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText("Wrong format for input date !");
+                                    break;
+                                }
+                                stmt.setDate(3, date);
+                                stmt.setObject(4, input4_insdel.getText());
+                                stmt.setObject(5, input5_insdel.getText());
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
                         }
                         if(rs != null) {
                             rs.close();
@@ -234,15 +211,12 @@ public class Main extends Application {
                         System.exit(0);
                     }
                 }
-                String string = builder.toString();
-//                result_search_queries.setText(string);
             }
         });
 
         // Delete button
         delete_button_insdel.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
-                StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 PreparedStatement stmt = null;
                 if (choicebox_insdel.getValue() == null) {
@@ -302,89 +276,69 @@ public class Main extends Application {
                                 error_message_insdel.setText("Deletion done !");
                                 break;
                             }
-//
-//                            case "response_time": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM response_time x\n" +
-//                                        "                WHERE x.response_time LIKE ? OR x.host_id = ?;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-//                                int foo;
-//                                try {
-//                                    foo = Integer.parseInt(search_bar.getText());
-//                                }
-//                                catch (NumberFormatException e)
-//                                {
-//                                    foo = 0;
-//                                }
-//                                stmt.setObject(2, foo);
-//
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                while (rs.next()) {
-//                                    String response_time = rs.getString("response_time");
-//                                    int host_id = rs.getInt("host_id");
-//                                    builder.append("Response time : " + response_time + ", Host id : " + host_id);
-//                                    builder.append(System.lineSeparator());
-//                                }
-//                                break;
-//                            }
-//
-//                            case "hosts": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM hosts x\n" +
-//                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-//                                int foo;
-//                                try {
-//                                    foo = Integer.parseInt(search_bar.getText());
-//                                }
-//                                catch (NumberFormatException e)
-//                                {
-//                                    foo = 0;
-//                                }
-//                                stmt.setObject(2, foo);
-//                                Date date = null;
-//                                try {
-//                                    date = (Date) Date.valueOf(search_bar.getText());
-//                                }
-//                                catch (Exception e){
-//                                    date = new Date(System.currentTimeMillis());
-//                                }
-//                                stmt.setDate(3, date);
-//                                stmt.setObject(4, '%'+search_bar.getText()+'%');
-//                                stmt.setObject(5, '%'+search_bar.getText()+'%');
-//
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                int counter = 1;
-//                                while (rs.next()) {
-//                                    builder.append("Entry " + counter + " : ");
-//                                    builder.append(System.lineSeparator());
-//                                    String url = rs.getString("url");
-//                                    int id_user = rs.getInt("id_user");
-//                                    String since = rs.getString("since");
-//                                    String about = rs.getString("about");
-//                                    String thumbnail_url = rs.getString("thumbnail_url");
-//                                    builder.append("Url : " + url);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("User id : " + id_user);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Since : " + since);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("About : " + about);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Thumbnail_url : " + thumbnail_url);
-//                                    builder.append(System.lineSeparator());
-//                                    counter++;
-//                                }
-//                                break;
-//                            }
+
+                            case "response_time": {
+                                String selectStatement = "DELETE FROM response_time WHERE verification_type = ? AND host_id = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input2_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Deletion done !");
+                                break;
+                            }
+
+                            case "hosts": {
+                                String selectStatement = "DELETE FROM hosts WHERE url = ? AND id_user = ? AND since = ? AND about = ? AND thumbnail_url = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input2_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(input3_insdel.getText());
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText("Wrong format for the date !");
+                                    break;
+                                }
+                                stmt.setDate(3, date);
+                                stmt.setObject(4, input4_insdel.getText());
+                                stmt.setObject(5, input5_insdel.getText());
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Deletion done !");
+                                break;
+                            }
                         }
                         if(rs != null) {
                             rs.close();
@@ -402,8 +356,6 @@ public class Main extends Application {
                         System.exit(0);
                     }
                 }
-                String string = builder.toString();
-//                result_search_queries.setText(string);
             }
         });
 
