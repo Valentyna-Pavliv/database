@@ -34,7 +34,7 @@
                   </VBox>
             </content>
           </Tab>
-          <Tab text="Predefined Queries">
+          <Tab text="Predefined Queries 1">
             <content>
                   <VBox spacing="10.0">
                      <children>
@@ -63,6 +63,35 @@
                   </VBox>
             </content>
           </Tab>
+            <Tab text="Predefined Queries 1">
+               <content>
+                  <VBox spacing="10.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button id="query21" mnemonicParsing="false" text="Query 1" />
+                              <Button id="query22" mnemonicParsing="false" text="Query 2" />
+                              <Button id="query23" mnemonicParsing="false" text="Query 3" />
+                              <Button id="query24" mnemonicParsing="false" text="Query 4" />
+                              <Button id="query25" mnemonicParsing="false" text="Query 5" />
+                              <Button id="query26" mnemonicParsing="false" text="Query 6" />
+                              <Button id="query27" mnemonicParsing="false" text="Query 7" />
+                              <Button id="query28" mnemonicParsing="false" text="Query 8" />
+                              <Button id="query29" mnemonicParsing="false" text="Query 9" />
+                              <Button id="query210" mnemonicParsing="false" text="Query 10" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <Text id="result_predefined_queries_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
             <Tab text="Insert / Delete">
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
