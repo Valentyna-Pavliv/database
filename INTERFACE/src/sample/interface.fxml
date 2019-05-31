@@ -108,6 +108,7 @@
                               <Text id="text11_insdel" layoutX="14.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                               <Text id="text12_insdel" layoutX="14.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                               <Text id="text13_insdel" layoutX="14.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="error_message_insdel" layoutX="14.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                            </children>
                         </AnchorPane>
                      </children>
