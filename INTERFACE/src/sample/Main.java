@@ -1753,7 +1753,7 @@ public class Main extends Application {
                             "        AND rs.id_listing =ra.id_listing AND a.amenity_type = ra.amenity_type LIMIT 50;" );
                     while ( rs.next() ) {
                         int avg_price = rs.getInt(1);
-                        builder.append( "Average rating : " + avg_price);
+                        builder.append( "Average cleaning review score : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -1788,6 +1788,9 @@ public class Main extends Application {
                             " FROM calendars c, listings l , users u\n" +
                             " WHERE c.calendar_date >= '2019-03-01' AND c.calendar_date < '2019-10-01' AND c.available LIKE '%t%'\n" +
                             " AND l.id_listing = c.id_listing AND l.host_id = u.id_user LIMIT 50;" );
+                    builder.append( "Result : ");
+                    builder.append(System.lineSeparator());
+                    int counter = 1;
                     while ( rs.next() ) {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
@@ -2152,12 +2155,14 @@ public class Main extends Application {
                             "AND h.id_listing=l.id_listing\n" +
                             "group by l.city\n" +
                             "ORDER BY count(*) DESC;\n" );
-                    builder.append( "Result : ");
-                    builder.append(System.lineSeparator());
+
                     while ( rs.next() ) {
                         String city = rs.getString("city");
                         int count = rs.getInt(2);
-                        builder.append( "City : " + city + ", Count : " + count);
+                        builder.append( city);
+                        builder.append(System.lineSeparator());
+                        builder.append("-> " + count);
+                        builder.append(System.lineSeparator());
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -2195,13 +2200,16 @@ public class Main extends Application {
                             "       FROM (houses h INNER JOIN review_scores rs ON rs.id_listing = h.id_listing)) X, locations l\n" +
                             "           WHERE X.AmountOrder  IN (floor((X.TotalRows+1)/2.0) , ceil((X.TotalRows+1)/2.0)) \n" +
                             "AND l.city = 'Madrid' AND l.id_listing = X.id_listing)X GROUP BY neighbourhood  ORDER BY median DESC LIMIT 5;\n" );
-                    builder.append( "Result : ");
-                    builder.append(System.lineSeparator());
+                    int counter = 1;
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
-                        int median = rs.getInt(2);
-                        builder.append( "neighbourhood : " + neighbourhood + ", Median : " + median);
+                        builder.append( "Top " + counter + " : " + neighbourhood);
                         builder.append(System.lineSeparator());
+                        int median = rs.getInt(2);
+                        builder.append( "-> " + median);
+                        builder.append(System.lineSeparator());
+                        builder.append(System.lineSeparator());
+                        counter++;
                     }
                     rs.close();
                     stmt.close();
