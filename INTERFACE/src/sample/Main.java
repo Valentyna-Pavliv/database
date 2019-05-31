@@ -68,10 +68,227 @@ public class Main extends Application {
             public void handle(ActionEvent actionEvent) {
                 switch (choicebox_insdel.getSelectionModel().getSelectedItem().toString()){
                     case "has_verifications" :  {
-                        text1_insdel.setText("YAOOUHH !");
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "verifications" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "response_time" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "hosts" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "review_scores" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "users" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "amenities" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "has_amenites" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "listings" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "reviews" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "booking_polices" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "calendars" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "locations" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "houses" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "property" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "room_type" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
+                    }
+                    case "bed_type" :  {
+                        text1_insdel.setText("verification type :");
+                        text2_insdel.setText("user id :");
+                        text3_insdel.setText("unused :");
+                        text4_insdel.setText("unused :");
+                        text5_insdel.setText("unused :");
+                        text6_insdel.setText("unused :");
+                        text7_insdel.setText("unused :");
+                        text8_insdel.setText("unused :");
+                        text9_insdel.setText("unused :");
+                        text10_insdel.setText("unused :");
+                        break;
                     }
                 }
-
             }
         });
 
