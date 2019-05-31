@@ -2061,55 +2061,6 @@ public class Main extends Application {
 //            }
 //        });
 //
-//        query9.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override public void handle(ActionEvent ae) {
-//                StringBuilder builder = new StringBuilder();
-//                Connection c = null;
-//                Statement stmt = null;
-//                try {
-//                    Class.forName("org.postgresql.Driver");
-//                    c = DriverManager
-//                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
-//                                    "postgres", "database2019");
-//
-//                    c.setAutoCommit(false);
-//
-//                    stmt = c.createStatement();
-//                    ResultSet rs = stmt.executeQuery( "SELECT u.id_user, u.user_name\n" +
-//                            "  FROM users u,\n" +
-//                            "       (SELECT l.host_id as id\n" +
-//                            "  FROM listings l\n" +
-//                            "  GROUP BY l.host_id\n" +
-//                            "  HAVING COUNT(*) = 1\n" +
-//                            "  )h\n" +
-//                            "  WHERE u.id_user = h.id;\n" +
-//                            "\n" +
-//                            "  SELECT(u.id_user, u.name)\n" +
-//                            "  FROM users u\n" +
-//                            "       INNER JOIN (SELECT id_user, count(id_user) as cnt\n" +
-//                            "                       FROM hosts\n" +
-//                            "                      GROUP BY id_user) cou ON u.id_user = cou.id_user\n" +
-//                            "                      ORDER BY cnt DESC\n" +
-//                            "                      LIMIT 10;" );
-//                    while ( rs.next() ) {
-//                        int id_user = rs.getInt("id_user");
-//                        String user_name = rs.getString("user_name");
-//                        builder.append( "User name : " + user_name + " : Id user : " + id_user);
-//                        builder.append(System.lineSeparator());
-//                    }
-//                    rs.close();
-//                    stmt.close();
-//                    c.close();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.err.println(e.getClass().getName()+": "+e.getMessage());
-//                    System.exit(0);
-//                }
-//                String string = builder.toString();
-//                result_predefined_queries.setText(string);
-//            }
-//        });
-//
 //        query10.setOnAction(new EventHandler<ActionEvent>() {
 //            @Override public void handle(ActionEvent ae) {
 //                StringBuilder builder = new StringBuilder();
@@ -2469,9 +2420,9 @@ public class Main extends Application {
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {
-                        String host_id = rs.getString("host_id");
-                        Array busiest_listings = rs.getArray("busiest_listings");
-                        builder.append("Host id : " + host_id + ", Busiest listings : " + busiest_listings.toString());
+                        String neighbourhood = rs.getString("neighbourhood");
+                        Array top_amenities = rs.getArray("top_amenities");
+                        builder.append("Neighbourhood : " + neighbourhood + ", Top amenities : " + top_amenities.toString());
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -2483,201 +2434,160 @@ public class Main extends Application {
                     System.exit(0);
                 }
                 String string = builder.toString();
-                result_predefined_queries.setText(string);
+                result_predefined_queries_2.setText(string);
             }
         });
 
-//        query8.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override public void handle(ActionEvent ae) {
-//                StringBuilder builder = new StringBuilder();
-//                Connection c = null;
-//                Statement stmt = null;
-//                try {
-//                    Class.forName("org.postgresql.Driver");
-//                    c = DriverManager
-//                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
-//                                    "postgres", "database2019");
-//
-//                    c.setAutoCommit(false);
-//
-//                    stmt = c.createStatement();
-//                    ResultSet rs = stmt.executeQuery( "\n" +
-//                            "SELECT madridPricing.avgMadrid - berlinPricing.avgBerlin\n" +
-//                            "FROM (SELECT AVG(c.price) AS  avgMadrid\n" +
-//                            "      FROM calendars c,\n" +
-//                            "           houses h,\n" +
-//                            "           locations l\n" +
-//                            "      WHERE h.beds = 8\n" +
-//                            "        AND l.city LIKE '%Madrid%'\n" +
-//                            "        AND l.id_listing = h.id_listing\n" +
-//                            "        AND c.id_listing = h.id_listing\n" +
-//                            "    )madridPricing ,\n" +
-//                            "     (SELECT AVG(c.price) AS avgBerlin\n" +
-//                            "      FROM calendars c,\n" +
-//                            "           houses h,\n" +
-//                            "           locations l\n" +
-//                            "      WHERE h.beds = 8\n" +
-//                            "        AND l.city LIKE '%Berlin%'\n" +
-//                            "        AND l.id_listing = h.id_listing\n" +
-//                            "        AND c.id_listing = h.id_listing\n" +
-//                            "    )berlinPricing LIMIT 50;" );
-//                    while ( rs.next() ) {
-//                        int avg_price = rs.getInt(1);
-//                        builder.append( "Average pricing : " + avg_price);
-//                        builder.append(System.lineSeparator());
-//                    }
-//                    rs.close();
-//                    stmt.close();
-//                    c.close();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.err.println(e.getClass().getName()+": "+e.getMessage());
-//                    System.exit(0);
-//                }
-//                String string = builder.toString();
-//                result_predefined_queries.setText(string);
-//            }
-//        });
-//
-//        query9.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override public void handle(ActionEvent ae) {
-//                StringBuilder builder = new StringBuilder();
-//                Connection c = null;
-//                Statement stmt = null;
-//                try {
-//                    Class.forName("org.postgresql.Driver");
-//                    c = DriverManager
-//                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
-//                                    "postgres", "database2019");
-//
-//                    c.setAutoCommit(false);
-//
-//                    stmt = c.createStatement();
-//                    ResultSet rs = stmt.executeQuery( "SELECT u.id_user, u.user_name\n" +
-//                            "  FROM users u,\n" +
-//                            "       (SELECT l.host_id as id\n" +
-//                            "  FROM listings l\n" +
-//                            "  GROUP BY l.host_id\n" +
-//                            "  HAVING COUNT(*) = 1\n" +
-//                            "  )h\n" +
-//                            "  WHERE u.id_user = h.id;\n" +
-//                            "\n" +
-//                            "  SELECT(u.id_user, u.name)\n" +
-//                            "  FROM users u\n" +
-//                            "       INNER JOIN (SELECT id_user, count(id_user) as cnt\n" +
-//                            "                       FROM hosts\n" +
-//                            "                      GROUP BY id_user) cou ON u.id_user = cou.id_user\n" +
-//                            "                      ORDER BY cnt DESC\n" +
-//                            "                      LIMIT 10;" );
-//                    while ( rs.next() ) {
-//                        int id_user = rs.getInt("id_user");
-//                        String user_name = rs.getString("user_name");
-//                        builder.append( "User name : " + user_name + " : Id user : " + id_user);
-//                        builder.append(System.lineSeparator());
-//                    }
-//                    rs.close();
-//                    stmt.close();
-//                    c.close();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.err.println(e.getClass().getName()+": "+e.getMessage());
-//                    System.exit(0);
-//                }
-//                String string = builder.toString();
-//                result_predefined_queries.setText(string);
-//            }
-//        });
-//
-//        query9.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override public void handle(ActionEvent ae) {
-//                StringBuilder builder = new StringBuilder();
-//                Connection c = null;
-//                Statement stmt = null;
-//                try {
-//                    Class.forName("org.postgresql.Driver");
-//                    c = DriverManager
-//                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
-//                                    "postgres", "database2019");
-//
-//                    c.setAutoCommit(false);
-//
-//                    stmt = c.createStatement();
-//                    ResultSet rs = stmt.executeQuery( "SELECT u.id_user, u.user_name\n" +
-//                            "  FROM users u,\n" +
-//                            "       (SELECT l.host_id as id\n" +
-//                            "  FROM listings l\n" +
-//                            "  GROUP BY l.host_id\n" +
-//                            "  HAVING COUNT(*) = 1\n" +
-//                            "  )h\n" +
-//                            "  WHERE u.id_user = h.id;\n" +
-//                            "\n" +
-//                            "  SELECT(u.id_user, u.name)\n" +
-//                            "  FROM users u\n" +
-//                            "       INNER JOIN (SELECT id_user, count(id_user) as cnt\n" +
-//                            "                       FROM hosts\n" +
-//                            "                      GROUP BY id_user) cou ON u.id_user = cou.id_user\n" +
-//                            "                      ORDER BY cnt DESC\n" +
-//                            "                      LIMIT 10;" );
-//                    while ( rs.next() ) {
-//                        int id_user = rs.getInt("id_user");
-//                        String user_name = rs.getString("user_name");
-//                        builder.append( "User name : " + user_name + " : Id user : " + id_user);
-//                        builder.append(System.lineSeparator());
-//                    }
-//                    rs.close();
-//                    stmt.close();
-//                    c.close();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.err.println(e.getClass().getName()+": "+e.getMessage());
-//                    System.exit(0);
-//                }
-//                String string = builder.toString();
-//                result_predefined_queries.setText(string);
-//            }
-//        });
-//
+        query28.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                Statement stmt = null;
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    c = DriverManager
+                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                    "postgres", "database2019");
 
-//        query10.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override public void handle(ActionEvent ae) {
-//                StringBuilder builder = new StringBuilder();
-//                Connection c = null;
-//                Statement stmt = null;
-//                try {
-//                    Class.forName("org.postgresql.Driver");
-//                    c = DriverManager
-//                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
-//                                    "postgres", "database2019");
-//
-//                    c.setAutoCommit(false);
-//
-//                    stmt = c.createStatement();
-//                    ResultSet rs = stmt.executeQuery( " SELECT (l.id_listing, l.name_listing)\n" +
-//                            "  FROM listings l\n" +
-//                            "       RIGHT JOIN (SELECT id_listing FROM review_scores rs) s ON l.id_listing = s.id_listing\n" +
-//                            "          INNER JOIN (SELECT id_listing, count(id_listing) as cnt\n" +
-//                            "                      FROM review_scores rs\n" +
-//                            "                      GROUP BY id_listing) cou ON l.id_listing = cou.id_listing\n" +
-//                            "                      ORDER BY cnt DESC\n" +
-//                            "                      LIMIT 10;" );
-//                    while ( rs.next() ) {
-//                        int id_listing = rs.getInt("id_listing");
-//                        String name_listing = rs.getString("name_listing");
-//                        builder.append( "User name : " + name_listing + " : Id user : " + id_listing);
-//                        builder.append(System.lineSeparator());
-//                    }
-//                    rs.close();
-//                    stmt.close();
-//                    c.close();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.err.println(e.getClass().getName()+": "+e.getMessage());
-//                    System.exit(0);
-//                }
-//                String string = builder.toString();
-//                result_predefined_queries.setText(string);
-//            }
-//        });
+                    c.setAutoCommit(false);
+
+                    stmt = c.createStatement();
+                    ResultSet rs = stmt.executeQuery( "WITH user_cnt AS(\n" +
+                            "SELECT user_id, COUNT(DISTINCT verification_type)as cnt, AVG(communication) average\n" +
+                            "FROM listings l\n" +
+                            "LEFT JOIN has_verifications h ON l.host_id=h.user_id\n" +
+                            "RIGHT JOIN review_scores rs ON rs.communication IS NOT NULL AND rs.id_listing=l.id_listing\n" +
+                            "GROUP BY user_id\n" +
+                            "HAVING AVG(communication) IS NOT NULL\n" +
+                            "),\n" +
+                            "most AS(\n" +
+                            "SELECT *\n" +
+                            "FROM user_cnt\n" +
+                            "ORDER BY cnt DESC LIMIT 1\n" +
+                            "),\n" +
+                            "smallest AS(\n" +
+                            "SELECT *\n" +
+                            "FROM user_cnt\n" +
+                            "ORDER BY cnt ASC LIMIT 1\n" +
+                            ")\n" +
+                            "\n" +
+                            "SELECT (most.average - smallest.average)difference\n" +
+                            "from most, smallest\n" );
+                    builder.append( "Result : ");
+                    builder.append(System.lineSeparator());
+                    while ( rs.next() ) {
+                        int avg_price = rs.getInt(1);
+                        builder.append( "Average pricing : " + avg_price);
+                        builder.append(System.lineSeparator());
+                    }
+                    rs.close();
+                    stmt.close();
+                    c.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println(e.getClass().getName()+": "+e.getMessage());
+                    System.exit(0);
+                }
+                String string = builder.toString();
+                result_predefined_queries_2.setText(string);
+            }
+        });
+
+        query29.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                Statement stmt = null;
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    c = DriverManager
+                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                    "postgres", "database2019");
+
+                    c.setAutoCommit(false);
+
+                    stmt = c.createStatement();
+                    ResultSet rs = stmt.executeQuery( "SELECT c_s.city city\n" +
+                            "FROM(SELECT c_nbr.city city, SUM(c_nbr.nb_reviews) s\n" +
+                            "FROM (SELECT c_nbr_rt.city city, c_nbr_rt.nb_reviews nb_reviews\n" +
+                            "FROM (SELECT l.city city, idl_nbr.nb_reviews nb_reviews, r.room_type room_type\n" +
+                            "FROM locations l, room_type r, \n" +
+                            "(SELECT r.id_listing id_listing, COUNT(r.id_review) nb_reviews\n" +
+                            "FROM reviews r\n" +
+                            "GROUP BY r.id_listing)idl_nbr\n" +
+                            "WHERE idl_nbr.id_listing=l.id_listing AND l.id_listing=r.id_listing)c_nbr_rt, \n" +
+                            "(SELECT rt_a.room_type room_type, AVG(rt_a.acc) av\n" +
+                            "FROM (SELECT r.room_type room_type, h.accommodates acc\n" +
+                            "FROM houses h, room_type r\n" +
+                            "WHERE h.id_listing=r.id_listing) rt_a\n" +
+                            "GROUP BY rt_a.room_type)rt_av\n" +
+                            "WHERE c_nbr_rt.room_type=rt_av.room_type  and rt_av.av > 3)c_nbr\n" +
+                            "GROUP BY c_nbr.city) c_s\n" +
+                            "ORDER BY c_s.s DESC LIMIT 1;\n" );
+                    while ( rs.next() ) {
+                        String city = rs.getString("city");
+                        builder.append( "Result : " + city);
+                        builder.append(System.lineSeparator());
+                    }
+                    rs.close();
+                    stmt.close();
+                    c.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println(e.getClass().getName()+": "+e.getMessage());
+                    System.exit(0);
+                }
+                String string = builder.toString();
+                result_predefined_queries_2.setText(string);
+            }
+        });
+
+        query210.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                Statement stmt = null;
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    c = DriverManager
+                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                    "postgres", "database2019");
+
+                    c.setAutoCommit(false);
+
+                    stmt = c.createStatement();
+                    ResultSet rs = stmt.executeQuery( " SELECT q.neighbourhood    \n" +
+                            "  FROM (SELECT h.neighbourhood, (COUNT(CASE WHEN NOT c.available THEN 1 END)*100)/count(*) percentage   \n" +
+                            "           FROM houses h  \n" +
+                            "     INNER JOIN listings list ON list.id_listing = h.id_listing\n" +
+                            "INNER JOIN (SELECT h.id_user AS id_user, h.since FROM hosts h WHERE since <='01.06.2017' ) hosts\n" +
+                            " ON list.host_id = hosts.id_user  \n" +
+                            " INNER JOIN (SELECT l.id_listing FROM locations l WHERE l.city = 'Madrid')l ON l.id_listing = h.id_listing   \n" +
+                            "      INNER JOIN (SELECT ca.id_listing AS id_listing, bool_and(ca.available) AS available  \n" +
+                            "                       FROM calendars ca  \n" +
+                            "                       WHERE extract(year from ca.calendar_date)=2019 GROUP BY id_listing)c \n" +
+                            "ON c.id_listing = h.id_listing  \n" +
+                            "  GROUP BY h.neighbourhood)q  \n" +
+                            "  WHERE q.percentage>=50;\n" );
+                    builder.append( "Result : ");
+                    builder.append(System.lineSeparator());
+                    while ( rs.next() ) {
+                        String neighbourhood = rs.getString("neighbourhood");
+                        builder.append(neighbourhood);
+                        builder.append(System.lineSeparator());
+                    }
+                    rs.close();
+                    stmt.close();
+                    c.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println(e.getClass().getName()+": "+e.getMessage());
+                    System.exit(0);
+                }
+                String string = builder.toString();
+                result_predefined_queries_2.setText(string);
+            }
+        });
     }
 
     public static void main(String[] args) {
