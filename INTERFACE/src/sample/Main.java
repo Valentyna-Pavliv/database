@@ -43,9 +43,6 @@ public class Main extends Application {
                 "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type");
         table_selection_search.setItems(table_name);
 
-        // Search argument
-//        String r = search_bar.getPromptText();
-
         // Search button
         search_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
@@ -69,9 +66,9 @@ public class Main extends Application {
                             case "has_verifications": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM has_verifications x\n" +
-                                        "                WHERE x.verification_type = ? OR x.user_id = ?;";
+                                        "                WHERE x.verification_type LIKE ? OR x.user_id = ?;";
                                 stmt = c.prepareStatement(selectStatement);
-                                stmt.setObject(1, search_bar.getText());
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
                                 try {
                                     foo = Integer.parseInt(search_bar.getText());
@@ -90,6 +87,95 @@ public class Main extends Application {
                                     String verification_type = rs.getString("verification_type");
                                     int user_id = rs.getInt("user_id");
                                     builder.append("Verification type : " + verification_type + ", User id : " + user_id);
+                                    builder.append(System.lineSeparator());
+                                }
+                                break;
+                            }
+
+                            case "verifications": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM verifications x\n" +
+                                        "                WHERE x.verification_type LIKE ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+                                builder.append("Result :");
+                                builder.append(System.lineSeparator());
+                                while (rs.next()) {
+                                    String verification_type = rs.getString("verification_type");
+                                    builder.append("Verification type : " + verification_type);
+                                    builder.append(System.lineSeparator());
+                                }
+                                break;
+                            }
+
+                            case "response_time": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM response_time x\n" +
+                                        "                WHERE x.response_time LIKE ? OR x.host_id = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+                                builder.append("Result :");
+                                builder.append(System.lineSeparator());
+                                while (rs.next()) {
+                                    String response_time = rs.getString("response_time");
+                                    int host_id = rs.getInt("host_id");
+                                    builder.append("Response time : " + response_time + ", Host id : " + host_id);
+                                    builder.append(System.lineSeparator());
+                                }
+                                break;
+                            }
+
+                            case "hosts": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM hosts x\n" +
+                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+                                stmt.setObject(3, '%'+search_bar.getText()+'%');
+                                stmt.setObject(4, '%'+search_bar.getText()+'%');
+                                stmt.setObject(5, '%'+search_bar.getText()+'%');
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+                                builder.append("Result :");
+                                builder.append(System.lineSeparator());
+                                int counter = 1;
+                                while (rs.next()) {
+                                    builder.append("Entry " + counter + " : ");
+                                    String url = rs.getString("url");
+                                    int id_user = rs.getInt("id_user");
+                                    String since = rs.getString("since");
+                                    String about = rs.getString("about");
+                                    String thumbnail_url = rs.getString("thumbnail_url");
+                                    builder.append("Url : " + url);
+                                    builder.append("User id : " + id_user);
+                                    builder.append("Since : " + since);
+                                    builder.append("About : " + about);
+                                    builder.append("Thumbnail_url : " + thumbnail_url);
                                     builder.append(System.lineSeparator());
                                 }
                                 break;
