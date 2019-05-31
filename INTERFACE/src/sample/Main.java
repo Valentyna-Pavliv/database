@@ -50,6 +50,9 @@ public class Main extends Application {
         Text text8_insdel = (Text) scene.lookup("#text8_insdel");
         Text text9_insdel = (Text) scene.lookup("#text9_insdel");
         Text text10_insdel = (Text) scene.lookup("#text10_insdel");
+        Text text11_insdel = (Text) scene.lookup("#text11_insdel");
+        Text text12_insdel = (Text) scene.lookup("#text12_insdel");
+        Text text13_insdel = (Text) scene.lookup("#text13_insdel");
         TextField input1_insdel = (TextField) scene.lookup("#input1_insdel");
         TextField input2_insdel = (TextField) scene.lookup("#input2_insdel");
         TextField input3_insdel = (TextField) scene.lookup("#input3_insdel");
@@ -60,6 +63,9 @@ public class Main extends Application {
         TextField input8_insdel = (TextField) scene.lookup("#input8_insdel");
         TextField input9_insdel = (TextField) scene.lookup("#input9_insdel");
         TextField input10_insdel = (TextField) scene.lookup("#input10_insdel");
+        TextField input11_insdel = (TextField) scene.lookup("#input11_insdel");
+        TextField input12_insdel = (TextField) scene.lookup("#input12_insdel");
+        TextField input13_insdel = (TextField) scene.lookup("#input13_insdel");
 
         // Selection box
         choicebox_insdel.setItems(table_name);
@@ -78,11 +84,14 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "verifications" :  {
                         text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text2_insdel.setText("unused :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -91,11 +100,14 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "response_time" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text1_insdel.setText("response time :");
+                        text2_insdel.setText("host id :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -104,37 +116,46 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "hosts" :  {
-                        text1_insdel.setText("verification type :");
+                        text1_insdel.setText("url :");
                         text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
+                        text3_insdel.setText("since :");
+                        text4_insdel.setText("about :");
+                        text5_insdel.setText("thumbnail url :");
                         text6_insdel.setText("unused :");
                         text7_insdel.setText("unused :");
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "review_scores" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
-                        text6_insdel.setText("unused :");
-                        text7_insdel.setText("unused :");
-                        text8_insdel.setText("unused :");
+                        text1_insdel.setText("value :");
+                        text2_insdel.setText("listing id :");
+                        text3_insdel.setText("checking :");
+                        text4_insdel.setText("rating :");
+                        text5_insdel.setText("location :");
+                        text6_insdel.setText("accuracy:");
+                        text7_insdel.setText("communication :");
+                        text8_insdel.setText("cleanliness :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "users" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text1_insdel.setText("user id :");
+                        text2_insdel.setText("user name :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -143,10 +164,13 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "amenities" :  {
-                        text1_insdel.setText("verification type :");
+                        text1_insdel.setText("amenity type :");
                         text2_insdel.setText("user id :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
@@ -156,11 +180,14 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "has_amenites" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text1_insdel.setText("amenity type :");
+                        text2_insdel.setText("listing id :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -169,89 +196,110 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "listings" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
-                        text6_insdel.setText("unused :");
-                        text7_insdel.setText("unused :");
-                        text8_insdel.setText("unused :");
-                        text9_insdel.setText("unused :");
-                        text10_insdel.setText("unused :");
+                        text1_insdel.setText("listing id :");
+                        text2_insdel.setText("listing name :");
+                        text3_insdel.setText("url :");
+                        text4_insdel.setText("space :");
+                        text5_insdel.setText("interaction :");
+                        text6_insdel.setText("notes :");
+                        text7_insdel.setText("picture url :");
+                        text8_insdel.setText("description :");
+                        text9_insdel.setText("neighbourhood overview :");
+                        text10_insdel.setText("summary :");
+                        text11_insdel.setText("transit :");
+                        text12_insdel.setText("listing access :");
+                        text13_insdel.setText("host id :");
                         break;
                     }
                     case "reviews" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
+                        text1_insdel.setText("review id :");
+                        text2_insdel.setText("listing id :");
+                        text3_insdel.setText("reviewer id :");
+                        text4_insdel.setText("review date :");
+                        text5_insdel.setText("review comment :");
                         text6_insdel.setText("unused :");
                         text7_insdel.setText("unused :");
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "booking_polices" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
-                        text6_insdel.setText("unused :");
-                        text7_insdel.setText("unused :");
-                        text8_insdel.setText("unused :");
+                        text1_insdel.setText("listing id :");
+                        text2_insdel.setText("extra people :");
+                        text3_insdel.setText("business travel ready :");
+                        text4_insdel.setText("require guest profile picture :");
+                        text5_insdel.setText("require guest phone verification :");
+                        text6_insdel.setText("maximum night :");
+                        text7_insdel.setText("minimum night :");
+                        text8_insdel.setText("guest included :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "calendars" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
-                        text6_insdel.setText("unused :");
-                        text7_insdel.setText("unused :");
-                        text8_insdel.setText("unused :");
-                        text9_insdel.setText("unused :");
+                        text1_insdel.setText("calendar date :");
+                        text2_insdel.setText("listing id :");
+                        text3_insdel.setText("available :");
+                        text4_insdel.setText("price :");
+                        text5_insdel.setText("daily price :");
+                        text6_insdel.setText("weekly price :");
+                        text7_insdel.setText("monthly price :");
+                        text8_insdel.setText("cleaning fee :");
+                        text9_insdel.setText("security deposit :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "locations" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
-                        text6_insdel.setText("unused :");
+                        text1_insdel.setText("latitude :");
+                        text2_insdel.setText("longitude :");
+                        text3_insdel.setText("listing id :");
+                        text4_insdel.setText("country :");
+                        text5_insdel.setText("country code :");
+                        text6_insdel.setText("city :");
                         text7_insdel.setText("unused :");
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "houses" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
-                        text3_insdel.setText("unused :");
-                        text4_insdel.setText("unused :");
-                        text5_insdel.setText("unused :");
-                        text6_insdel.setText("unused :");
-                        text7_insdel.setText("unused :");
-                        text8_insdel.setText("unused :");
-                        text9_insdel.setText("unused :");
+                        text1_insdel.setText("neighbourhood :");
+                        text2_insdel.setText("listing id :");
+                        text3_insdel.setText("beds :");
+                        text4_insdel.setText("space :");
+                        text5_insdel.setText("house rules :");
+                        text6_insdel.setText("accomodates :");
+                        text7_insdel.setText("square feet :");
+                        text8_insdel.setText("bathrooms :");
+                        text9_insdel.setText("bedrooms :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "property" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text1_insdel.setText("listing id :");
+                        text2_insdel.setText("property type :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -260,11 +308,14 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "room_type" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text1_insdel.setText("listing id :");
+                        text2_insdel.setText("room type :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -273,11 +324,14 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                     case "bed_type" :  {
-                        text1_insdel.setText("verification type :");
-                        text2_insdel.setText("user id :");
+                        text1_insdel.setText("listing id :");
+                        text2_insdel.setText("bed type :");
                         text3_insdel.setText("unused :");
                         text4_insdel.setText("unused :");
                         text5_insdel.setText("unused :");
@@ -286,6 +340,9 @@ public class Main extends Application {
                         text8_insdel.setText("unused :");
                         text9_insdel.setText("unused :");
                         text10_insdel.setText("unused :");
+                        text11_insdel.setText("unused :");
+                        text12_insdel.setText("unused :");
+                        text13_insdel.setText("unused :");
                         break;
                     }
                 }

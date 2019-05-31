@@ -102,6 +102,12 @@
                               <Text id="text8_insdel" layoutX="14.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                               <Text id="text9_insdel" layoutX="14.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                               <Text id="text10_insdel" layoutX="14.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <TextField id="input11_insdel" layoutX="322.0" layoutY="273.0" prefWidth="405.0" />
+                              <TextField id="input12_insdel" layoutX="322.0" layoutY="299.0" prefWidth="405.0" />
+                              <TextField id="input13_insdel" layoutX="322.0" layoutY="325.0" prefWidth="405.0" />
+                              <Text id="text11_insdel" layoutX="14.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text12_insdel" layoutX="14.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text13_insdel" layoutX="14.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                            </children>
                         </AnchorPane>
                      </children>
