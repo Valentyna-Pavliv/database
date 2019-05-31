@@ -239,6 +239,174 @@ public class Main extends Application {
             }
         });
 
+        // Delete button
+        delete_button_insdel.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                PreparedStatement stmt = null;
+                if (choicebox_insdel.getValue() == null) {
+                    error_message_insdel.setText("Please select a table !");
+                }
+                else {
+                    try {
+                        Class.forName("org.postgresql.Driver");
+                        c = DriverManager
+                                .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                        "postgres", "database2019");
+
+                        c.setAutoCommit(false);
+
+                        ResultSet rs = null;
+                        switch ((String) choicebox_insdel.getValue()) {
+                            case "has_verifications": {
+                                String selectStatement = "DELETE FROM has_verifications WHERE verification_type = ? AND user_id = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input2_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for input user id");
+                                    break;
+                                }
+                                stmt.setObject(2, foo);
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Deletion done !");
+                                break;
+                            }
+
+                            case "verifications": {
+                                String selectStatement = "DELETE FROM verifications WHERE verification_type = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Deletion done !");
+                                break;
+                            }
+//
+//                            case "response_time": {
+//                                String selectStatement = "SELECT *\n" +
+//                                        "                FROM response_time x\n" +
+//                                        "                WHERE x.response_time LIKE ? OR x.host_id = ?;";
+//                                stmt = c.prepareStatement(selectStatement);
+//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+//                                int foo;
+//                                try {
+//                                    foo = Integer.parseInt(search_bar.getText());
+//                                }
+//                                catch (NumberFormatException e)
+//                                {
+//                                    foo = 0;
+//                                }
+//                                stmt.setObject(2, foo);
+//
+//                                stmt.execute();
+//                                rs = stmt.getResultSet();
+//                                builder.append("Result :");
+//                                builder.append(System.lineSeparator());
+//                                while (rs.next()) {
+//                                    String response_time = rs.getString("response_time");
+//                                    int host_id = rs.getInt("host_id");
+//                                    builder.append("Response time : " + response_time + ", Host id : " + host_id);
+//                                    builder.append(System.lineSeparator());
+//                                }
+//                                break;
+//                            }
+//
+//                            case "hosts": {
+//                                String selectStatement = "SELECT *\n" +
+//                                        "                FROM hosts x\n" +
+//                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
+//                                stmt = c.prepareStatement(selectStatement);
+//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+//                                int foo;
+//                                try {
+//                                    foo = Integer.parseInt(search_bar.getText());
+//                                }
+//                                catch (NumberFormatException e)
+//                                {
+//                                    foo = 0;
+//                                }
+//                                stmt.setObject(2, foo);
+//                                Date date = null;
+//                                try {
+//                                    date = (Date) Date.valueOf(search_bar.getText());
+//                                }
+//                                catch (Exception e){
+//                                    date = new Date(System.currentTimeMillis());
+//                                }
+//                                stmt.setDate(3, date);
+//                                stmt.setObject(4, '%'+search_bar.getText()+'%');
+//                                stmt.setObject(5, '%'+search_bar.getText()+'%');
+//
+//                                stmt.execute();
+//                                rs = stmt.getResultSet();
+//                                builder.append("Result :");
+//                                builder.append(System.lineSeparator());
+//                                int counter = 1;
+//                                while (rs.next()) {
+//                                    builder.append("Entry " + counter + " : ");
+//                                    builder.append(System.lineSeparator());
+//                                    String url = rs.getString("url");
+//                                    int id_user = rs.getInt("id_user");
+//                                    String since = rs.getString("since");
+//                                    String about = rs.getString("about");
+//                                    String thumbnail_url = rs.getString("thumbnail_url");
+//                                    builder.append("Url : " + url);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("User id : " + id_user);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("Since : " + since);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("About : " + about);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("Thumbnail_url : " + thumbnail_url);
+//                                    builder.append(System.lineSeparator());
+//                                    counter++;
+//                                }
+//                                break;
+//                            }
+                        }
+                        if(rs != null) {
+                            rs.close();
+                        }
+                        if (stmt != null){
+                            stmt.close();
+                        }
+                        if (c != null){
+                            c.commit();
+                            c.close();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                        System.exit(0);
+                    }
+                }
+                String string = builder.toString();
+//                result_search_queries.setText(string);
+            }
+        });
+
         // Selection box
         choicebox_insdel.setItems(table_name);
         choicebox_insdel.setOnAction(new EventHandler<ActionEvent>(){
