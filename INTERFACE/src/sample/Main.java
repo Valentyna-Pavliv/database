@@ -142,7 +142,8 @@ public class Main extends Application {
                                 }
                                 catch (NumberFormatException e)
                                 {
-                                    foo = 0;
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
                                 }
                                 stmt.setObject(2, foo);
 
@@ -168,7 +169,8 @@ public class Main extends Application {
                                 }
                                 catch (NumberFormatException e)
                                 {
-                                    foo = 0;
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
                                 }
                                 stmt.setObject(2, foo);
                                 Date date = null;
@@ -194,6 +196,342 @@ public class Main extends Application {
                                 error_message_insdel.setText("Insertion done !");
                                 break;
                             }
+                            case "review_scores": {
+                                String selectStatement = "INSERT INTO review_scores VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                try {
+                                    stmt.setObject(1, Integer.parseInt(input1_insdel.getText()));
+                                    stmt.setObject(2, Integer.parseInt(input2_insdel.getText()));
+                                    stmt.setObject(3, Integer.parseInt(input3_insdel.getText()));
+                                    stmt.setObject(4, Integer.parseInt(input4_insdel.getText()));
+                                    stmt.setObject(5, Integer.parseInt(input5_insdel.getText()));
+                                    stmt.setObject(6, Integer.parseInt(input6_insdel.getText()));
+                                    stmt.setObject(7, Integer.parseInt(input7_insdel.getText()));
+                                    stmt.setObject(8, Integer.parseInt(input8_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "users": {
+                                String selectStatement = "INSERT INTO users VALUES (?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input1_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+                                stmt.setObject(1, foo);
+                                stmt.setObject(2, input2_insdel.getText());
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "amenities": {
+                                String selectStatement = "INSERT INTO amenities VALUES (?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "has_amenites": {
+                                String selectStatement = "INSERT INTO has_amenites VALUES (?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input2_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for input user id");
+                                    break;
+                                }
+                                stmt.setObject(2, foo);
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "listings": {
+                                String selectStatement = "INSERT INTO listings VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(input1_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for input user id");
+                                    break;
+                                }
+                                stmt.setObject(1, foo);
+                                stmt.setObject(2, input2_insdel.getText());
+                                stmt.setObject(3, input3_insdel.getText());
+                                stmt.setObject(4, input4_insdel.getText());
+                                stmt.setObject(5, input5_insdel.getText());
+                                stmt.setObject(6, input6_insdel.getText());
+                                stmt.setObject(7, input7_insdel.getText());
+                                stmt.setObject(8, input8_insdel.getText());
+                                stmt.setObject(9, input9_insdel.getText());
+                                stmt.setObject(10, input10_insdel.getText());
+                                stmt.setObject(11, input11_insdel.getText());
+                                try {
+                                    foo = Integer.parseInt(input12_insdel.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for input user id");
+                                    break;
+                                }
+                                stmt.setObject(12, foo);
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "reviews": {
+                                String selectStatement = "INSERT INTO reviews VALUES (?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                try {
+                                    stmt.setObject(1, Integer.parseInt(input1_insdel.getText()));
+                                    stmt.setObject(2, Integer.parseInt(input2_insdel.getText()));
+                                    stmt.setObject(3, Integer.parseInt(input3_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(input4_insdel.getText());
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText("Wrong format for input date !");
+                                    break;
+                                }
+                                stmt.setDate(4, date);
+                                stmt.setObject(5, input5_insdel.getText());
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "booking_polices": {
+                                String selectStatement = "INSERT INTO booking_polices VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                try {
+                                    stmt.setObject(1, Integer.parseInt(input1_insdel.getText()));
+                                    stmt.setObject(2, Integer.parseInt(input2_insdel.getText()));
+                                    stmt.setObject(6, Integer.parseInt(input6_insdel.getText()));
+                                    stmt.setObject(7, Integer.parseInt(input7_insdel.getText()));
+                                    stmt.setObject(8, Integer.parseInt(input8_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+                                stmt.setObject(3, input3_insdel.getText());
+                                stmt.setObject(4, input4_insdel.getText());
+                                stmt.setObject(5, input5_insdel.getText());
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "calendars": {
+                                String selectStatement = "INSERT INTO calendars VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(input1_insdel.getText());
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText("Wrong format for input date !");
+                                    break;
+                                }
+                                stmt.setDate(1, date);
+                                stmt.setObject(3, input3_insdel.getText());
+                                try {
+                                    stmt.setObject(2, Integer.parseInt(input2_insdel.getText()));
+                                    stmt.setObject(4, Integer.parseInt(input4_insdel.getText()));
+                                    stmt.setObject(5, Integer.parseInt(input5_insdel.getText()));
+                                    stmt.setObject(6, Integer.parseInt(input6_insdel.getText()));
+                                    stmt.setObject(7, Integer.parseInt(input7_insdel.getText()));
+                                    stmt.setObject(8, Integer.parseInt(input8_insdel.getText()));
+                                    stmt.setObject(9, Integer.parseInt(input9_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "locations": {
+                                String selectStatement = "INSERT INTO locations VALUES (?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(4, input4_insdel.getText());
+                                stmt.setObject(5, input5_insdel.getText());
+                                stmt.setObject(6, input6_insdel.getText());
+                                try {
+                                    stmt.setObject(1, Float.parseFloat(input1_insdel.getText()));
+                                    stmt.setObject(2, Float.parseFloat(input2_insdel.getText()));
+                                    stmt.setObject(3, Integer.parseInt(input3_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "houses": {
+                                String selectStatement = "INSERT INTO houses VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(3, input3_insdel.getText());
+                                stmt.setObject(4, input4_insdel.getText());
+                                try {
+                                    stmt.setObject(1, Float.parseFloat(input1_insdel.getText()));
+                                    stmt.setObject(2, Float.parseFloat(input2_insdel.getText()));
+                                    stmt.setObject(5, Integer.parseInt(input5_insdel.getText()));
+                                    stmt.setObject(6, Float.parseFloat(input6_insdel.getText()));
+                                    stmt.setObject(7, Float.parseFloat(input7_insdel.getText()));
+                                    stmt.setObject(8, Float.parseFloat(input8_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "houses": {
+                                String selectStatement = "INSERT INTO houses VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(3, input3_insdel.getText());
+                                stmt.setObject(4, input4_insdel.getText());
+                                try {
+                                    stmt.setObject(1, Float.parseFloat(input1_insdel.getText()));
+                                    stmt.setObject(2, Float.parseFloat(input2_insdel.getText()));
+                                    stmt.setObject(5, Integer.parseInt(input5_insdel.getText()));
+                                    stmt.setObject(6, Float.parseFloat(input6_insdel.getText()));
+                                    stmt.setObject(7, Float.parseFloat(input7_insdel.getText()));
+                                    stmt.setObject(8, Float.parseFloat(input8_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
+
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+
+
+
+
+
+
+                           //   "houses", "property", "cancellation_policy", "room_type", "bed_type"
                         }
                         if(rs != null) {
                             rs.close();
@@ -497,16 +835,15 @@ public class Main extends Application {
                         text1_insdel.setText("listing id :");
                         text2_insdel.setText("listing name :");
                         text3_insdel.setText("url :");
-                        text4_insdel.setText("space :");
-                        text5_insdel.setText("interaction :");
-                        text6_insdel.setText("notes :");
-                        text7_insdel.setText("picture url :");
-                        text8_insdel.setText("description :");
-                        text9_insdel.setText("neighbourhood overview :");
-                        text10_insdel.setText("summary :");
-                        text11_insdel.setText("transit :");
-                        text12_insdel.setText("listing access :");
-                        text13_insdel.setText("host id :");
+                        text4_insdel.setText("interaction :");
+                        text5_insdel.setText("notes :");
+                        text6_insdel.setText("picture url :");
+                        text7_insdel.setText("description :");
+                        text8_insdel.setText("neighbourhood overview :");
+                        text9_insdel.setText("summary :");
+                        text10_insdel.setText("transit :");
+                        text11_insdel.setText("listing access :");
+                        text12_insdel.setText("host id :");
                         break;
                     }
                     case "reviews" :  {
@@ -801,60 +1138,59 @@ public class Main extends Application {
                                 }
                                 break;
                             }
-                            // TODO: finsih search
-//                            case "review_scores": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM hosts x\n" +
-//                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-//                                int foo;
-//                                try {
-//                                    foo = Integer.parseInt(search_bar.getText());
-//                                }
-//                                catch (NumberFormatException e)
-//                                {
-//                                    foo = 0;
-//                                }
-//                                stmt.setObject(2, foo);
-//                                Date date = null;
-//                                try {
-//                                    date = (Date) Date.valueOf(search_bar.getText());
-//                                }
-//                                catch (Exception e){
-//                                    date = new Date(System.currentTimeMillis());
-//                                }
-//                                stmt.setDate(3, date);
-//                                stmt.setObject(4, '%'+search_bar.getText()+'%');
-//                                stmt.setObject(5, '%'+search_bar.getText()+'%');
-//
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                int counter = 1;
-//                                while (rs.next()) {
-//                                    builder.append("Entry " + counter + " : ");
-//                                    builder.append(System.lineSeparator());
-//                                    String url = rs.getString("url");
-//                                    int id_user = rs.getInt("id_user");
-//                                    String since = rs.getString("since");
-//                                    String about = rs.getString("about");
-//                                    String thumbnail_url = rs.getString("thumbnail_url");
-//                                    builder.append("Url : " + url);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("User id : " + id_user);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Since : " + since);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("About : " + about);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Thumbnail_url : " + thumbnail_url);
-//                                    builder.append(System.lineSeparator());
-//                                    counter++;
-//                                }
-//                                break;
-//                            }
+                            case "review_scores": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM review_scores x\n" +
+                                        "                WHERE x.value LIKE ? OR x.id_listing = ? OR x.checking = ? OR x.rating LIKE ? OR x.location LIKE ? LIMIT 50;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(search_bar.getText());
+                                }
+                                catch (Exception e){
+                                    date = new Date(System.currentTimeMillis());
+                                }
+                                stmt.setDate(3, date);
+                                stmt.setObject(4, '%'+search_bar.getText()+'%');
+                                stmt.setObject(5, '%'+search_bar.getText()+'%');
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+                                builder.append("Result :");
+                                builder.append(System.lineSeparator());
+                                int counter = 1;
+                                while (rs.next()) {
+                                    builder.append("Entry " + counter + " : ");
+                                    builder.append(System.lineSeparator());
+                                    String url = rs.getString("url");
+                                    int id_user = rs.getInt("id_user");
+                                    String since = rs.getString("since");
+                                    String about = rs.getString("about");
+                                    String thumbnail_url = rs.getString("thumbnail_url");
+                                    builder.append("Url : " + url);
+                                    builder.append(System.lineSeparator());
+                                    builder.append("User id : " + id_user);
+                                    builder.append(System.lineSeparator());
+                                    builder.append("Since : " + since);
+                                    builder.append(System.lineSeparator());
+                                    builder.append("About : " + about);
+                                    builder.append(System.lineSeparator());
+                                    builder.append("Thumbnail_url : " + thumbnail_url);
+                                    builder.append(System.lineSeparator());
+                                    counter++;
+                                }
+                                break;
+                            }
                         }
                         rs.close();
                         stmt.close();
