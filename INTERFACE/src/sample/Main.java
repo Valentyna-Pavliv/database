@@ -1499,13 +1499,16 @@ public class Main extends Application {
 
                                 stmt.execute();
                                 rs = stmt.getResultSet();
-                                builder.append("Result :");
-                                builder.append(System.lineSeparator());
+                                int counter = 1;
                                 while (rs.next()) {
-                                    String verification_type = rs.getString("verification_type");
                                     int user_id = rs.getInt("user_id");
-                                    builder.append("Verification type : " + verification_type + ", User id : " + user_id);
+                                    builder.append("Result " + counter + " : " + user_id);
                                     builder.append(System.lineSeparator());
+                                    String verification_type = rs.getString("verification_type");
+                                    builder.append("-> " + verification_type);
+                                    builder.append(System.lineSeparator());
+                                    builder.append(System.lineSeparator());
+                                    counter++;
                                 }
                                 break;
                             }
