@@ -31,6 +31,12 @@ public class Main extends Application {
         primaryStage.show();
 
 
+        // CONFIGURATION INSERTION DELETION
+        ChoiceBox choicebox_insdel = (ChoiceBox) scene.lookup("#choicebox_insdel");
+        Button insert_button_insdel = (Button) scene.lookup("#insert_button_insdel");
+        Button delete_button_insdel = (Button) scene.lookup("#delete_button_insdel");
+
+
         // CONFIGURATION SEARCH
         Text result_search_queries = (Text) scene.lookup("#result_search_queries");
         Button search_button = (Button) scene.lookup("#search_button");
@@ -193,6 +199,60 @@ public class Main extends Application {
                                 }
                                 break;
                             }
+                            // TODO: finsih search
+//                            case "review_scores": {
+//                                String selectStatement = "SELECT *\n" +
+//                                        "                FROM hosts x\n" +
+//                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
+//                                stmt = c.prepareStatement(selectStatement);
+//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+//                                int foo;
+//                                try {
+//                                    foo = Integer.parseInt(search_bar.getText());
+//                                }
+//                                catch (NumberFormatException e)
+//                                {
+//                                    foo = 0;
+//                                }
+//                                stmt.setObject(2, foo);
+//                                Date date = null;
+//                                try {
+//                                    date = (Date) Date.valueOf(search_bar.getText());
+//                                }
+//                                catch (Exception e){
+//                                    date = new Date(System.currentTimeMillis());
+//                                }
+//                                stmt.setDate(3, date);
+//                                stmt.setObject(4, '%'+search_bar.getText()+'%');
+//                                stmt.setObject(5, '%'+search_bar.getText()+'%');
+//
+//                                stmt.execute();
+//                                rs = stmt.getResultSet();
+//                                builder.append("Result :");
+//                                builder.append(System.lineSeparator());
+//                                int counter = 1;
+//                                while (rs.next()) {
+//                                    builder.append("Entry " + counter + " : ");
+//                                    builder.append(System.lineSeparator());
+//                                    String url = rs.getString("url");
+//                                    int id_user = rs.getInt("id_user");
+//                                    String since = rs.getString("since");
+//                                    String about = rs.getString("about");
+//                                    String thumbnail_url = rs.getString("thumbnail_url");
+//                                    builder.append("Url : " + url);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("User id : " + id_user);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("Since : " + since);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("About : " + about);
+//                                    builder.append(System.lineSeparator());
+//                                    builder.append("Thumbnail_url : " + thumbnail_url);
+//                                    builder.append(System.lineSeparator());
+//                                    counter++;
+//                                }
+//                                break;
+//                            }
                         }
                         rs.close();
                         stmt.close();
