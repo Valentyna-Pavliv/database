@@ -2105,6 +2105,7 @@ public class Main extends Application {
 
         // CONFIGURATION PREDEFINED QUERIES
         Text result_predefined_queries_2 = (Text) scene.lookup("#result_predefined_queries_2");
+        Text description_query_set_2 = (Text) scene.lookup("#description_query_set_2");
 
         Button query21 = (Button) scene.lookup("#query21");
         Button query22 = (Button) scene.lookup("#query22");
@@ -2121,6 +2122,7 @@ public class Main extends Application {
 
         query21.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Print how many hosts in each city have declared the area of their property in square meters. Sort the output based on the city name in ascending order.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2162,6 +2164,7 @@ public class Main extends Application {
 
         query22.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("The quality of a neighborhood is defined based on the number of listings and the review score of these listings, one way for computing that is using the median of the review scores, as medians are more robust to outliers. Find the top-‐5 neighborhoods using median review scores of listings in Madrid.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2204,6 +2207,7 @@ public class Main extends Application {
 
         query23.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Find all the hosts (host_ids, host_names) with the highest number of listings.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2247,6 +2251,7 @@ public class Main extends Application {
 
         query24.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Find the 5 most cheapest Apartments (based on average price within the available dates) in Berlin available between 01-‐03-‐2019 and 30-‐04-‐2019 having at least 2 beds, a location review score of at least 8, flexible cancellation, and listed by a host with a verifiable government id.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2301,6 +2306,7 @@ public class Main extends Application {
 
         query25.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Each property can accommodate different number of people (1 to 16). Find the top‐5 rated (review_score_rating) listings for each distinct category based on number of accommodated guests with at least two of these facilities: Wifi, Internet, TV, and Free street parking.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2358,6 +2364,7 @@ public class Main extends Application {
 
         query26.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("What are top three busiest listings per host? The more reviews a listing has, the busier the listing is.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2400,6 +2407,7 @@ public class Main extends Application {
 
         query27.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("What are the three most frequently used amenities at each neighborhood in Berlin for the listings with “Private Room” room type?");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2442,6 +2450,7 @@ public class Main extends Application {
 
         query28.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("What is the difference in the average communication review score of the host who has the most diverse way of verifications and of the host who has the least diverse way of verifications. In case of a multiple number of the most or the least diverse verifying hosts, pick a host one from the most and one from the least verifying hosts.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2497,6 +2506,7 @@ public class Main extends Application {
 
         query29.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("What is the city who has the highest number of reviews for the room types whose average number of accommodates are greater than 3.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2546,6 +2556,7 @@ public class Main extends Application {
 
         query210.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Print all the neighbourhoods in Madrid which had at least 50 percent of their listings occupied in 2019 and their host has joined airbnb no later than 01.06.2017.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2593,6 +2604,7 @@ public class Main extends Application {
 
         query211.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Print all the countries that at least 20% of their listings were available in 2018.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
@@ -2638,6 +2650,7 @@ public class Main extends Application {
 
         query212.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
+                description_query_set_2.setText("Print all the neighborhoods in Barcelona where more than 5 percent of their accommodation cancelation policy is strict with grace period.");
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
