@@ -44,7 +44,7 @@ public class Main extends Application {
         table_selection_search.setItems(table_name);
 
         // Search argument
-        String r = search_bar.getText();
+//        String r = search_bar.getPromptText();
 
         // Search button
         search_button.setOnAction(new EventHandler<ActionEvent>() {
@@ -53,7 +53,7 @@ public class Main extends Application {
                 Connection c = null;
                 PreparedStatement stmt = null;
                 if (table_selection_search.getValue() == null || search_bar.getText().isBlank()) {
-                    builder.append("Please select a table !");
+                    builder.append("Please select a table or fill the search bar !");
                 }
                 else {
                     try {
@@ -69,13 +69,23 @@ public class Main extends Application {
                             case "has_verifications": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM has_verifications x\n" +
-                                        "                WHERE x.verification_type = ? OR x.user_id = ? LIMIT 50;";
+                                        "                WHERE x.verification_type = ? OR x.user_id = ?;";
                                 stmt = c.prepareStatement(selectStatement);
-                                stmt.setObject(1, r);
-                                stmt.setObject(2, (int) Integer.valueOf(r));
+                                stmt.setObject(1, search_bar.getText());
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
 
                                 stmt.execute();
                                 rs = stmt.getResultSet();
+                                builder.append("Result :");
+                                builder.append(System.lineSeparator());
                                 while (rs.next()) {
                                     String verification_type = rs.getString("verification_type");
                                     int user_id = rs.getInt("user_id");
