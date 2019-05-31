@@ -143,7 +143,7 @@ public class Main extends Application {
                             case "hosts": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM hosts x\n" +
-                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ?;";
+                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
@@ -155,7 +155,14 @@ public class Main extends Application {
                                     foo = 0;
                                 }
                                 stmt.setObject(2, foo);
-                                stmt.setObject(3, '%'+search_bar.getText()+'%');
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(search_bar.getText());
+                                }
+                                catch (Exception e){
+                                    date = new Date(System.currentTimeMillis());
+                                }
+                                stmt.setDate(3, date);
                                 stmt.setObject(4, '%'+search_bar.getText()+'%');
                                 stmt.setObject(5, '%'+search_bar.getText()+'%');
 
@@ -166,17 +173,23 @@ public class Main extends Application {
                                 int counter = 1;
                                 while (rs.next()) {
                                     builder.append("Entry " + counter + " : ");
+                                    builder.append(System.lineSeparator());
                                     String url = rs.getString("url");
                                     int id_user = rs.getInt("id_user");
                                     String since = rs.getString("since");
                                     String about = rs.getString("about");
                                     String thumbnail_url = rs.getString("thumbnail_url");
                                     builder.append("Url : " + url);
+                                    builder.append(System.lineSeparator());
                                     builder.append("User id : " + id_user);
+                                    builder.append(System.lineSeparator());
                                     builder.append("Since : " + since);
+                                    builder.append(System.lineSeparator());
                                     builder.append("About : " + about);
+                                    builder.append(System.lineSeparator());
                                     builder.append("Thumbnail_url : " + thumbnail_url);
                                     builder.append(System.lineSeparator());
+                                    counter++;
                                 }
                                 break;
                             }
