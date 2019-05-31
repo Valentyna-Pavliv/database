@@ -2116,6 +2116,8 @@ public class Main extends Application {
         Button query28 = (Button) scene.lookup("#query28");
         Button query29 = (Button) scene.lookup("#query29");
         Button query210 = (Button) scene.lookup("#query210");
+        Button query211 = (Button) scene.lookup("#query211");
+        Button query212 = (Button) scene.lookup("#query212");
 
         query21.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
@@ -2569,6 +2571,93 @@ public class Main extends Application {
                             "ON c.id_listing = h.id_listing  \n" +
                             "  GROUP BY h.neighbourhood)q  \n" +
                             "  WHERE q.percentage>=50;\n" );
+                    builder.append( "Result : ");
+                    builder.append(System.lineSeparator());
+                    while ( rs.next() ) {
+                        String neighbourhood = rs.getString("neighbourhood");
+                        builder.append(neighbourhood);
+                        builder.append(System.lineSeparator());
+                    }
+                    rs.close();
+                    stmt.close();
+                    c.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println(e.getClass().getName()+": "+e.getMessage());
+                    System.exit(0);
+                }
+                String string = builder.toString();
+                result_predefined_queries_2.setText(string);
+            }
+        });
+
+        query211.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                Statement stmt = null;
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    c = DriverManager
+                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                    "postgres", "database2019");
+
+                    c.setAutoCommit(false);
+
+                    stmt = c.createStatement();
+                    ResultSet rs = stmt.executeQuery( " SELECT c_p.country \n" +
+                            "FROM (SELECT a_c.country country, (COUNT(CASE WHEN available THEN 1 END)*100)/count(*) percentage\n" +
+                            "FROM (SELECT id_a.available available, l.country country\n" +
+                            "FROM locations l, (SELECT c.id_listing id_listing, bool_or(c.available) available\n" +
+                            "FROM (SELECT ca.id_listing id_listing, ca.available\n" +
+                            "FROM calendars ca\n" +
+                            "WHERE extract(year from ca.calendar_date)=2018)c\n" +
+                            "GROUP BY c.id_listing)id_a\n" +
+                            "WHERE l.id_listing = id_a.id_listing) a_c\n" +
+                            "GROUP BY a_c.country)c_p\n" +
+                            "WHERE c_p.percentage>=20;\n" );
+                    builder.append( "Result : ");
+                    builder.append(System.lineSeparator());
+                    while ( rs.next() ) {
+                        String country = rs.getString("country");
+                        builder.append(country);
+                        builder.append(System.lineSeparator());
+                    }
+                    rs.close();
+                    stmt.close();
+                    c.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.err.println(e.getClass().getName()+": "+e.getMessage());
+                    System.exit(0);
+                }
+                String string = builder.toString();
+                result_predefined_queries_2.setText(string);
+            }
+        });
+
+        query212.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent ae) {
+                StringBuilder builder = new StringBuilder();
+                Connection c = null;
+                Statement stmt = null;
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    c = DriverManager
+                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                    "postgres", "database2019");
+
+                    c.setAutoCommit(false);
+
+                    stmt = c.createStatement();
+                    ResultSet rs = stmt.executeQuery( " SELECT q.neighbourhood  \n" +
+                            "FROM( \n" +
+                            "    SELECT h.neighbourhood, (COUNT(CASE WHEN c. cancellation_policy = 'strict 14 with grace period ' THEN 1   END)*100)/count(*) percentage  \n" +
+                            " FROM houses h  \n" +
+                            "     INNER JOIN (SELECT l.id_listing FROM locations l WHERE l.city = 'Barcelona')l ON l.id_listing = h.id_listing\n" +
+                            "     INNER JOIN cancellation_policy c ON c.id_listing = h.id_listing\n" +
+                            " GROUP BY h.neighbourhood)q\n" +
+                            " WHERE q.percentage>=0;\n" );
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {

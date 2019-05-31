@@ -79,6 +79,8 @@
                               <Button id="query28" mnemonicParsing="false" text="Query 8" />
                               <Button id="query29" mnemonicParsing="false" text="Query 9" />
                               <Button id="query210" mnemonicParsing="false" text="Query 10" />
+                              <Button id="query211" mnemonicParsing="false" text="Query 11" />
+                              <Button id="query212" mnemonicParsing="false" text="Query 12" />
                            </children>
                            <opaqueInsets>
                               <Insets />
