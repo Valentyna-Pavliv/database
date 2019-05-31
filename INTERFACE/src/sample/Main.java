@@ -495,18 +495,13 @@ public class Main extends Application {
                                 error_message_insdel.setText("Insertion done !");
                                 break;
                             }
-                            case "houses": {
-                                String selectStatement = "INSERT INTO houses VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                            case "property": {
+                                String selectStatement = "INSERT INTO property VALUES (?, ?);";
                                 stmt = c.prepareStatement(selectStatement);
-                                stmt.setObject(3, input3_insdel.getText());
-                                stmt.setObject(4, input4_insdel.getText());
+                                stmt.setObject(2, input2_insdel.getText());
+
                                 try {
                                     stmt.setObject(1, Float.parseFloat(input1_insdel.getText()));
-                                    stmt.setObject(2, Float.parseFloat(input2_insdel.getText()));
-                                    stmt.setObject(5, Integer.parseInt(input5_insdel.getText()));
-                                    stmt.setObject(6, Float.parseFloat(input6_insdel.getText()));
-                                    stmt.setObject(7, Float.parseFloat(input7_insdel.getText()));
-                                    stmt.setObject(8, Float.parseFloat(input8_insdel.getText()));
                                 }
                                 catch (NumberFormatException e)
                                 {
@@ -525,13 +520,81 @@ public class Main extends Application {
                                 error_message_insdel.setText("Insertion done !");
                                 break;
                             }
+                            case "cancellation_policy": {
+                                String selectStatement = "INSERT INTO cancellation_policy VALUES (?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, input1_insdel.getText());
 
+                                try {
+                                    stmt.setObject(2, Float.parseFloat(input2_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
 
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "room_type": {
+                                String selectStatement = "INSERT INTO room_type VALUES (?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(2, input2_insdel.getText());
 
+                                try {
+                                    stmt.setObject(1, Float.parseFloat(input1_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
 
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
+                            case "bed_type": {
+                                String selectStatement = "INSERT INTO bed_type VALUES (?, ?);";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(2, input2_insdel.getText());
 
+                                try {
+                                    stmt.setObject(1, Float.parseFloat(input1_insdel.getText()));
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    error_message_insdel.setText("Wrong format for imput user id");
+                                    break;
+                                }
 
-                           //   "houses", "property", "cancellation_policy", "room_type", "bed_type"
+                                try {
+                                    stmt.execute();
+                                    rs = stmt.getResultSet();
+                                }
+                                catch (Exception e){
+                                    error_message_insdel.setText(e.getMessage());
+                                    break;
+                                }
+                                error_message_insdel.setText("Insertion done !");
+                                break;
+                            }
                         }
                         if(rs != null) {
                             rs.close();

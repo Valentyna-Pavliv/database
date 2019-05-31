@@ -253,11 +253,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="468" column="76" selection-start-line="468" selection-start-column="76" selection-end-line="468" selection-end-column="76" />
+            <state relative-caret-position="469">
+              <caret line="600" column="25" lean-forward="true" selection-start-line="600" selection-start-column="25" selection-end-line="600" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#87416#87417#0" expanded="true" />
+                <element signature="e#92718#92719#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -482,12 +482,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1559219844814" duration="129000" />
       <workItem from="1559220033998" duration="7222000" />
-      <workItem from="1559231653598" duration="29785000" />
+      <workItem from="1559231653598" duration="30317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38438000" />
+    <option name="totallyTimeSpent" value="38970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -636,11 +636,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="468" column="76" selection-start-line="468" selection-start-column="76" selection-end-line="468" selection-end-column="76" />
+        <state relative-caret-position="469">
+          <caret line="600" column="25" lean-forward="true" selection-start-line="600" selection-start-column="25" selection-end-line="600" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#87416#87417#0" expanded="true" />
+            <element signature="e#92718#92719#0" expanded="true" />
           </folding>
         </state>
       </provider>
