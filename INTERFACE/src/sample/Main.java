@@ -38,41 +38,61 @@ public class Main extends Application {
         TextField search_bar = (TextField) scene.lookup("#search_bar");
 
         // Selection table
-        ObservableList table_name = FXCollections.observableArrayList("Has_response_time", "Has_verifications", "Verifications",
-                "Response_times", "Hosts", "Review_scores", "Users", "Amenities", "Has_amenites", "Listings", "Reviews", "Booking_polices",
-                "Calendars", "Locations", "Houses", "Properties", "Has_property", "Rooms", "Has_room", "Beds", "Has_bed");
+        ObservableList table_name = FXCollections.observableArrayList("has_verifications", "verifications",
+                "response_time", "hosts", "review_scores", "users", "amenities", "has_amenites", "listings", "reviews", "booking_polices",
+                "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type");
         table_selection_search.setItems(table_name);
+
+        // Search argument
+        String r = search_bar.getText();
 
         // Search button
         search_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
-                Statement stmt = null;
-                try {
-                    Class.forName("org.postgresql.Driver");
-                    c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                                    "postgres", "database2019");
+                PreparedStatement stmt = null;
+                if (table_selection_search.getValue() == null || search_bar.getText().isBlank()) {
+                    builder.append("Please select a table !");
+                }
+                else {
+                    try {
+                        Class.forName("org.postgresql.Driver");
+                        c = DriverManager
+                                .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                        "postgres", "database2019");
 
-                    c.setAutoCommit(false);
+                        c.setAutoCommit(false);
 
-                    stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( "SELECT AVG(c.price)\n" +
-                            "FROM calendars c, houses h\n" +
-                            "WHERE h.bedrooms >= 8 AND c.id_listing = h.id_listing LIMIT 50;" );
-                    while ( rs.next() ) {
-                        int avgPrice = rs.getInt(1);
-                        builder.append( "Average price : " + avgPrice);
-                        builder.append(System.lineSeparator());
+                        ResultSet rs = null;
+                        switch ((String) table_selection_search.getValue()) {
+                            case "has_verifications": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM has_verifications x\n" +
+                                        "                WHERE x.verification_type = ? OR x.user_id = ? LIMIT 50;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, r);
+                                stmt.setObject(2, (int) Integer.valueOf(r));
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+                                while (rs.next()) {
+                                    String verification_type = rs.getString("verification_type");
+                                    int user_id = rs.getInt("user_id");
+                                    builder.append("Verification type : " + verification_type + ", User id : " + user_id);
+                                    builder.append(System.lineSeparator());
+                                }
+                                break;
+                            }
+                        }
+                        rs.close();
+                        stmt.close();
+                        c.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                        System.exit(0);
                     }
-                    rs.close();
-                    stmt.close();
-                    c.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.err.println(e.getClass().getName()+": "+e.getMessage());
-                    System.exit(0);
                 }
                 String string = builder.toString();
                 result_search_queries.setText(string);

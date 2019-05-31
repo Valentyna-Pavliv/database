@@ -22,11 +22,11 @@
                         <TextField id="search_bar" promptText="Type here to search ..." />
                         <HBox spacing="10.0">
                            <children>
-                              <Button id="search_button" accessibleText="search_button" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" text="Search" />
                               <ChoiceBox id="table_selection_search" accessibleText="fds" prefHeight="26.0" prefWidth="314.0" />
+                              <Button id="search_button" accessibleText="search_button" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" text="Search" />
                            </children>
                         </HBox>
-                        <Text id="result_search_queries" accessibleText="test_text" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="563.9830722808838" />
+                        <Text id="result_search_queries" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                      </children>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
