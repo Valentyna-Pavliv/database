@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox minHeight="800.0" minWidth="1024.0" prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="800.0" minWidth="1024.0" prefHeight="800.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Search">
+            <content>
+                  <VBox spacing="10.0">
+                     <children>
+                        <TextField id="search_bar" promptText="Type here to search ..." />
+                        <HBox spacing="10.0">
+                           <children>
+                              <ChoiceBox id="table_selection_search" accessibleText="fds" prefHeight="26.0" prefWidth="314.0" />
+                              <Button id="search_button" accessibleText="search_button" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" text="Search" />
+                           </children>
+                        </HBox>
+                        <Text id="result_search_queries" strokeType="OUTSIDE" strokeWidth="0.0" text="Nothing to show for the moment..." />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+            </content>
+          </Tab>
+          <Tab text="Predefined Queries 1">
+            <content>
+                  <VBox spacing="10.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button id="query1" mnemonicParsing="false" text="Query 1" />
+                              <Button id="query2" mnemonicParsing="false" text="Query 2" />
+                              <Button id="query3" mnemonicParsing="false" text="Query 3" />
+                              <Button id="query4" mnemonicParsing="false" text="Query 4" />
+                              <Button id="query5" mnemonicParsing="false" text="Query 5" />
+                              <Button id="query6" mnemonicParsing="false" text="Query 6" />
+                              <Button id="query7" mnemonicParsing="false" text="Query 7" />
+                              <Button id="query8" mnemonicParsing="false" text="Query 8" />
+                              <Button id="query9" mnemonicParsing="false" text="Query 9" />
+                              <Button id="query10" mnemonicParsing="false" text="Query 10" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <Text id="description_query_set_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a query !" />
+                        <Separator prefWidth="200.0" />
+                        <Text id="result_predefined_queries" strokeType="OUTSIDE" strokeWidth="0.0" text="Nothing to show for the moment..." />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+            </content>
+          </Tab>
+            <Tab text="Predefined Queries 2">
+               <content>
+                  <VBox spacing="10.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button id="query21" mnemonicParsing="false" text="Query 1" />
+                              <Button id="query22" mnemonicParsing="false" text="Query 2" />
+                              <Button id="query23" mnemonicParsing="false" text="Query 3" />
+                              <Button id="query24" mnemonicParsing="false" text="Query 4" />
+                              <Button id="query25" mnemonicParsing="false" text="Query 5" />
+                              <Button id="query26" mnemonicParsing="false" text="Query 6" />
+                              <Button id="query27" mnemonicParsing="false" text="Query 7" />
+                              <Button id="query28" mnemonicParsing="false" text="Query 8" />
+                              <Button id="query29" mnemonicParsing="false" text="Query 9" />
+                              <Button id="query210" mnemonicParsing="false" text="Query 10" />
+                              <Button id="query211" mnemonicParsing="false" text="Query 11" />
+                              <Button id="query212" mnemonicParsing="false" text="Query 12" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <Text id="description_query_set_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a query !" />
+                        <Separator prefWidth="200.0" />
+                        <Text id="result_predefined_queries_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Nothing to show for the moment..." />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Insert / Delete">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="1024.0" spacing="10.0">
+                           <children>
+                              <ChoiceBox id="choicebox_insdel" prefHeight="30.0" prefWidth="300.0" />
+                              <Button id="insert_button_insdel" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Insert" />
+                              <Button id="delete_button_insdel" lineSpacing="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Delete" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <AnchorPane prefHeight="730.0" prefWidth="1024.0">
+                           <children>
+                              <TextField id="input1_insdel" layoutX="322.0" layoutY="14.0" prefHeight="26.0" prefWidth="405.0" />
+                              <TextField id="input2_insdel" layoutX="322.0" layoutY="40.0" prefWidth="405.0" />
+                              <TextField id="input3_insdel" layoutX="322.0" layoutY="66.0" prefWidth="405.0" />
+                              <TextField id="input4_insdel" layoutX="322.0" layoutY="92.0" prefWidth="405.0" />
+                              <TextField id="input5_insdel" layoutX="322.0" layoutY="118.0" prefWidth="405.0" />
+                              <TextField id="input6_insdel" layoutX="322.0" layoutY="144.0" prefWidth="405.0" />
+                              <TextField id="input7_insdel" layoutX="322.0" layoutY="170.0" prefWidth="405.0" />
+                              <TextField id="input8_insdel" layoutX="322.0" layoutY="196.0" prefWidth="405.0" />
+                              <TextField id="input9_insdel" layoutX="322.0" layoutY="222.0" prefWidth="405.0" />
+                              <TextField id="input10_insdel" layoutX="322.0" layoutY="247.0" prefWidth="405.0" />
+                              <Text id="text1_insdel" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text2_insdel" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text3_insdel" layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text4_insdel" layoutX="14.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text5_insdel" layoutX="14.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text6_insdel" layoutX="14.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text7_insdel" layoutX="14.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text8_insdel" layoutX="14.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text9_insdel" layoutX="14.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text10_insdel" layoutX="14.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <TextField id="input11_insdel" layoutX="322.0" layoutY="273.0" prefWidth="405.0" />
+                              <TextField id="input12_insdel" layoutX="322.0" layoutY="299.0" prefWidth="405.0" />
+                              <TextField id="input13_insdel" layoutX="322.0" layoutY="325.0" prefWidth="405.0" />
+                              <Text id="text11_insdel" layoutX="14.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text12_insdel" layoutX="14.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="text13_insdel" layoutX="14.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <Text id="error_message_insdel" layoutX="14.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
