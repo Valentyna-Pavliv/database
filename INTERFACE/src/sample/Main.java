@@ -1936,7 +1936,7 @@ public class Main extends Application {
                 description_query_set_1.setText("Find all the hosts (host_ids, host_names) that have only one listing.");
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[579][2];
+                String[][] data = new String[21263][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -1954,8 +1954,8 @@ public class Main extends Application {
                             "HAVING COUNT(*) = 1)h\n" +
                             "WHERE u.id_user = h.id;\n" );
                     while ( rs.next() ) {
-                        int id_user = rs.getInt("id_user");
                         String user_name = rs.getString("user_name");
+                        int id_user = rs.getInt("id_user");
                         String[] temp = {user_name, String.valueOf(id_user)};
                         data[rs.getRow()-1] = temp;
                     }
@@ -1967,7 +1967,7 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String[] columnNames = {"User name, User id",};
+                String[] columnNames = {"User name", "User id",};
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -2011,7 +2011,7 @@ public class Main extends Application {
                             "WHERE  lids.id = c.id_listing) withoutWifi;\n" );
                     while ( rs.next() ) {
                         float avg_price = rs.getFloat(1);
-                        builder.append( "Average wifi price : " + avg_price);
+                        builder.append( "Difference in the average price : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -2056,7 +2056,7 @@ public class Main extends Application {
                             "c.id_listing = h.id_listing) berlinPricing;\n" );
                     while ( rs.next() ) {
                         float avg_price = rs.getFloat(1);
-                        builder.append( "Average pricing : " + avg_price);
+                        builder.append( "Cost difference : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -2078,6 +2078,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[10][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2100,8 +2101,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         int id_user = rs.getInt("id_user");
                         String user_name = rs.getString("user_name");
-                        builder.append( "User name : " + user_name + " : Id user : " + id_user);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {user_name, String.valueOf(id_user)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2111,8 +2112,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries.setText(string);
+                String[] columnNames = {"User name", "User id",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries.setText(result);
             }
         });
 
@@ -2122,6 +2131,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[10][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2141,8 +2151,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         int id_listing = rs.getInt("id_listing");
                         String name_listing = rs.getString("name_listing");
-                        builder.append( "User name : " + name_listing + " : Id user : " + id_listing);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {name_listing, String.valueOf(id_listing)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2152,14 +2162,24 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries.setText(string);
+                String[] columnNames = {"Listing name", "Listing id",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries.setText(result);
             }
         });
 
 
         // CONFIGURATION PREDEFINED QUERIES
-        Text result_predefined_queries_2 = (Text) scene.lookup("#result_predefined_queries_2");
+        TextArea result_predefined_queries_2 = (TextArea) scene.lookup("#result_predefined_queries_2");
+        result_predefined_queries.setEditable(false);
+        result_predefined_queries.setFont(Font.font(java.awt.Font.MONOSPACED, 16));
         Text description_query_set_2 = (Text) scene.lookup("#description_query_set_2");
 
         Button query21 = (Button) scene.lookup("#query21");
