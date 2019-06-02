@@ -1,0 +1,390 @@
+﻿CREATE TEMPORARY TABLE t (id INTEGER,                                                                                                                                                
+listing_url CHAR(40),                                                                                                                                                               
+listing_name CHAR(90),                                                                                                                                                               
+summary CHAR(1000),                                                                                                                                                                   
+space CHAR(1000),                                                                                                                                                                     
+description CHAR(1000),               
+neighborhood_overview CHAR(1000),                                                                 
+notes CHAR(1000),
+transit CHAR(1000),
+listing_access CHAR(1000),
+interaction CHAR(1000),                                                                                                                                                               
+house_rules CHAR(1000),
+picture_url CHAR(120),
+host_id INTEGER,
+host_url CHAR(50),
+host_name CHAR(35),
+host_since DATE,
+host_about CHAR(5730),
+host_response_time CHAR(18),
+host_response_rate INTEGER,
+host_thumbnail_url CHAR(110),
+host_picture_url CHAR(110),
+neighbourhood CHAR(35),
+city CHAR(20),
+country_code CHAR(2),
+country CHAR(20),
+latitude REAL,
+longitude REAL,
+property_type CHAR(22),
+room_type CHAR(15),
+accomodates INTEGER,
+bathrooms INTEGER,
+bedrooms INTEGER,
+beds INTEGER,
+bed_type CHAR(13),
+square_feet INTEGER,
+price INTEGER,
+weekly_price INTEGER,
+monthly_price INTEGER,
+security_deposit INTEGER,
+cleaning_fee INTEGER,
+guests_included INTEGER,
+extra_people INTEGER,
+minimum_nights INTEGER,
+maximum_nights INTEGER,
+review_scores_rating INTEGER,
+review_scores_accuracy INTEGER,
+review_scores_cleanliness INTEGER,
+review_scores_checking INTEGER,
+review_scores_communication INTEGER,
+review_scores_location INTEGER,
+review_scores_value INTEGER,
+is_business_travel_ready CHAR(1),
+cancellation_policy CHAR(27),
+require_guest_profile_picture CHAR(1),
+require_guest_phone_verification CHAR(1));
+
+
+
+
+CREATE TABLE users (
+        id_user   INTEGER NOT NULL,
+        user_name          CHAR(35)
+);
+
+
+ALTER TABLE users ADD CONSTRAINT user_pk PRIMARY KEY ( id_user );
+
+
+
+
+
+CREATE TABLE hosts (
+        url                 CHAR(50) NOT NULL,
+        id_user             INTEGER NOT NULL,
+        since               DATE,
+        about               CHAR(5730),
+        thumbnail_url   CHAR(110)
+);
+
+
+ALTER TABLE hosts ADD CONSTRAINT hosts_pk PRIMARY KEY ( id_user );
+
+
+ALTER TABLE hosts
+        ADD CONSTRAINT hosts_user_fk FOREIGN KEY ( id_user )
+            REFERENCES users ( id_user ) ON DELETE CASCADE;
+
+
+ 
+
+
+CREATE TABLE verifications (
+        verification_type CHAR(21) NOT NULL
+);
+
+
+ALTER TABLE verifications ADD CONSTRAINT verifications_pk PRIMARY KEY ( verification_type );
+
+
+
+
+CREATE TABLE has_verifications (
+        verification_type   CHAR(21) NOT NULL,
+        user_id                      INTEGER NOT NULL
+);
+
+
+ALTER TABLE has_verifications ADD CONSTRAINT has_verif_pk PRIMARY KEY ( verification_type,
+                                                                            user_id );
+
+
+ALTER TABLE has_verifications
+        ADD CONSTRAINT has_verif_verif_fk FOREIGN KEY ( verification_type )
+            REFERENCES verifications ( verification_type );
+
+
+ALTER TABLE has_verifications
+        ADD CONSTRAINT has_verifi_hosts_fk FOREIGN KEY ( user_id )
+            REFERENCES hosts ( id_user ) ON DELETE CASCADE;
+
+
+
+CREATE TABLE response_time (
+        response_time   CHAR(18),
+        host_id                 INTEGER NOT NULL
+);
+
+
+ALTER TABLE response_time ADD CONSTRAINT has_resp_time_pk PRIMARY KEY ( host_id );
+
+
+ALTER TABLE response_time
+        ADD CONSTRAINT has_resp_time_hosts_fk FOREIGN KEY ( host_id  )
+            REFERENCES hosts ( id_user )
+                ON DELETE CASCADE;
+
+
+ 
+CREATE TABLE listings (
+        id_listing                   INTEGER NOT NULL,
+        name_listing                 CHAR(90),
+        url                          CHAR(40),
+        space                        CHAR(1000),
+        interaction                  CHAR(1000),
+        notes                        CHAR(1000),
+        picture_url                  CHAR(120),
+        description                  CHAR(1000),
+        neighbourhood_overview   CHAR(1000),
+        summary                      CHAR(1000),
+        transit                      CHAR(1000),
+        listing_access               CHAR(1000),
+        host_id                INTEGER NOT NULL
+);
+
+
+ALTER TABLE listings ADD CONSTRAINT listings_pk PRIMARY KEY ( id_listing );
+ALTER TABLE listings ADD CONSTRAINT listing_fk FOREIGN KEY (host_id)
+        REFERENCES hosts ( id_user )
+                ON DELETE CASCADE;
+
+
+
+
+
+CREATE TABLE amenities (
+        amenity_type CHAR(42) NOT NULL
+);
+
+
+ALTER TABLE amenities ADD CONSTRAINT amenities_pk PRIMARY KEY ( amenity_type );
+
+
+
+CREATE TABLE has_amenities (
+        amenity_type   CHAR(42) NOT NULL,
+        id_listing         INTEGER NOT NULL
+);
+
+
+ALTER TABLE has_amenities ADD CONSTRAINT has_amenities_pk PRIMARY KEY ( amenity_type,
+                                                                            id_listing );
+
+
+ALTER TABLE has_amenities
+        ADD CONSTRAINT has_amenities_amenities_fk FOREIGN KEY ( amenity_type )
+            REFERENCES amenities ( amenity_type );
+
+
+ALTER TABLE has_amenities
+        ADD CONSTRAINT has_amenities_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+ON DELETE CASCADE;
+
+
+
+CREATE TABLE booking_policies (
+        id_listing                          INTEGER NOT NULL,
+        extra_people                        INTEGER,
+        is_business_travel_ready            CHAR(1),
+        require_guest_profile_picture   CHAR(1),
+        require_guest_phone_verification CHAR(1),
+        maximum_nights                      INTEGER,
+        minimum_nights                      INTEGER,
+        guests_included                     INTEGER
+);
+
+
+ALTER TABLE booking_policies ADD CONSTRAINT booking_policy_pk PRIMARY KEY ( id_listing );
+
+
+
+
+ALTER TABLE booking_policies
+        ADD CONSTRAINT booking_policy_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+
+CREATE TABLE cancellation_policy (
+        cancellation_policy CHAR(27),
+        id_listing              INTEGER NOT NULL
+);
+
+
+ALTER TABLE cancellation_policy ADD CONSTRAINT cancellation_policy_pk PRIMARY KEY ( id_listing);
+
+
+ALTER TABLE cancellation_policy
+        ADD CONSTRAINT cancellation_policy_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES booking_policies ( id_listing )
+                ON DELETE CASCADE;
+ 
+
+
+
+CREATE TABLE review_scores (
+        value               INTEGER,
+        id_listing          INTEGER NOT NULL,
+        checking            INTEGER,
+        rating              INTEGER,
+        location            INTEGER,
+        accuracy            INTEGER,
+        communication       INTEGER,
+        cleanliness         INTEGER
+);
+
+
+ALTER TABLE review_scores ADD CONSTRAINT review_scores_pk PRIMARY KEY ( id_listing );
+
+
+ALTER TABLE review_scores
+        ADD CONSTRAINT review_scores_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+
+
+
+CREATE TABLE locations (
+        latitude           REAL,
+        longitude          REAL,
+        id_listing         INTEGER NOT NULL,
+        country            CHAR(20),
+        country_code   CHAR(2),
+        city               CHAR(20)
+);
+
+
+ALTER TABLE locations
+        ADD CONSTRAINT location_pk PRIMARY KEY ( id_listing );
+
+
+ALTER TABLE locations
+        ADD CONSTRAINT location_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+ON DELETE CASCADE;
+
+
+
+CREATE TABLE houses (
+        neighbourhood   CHAR(35) ,
+        id_listing          INTEGER NOT NULL,
+        beds                INTEGER,
+        space               CHAR(1000),
+        house_rules         CHAR(1000),
+        accommodates        INTEGER,
+        square_feet         INTEGER,
+        bathrooms           INTEGER,
+        bedrooms            INTEGER
+);
+
+
+ALTER TABLE houses
+        ADD CONSTRAINT house_pk PRIMARY KEY (id_listing );
+
+
+ALTER TABLE houses
+        ADD CONSTRAINT house_locations_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+
+
+CREATE TABLE property (
+        id_listing          INTEGER
+            CONSTRAINT nnc_has_roomv1_id_listing NOT NULL,
+        property_type   CHAR(22)
+            CONSTRAINT nnc_has_roomv1_room_type NOT NULL
+);
+
+
+ALTER TABLE property
+        ADD CONSTRAINT has_property_pk PRIMARY KEY ( id_listing );
+
+
+ALTER TABLE property
+        ADD CONSTRAINT has_property_houses_fk FOREIGN KEY ( id_listing )
+            REFERENCES houses ( id_listing ) ON DELETE CASCADE;
+
+
+
+CREATE TABLE room_type (
+        id_listing          INTEGER
+            CONSTRAINT nnc_has_room_id_listing NOT NULL,
+        room_type           CHAR(15)
+            CONSTRAINT nnc_has_room_room_type NOT NULL
+);
+
+
+ALTER TABLE room_type
+        ADD CONSTRAINT has_room_pk PRIMARY KEY ( id_listing);
+
+
+ALTER TABLE room_type
+        ADD CONSTRAINT has_room_houses_fk FOREIGN KEY ( id_listing )
+            REFERENCES houses ( id_listing ) ON DELETE CASCADE;
+
+
+
+CREATE TABLE reviews (
+        id_review         INTEGER NOT NULL,
+        id_listing        INTEGER NOT NULL,
+        id_reviewer   INTEGER NOT NULL,
+        review_date            DATE,
+        review_comment        CHAR(6505)
+);
+
+
+ALTER TABLE reviews
+        ADD CONSTRAINT review_pk PRIMARY KEY (id_review );
+
+
+ALTER TABLE reviews
+        ADD CONSTRAINT review_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing );
+
+
+ALTER TABLE reviews
+        ADD CONSTRAINT review_user_fk FOREIGN KEY ( id_reviewer )
+            REFERENCES users ( id_user );
+
+
+
+CREATE TABLE calendars (
+        calendar_date                DATE NOT NULL,
+        id_listing             INTEGER
+            CONSTRAINT nnc_pricing_id NOT NULL,
+        available              CHAR(1),
+        price                  INTEGER,
+        daily_price            INTEGER,
+        weekly_price           INTEGER,
+        monthly_price          INTEGER,
+        cleaning_fee           INTEGER,
+        security_deposit   INTEGER
+);
+
+
+ALTER TABLE calendars ADD CONSTRAINT pricing_pk PRIMARY KEY ( id_listing,
+                                                                  calendar_date );
+
+
+ALTER TABLE calendars
+        ADD CONSTRAINT pricing_listings_fk FOREIGN KEY ( id_listing )
+            REFERENCES listings ( id_listing )
+                ON DELETE CASCADE;
+
+

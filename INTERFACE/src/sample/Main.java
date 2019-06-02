@@ -18,7 +18,6 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.sql.*;
-import java.util.Properties;
 
 public class Main extends Application {
 
@@ -81,7 +80,7 @@ public class Main extends Application {
                     try {
                         Class.forName("org.postgresql.Driver");
                         c = DriverManager
-                                .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                         "postgres", "database2019");
 
                         c.setAutoCommit(false);
@@ -626,7 +625,7 @@ public class Main extends Application {
                     try {
                         Class.forName("org.postgresql.Driver");
                         c = DriverManager
-                                .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                         "postgres", "database2019");
 
                         c.setAutoCommit(false);
@@ -1474,7 +1473,7 @@ public class Main extends Application {
                     try {
                         Class.forName("org.postgresql.Driver");
                         c = DriverManager
-                                .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                                .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                         "postgres", "database2019");
 
                         c.setAutoCommit(false);
@@ -1707,7 +1706,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -1715,9 +1714,9 @@ public class Main extends Application {
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT AVG(c.price)\n" +
                             "FROM calendars c, houses h\n" +
-                            "WHERE h.bedrooms >= 8 AND c.id_listing = h.id_listing LIMIT 50;" );
+                            "WHERE h.bedrooms = 8 AND c.id_listing = h.id_listing;\n" );
                     while ( rs.next() ) {
-                        int avgPrice = rs.getInt(1);
+                        float avgPrice = rs.getFloat(1);
                         builder.append( "Average price : " + avgPrice);
                         builder.append(System.lineSeparator());
                     }
@@ -1743,19 +1742,18 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT AVG(rs.rating)\n" +
-                            "FROM review_scores rs, amenities a, has_amenities ra\n" +
-                            "WHERE (a.amenity_type LIKE '%TV%'\n" +
-                            "        OR a.amenity_type LIKE '%Television%')\n" +
-                            "        AND rs.id_listing =ra.id_listing AND a.amenity_type = ra.amenity_type LIMIT 50;" );
+                            "FROM review_scores rs, has_amenities ra\n" +
+                            "WHERE (ra.amenity_type = 'TV')\n" +
+                            "AND rs.id_listing=ra.id_listing;\n" );
                     while ( rs.next() ) {
-                        int avg_price = rs.getInt(1);
+                        float avg_price = rs.getFloat(1);
                         builder.append( "Average cleaning review score : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
@@ -1781,16 +1779,19 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT DISTINCT u.user_name , u.id_user\n" +
-                            " FROM calendars c, listings l , users u\n" +
-                            " WHERE c.calendar_date >= '2019-03-01' AND c.calendar_date < '2019-10-01' AND c.available LIKE '%t%'\n" +
-                            " AND l.id_listing = c.id_listing AND l.host_id = u.id_user LIMIT 50;" );
+                            "FROM listings l , users u,\n" +
+                            "(SELECT c.id_listing, bool_and(c.available) a\n" +
+                            "FROM calendars c\n" +
+                            "WHERE c.calendar_date >= '2019-03-01' AND c.calendar_date < '2019-10-01'\n" +
+                            "GROUP BY c.id_listing)cal\n" +
+                            "WHERE cal.a AND l.id_listing = cal.id_listing AND l.host_id = u.id_user;\n" );
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
                     int counter = 1;
@@ -1822,7 +1823,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -1830,7 +1831,10 @@ public class Main extends Application {
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT COUNT(l1.host_id)\n" +
                             " FROM users u1, users u2, listings l1, listings l2\n" +
-                            " WHERE l1.host_id != l2.host_id AND u1.user_name = u2.user_name AND l1.host_id = u1.id_user AND u2.id_user = l2.host_id LIMIT 50;" );
+                            " WHERE l1.host_id != l2.host_id\n" +
+                            "      AND u1.user_name = u2.user_name\n" +
+                            "      AND l1.host_id = u1.id_user\n" +
+                            "      AND u2.id_user = l2.host_id;\n" );
                     while ( rs.next() ) {
                         int count = rs.getInt(1);
                         builder.append( "Host count : " + count);
@@ -1858,18 +1862,17 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT c.calendar_date\n" +
-                            "FROM calendars c, hosts h, users u\n" +
-                            "WHERE u.user_name LIKE '%Viajes Eco%'\n" +
-                            "    AND u.id_listing = h.id_listing\n" +
-                            "    AND h.id_listing = c.id_listing\n" +
-                            "    AND c.available = 't' LIMIT 50;" );
+                            "FROM calendars c, listings l, users u\n" +
+                            "WHERE u.user_name ='Viajes Eco'\n" +
+                            "    AND u.id_user = l.host_id\n" +
+                            "    AND l.id_listing = c.id_listing  AND c.available;\n" );
                     builder.append( "Available date: ");
                     while ( rs.next() ) {
                         Date date = rs.getDate("calendar_date");
@@ -1898,7 +1901,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -1910,7 +1913,7 @@ public class Main extends Application {
                             "FROM listings l\n" +
                             "GROUP BY l.host_id\n" +
                             "HAVING COUNT(*) = 1)h\n" +
-                            "WHERE u.id_user = h.id LIMIT 50;" );
+                            "WHERE u.id_user = h.id;\n" );
                     while ( rs.next() ) {
                         int id_user = rs.getInt("id_user");
                         String user_name = rs.getString("user_name");
@@ -1939,25 +1942,28 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( "SELECT withWifi.avgWithWifi - withoutWifi.avgWithoutWifi\n" +
-                            "FROM (SELECT AVG(c.price) AS avgWithWifi\n" +
+                    ResultSet rs = stmt.executeQuery( "SELECT withWifi.avgWithWifi - withoutWifi.avgWithoutWifi AS difference\n" +
+                            "FROM (SELECT AVG(c.daily_price) AS avgWithWifi\n" +
                             "        FROM calendars c, amenities a, has_amenities ha\n" +
-                            "        WHERE (a.amenity_type LIKE '%Wifi%'\n" +
-                            "            OR a.amenity_type LIKE '%WIFI%')\n" +
-                            "            AND ha.amenity_type = a.amenity_type AND ha.id_listing = c.id_listing) withWifi ,\n" +
-                            "     (SELECT AVG(c.price) avgWithoutWifi\n" +
-                            "        FROM calendars c, amenities a, has_amenities ha\n" +
-                            "        WHERE (NOT a.amenity_type LIKE '%Wifi%'\n" +
-                            "            AND NOT a.amenity_type LIKE '%WIFI%')\n" +
-                            "            AND ha.amenity_type = a.amenity_type AND ha.id_listing = c.id_listing) withoutWifi LIMIT 50;" );
+                            "        WHERE ha.amenity_type = 'Wifi' AND \n" +
+                            "ha.id_listing = c.id_listing) withWifi ,\n" +
+                            "(SELECT AVG(c.daily_price) AS avgWithoutWifi\n" +
+                            "FROM (SELECT a.id_listing as id \n" +
+                            "FROM (\n" +
+                            "(SELECT ha.id_listing AS id, ha.amenity_type  \n" +
+                            "FROM has_amenities ha   \n" +
+                            "WHERE ha.amenity_type = 'Wifi' )a \n" +
+                            "RIGHT JOIN listings l ON a.id = l.id_listing)a \n" +
+                            "WHERE a.amenity_type IS NULL )lids, calendars c\n" +
+                            "WHERE  lids.id = c.id_listing) withoutWifi;\n" );
                     while ( rs.next() ) {
-                        int avg_price = rs.getInt(1);
+                        float avg_price = rs.getFloat(1);
                         builder.append( "Average wifi price : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
@@ -1983,34 +1989,26 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( "\n" +
-                            "SELECT madridPricing.avgMadrid - berlinPricing.avgBerlin\n" +
+                    ResultSet rs = stmt.executeQuery( "SELECT madridPricing.avgMadrid - berlinPricing.avgBerlin AS difference\n" +
                             "FROM (SELECT AVG(c.price) AS  avgMadrid\n" +
-                            "      FROM calendars c,\n" +
-                            "           houses h,\n" +
-                            "           locations l\n" +
-                            "      WHERE h.beds = 8\n" +
-                            "        AND l.city LIKE '%Madrid%'\n" +
-                            "        AND l.id_listing = h.id_listing\n" +
-                            "        AND c.id_listing = h.id_listing\n" +
-                            "    )madridPricing ,\n" +
-                            "     (SELECT AVG(c.price) AS avgBerlin\n" +
-                            "      FROM calendars c,\n" +
-                            "           houses h,\n" +
-                            "           locations l\n" +
-                            "      WHERE h.beds = 8\n" +
-                            "        AND l.city LIKE '%Berlin%'\n" +
-                            "        AND l.id_listing = h.id_listing\n" +
-                            "        AND c.id_listing = h.id_listing\n" +
-                            "    )berlinPricing LIMIT 50;" );
+                            "FROM calendars c, houses h, locations l\n" +
+                            "WHERE h.beds = 8 AND \n" +
+                            "l.city = 'Madrid' AND \n" +
+                            "l.id_listing = h.id_listing AND c.id_listing = h.id_listing) madridPricing ,\n" +
+                            "(SELECT AVG(c.price) AS avgBerlin\n" +
+                            "FROM calendars c, houses h, locations l\n" +
+                            "WHERE h.beds = 8 AND \n" +
+                            "l.city LIKE '%Berlin%' AND \n" +
+                            "l.id_listing = h.id_listing AND \n" +
+                            "c.id_listing = h.id_listing) berlinPricing;\n" );
                     while ( rs.next() ) {
-                        int avg_price = rs.getInt(1);
+                        float avg_price = rs.getFloat(1);
                         builder.append( "Average pricing : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
@@ -2036,28 +2034,22 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT u.id_user, u.user_name\n" +
-                            "  FROM users u,\n" +
-                            "       (SELECT l.host_id as id\n" +
-                            "  FROM listings l\n" +
-                            "  GROUP BY l.host_id\n" +
-                            "  HAVING COUNT(*) = 1\n" +
-                            "  )h\n" +
-                            "  WHERE u.id_user = h.id;\n" +
-                            "\n" +
-                            "  SELECT(u.id_user, u.name)\n" +
-                            "  FROM users u\n" +
-                            "       INNER JOIN (SELECT id_user, count(id_user) as cnt\n" +
-                            "                       FROM hosts\n" +
-                            "                      GROUP BY id_user) cou ON u.id_user = cou.id_user\n" +
+                            "  FROM users u  INNER JOIN (SELECT h.id_user, count(h.id_user) as cnt\n" +
+                            "                       FROM (SELECT h.id_user as id_user\n" +
+                            "                             FROM listings lis, locations l ,hosts h\n" +
+                            "                             WHERE l.country = 'Spain' AND\n" +
+                            "                             l.id_listing = lis.id_listing AND\n" +
+                            "                             h.id_user = lis.host_id ) h\n" +
+                            "                          GROUP BY h.id_user) cou ON u.id_user = cou.id_user\n" +
                             "                      ORDER BY cnt DESC\n" +
-                            "                      LIMIT 10;" );
+                            "                      LIMIT 10;\n" );
                     while ( rs.next() ) {
                         int id_user = rs.getInt("id_user");
                         String user_name = rs.getString("user_name");
@@ -2086,20 +2078,19 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( " SELECT (l.id_listing, l.name_listing)\n" +
-                            "  FROM listings l\n" +
-                            "       RIGHT JOIN (SELECT id_listing FROM review_scores rs) s ON l.id_listing = s.id_listing\n" +
-                            "          INNER JOIN (SELECT id_listing, count(id_listing) as cnt\n" +
-                            "                      FROM review_scores rs\n" +
-                            "                      GROUP BY id_listing) cou ON l.id_listing = cou.id_listing\n" +
-                            "                      ORDER BY cnt DESC\n" +
-                            "                      LIMIT 10;" );
+                    ResultSet rs = stmt.executeQuery( "SELECT lis.id_listing, lis.name_listing  \n" +
+                            "FROM listings lis, locations l ,review_scores rs\n" +
+                            "WHERE NOT rs.rating is null \n" +
+                            "AND l.city =  'Barcelona'\n" +
+                            "AND l.id_listing = lis.id_listing\n" +
+                            "AND rs.id_listing = lis.id_listing\n" +
+                            "ORDER BY rs.rating DESC LIMIT 10;\n" );
                     while ( rs.next() ) {
                         int id_listing = rs.getInt("id_listing");
                         String name_listing = rs.getString("name_listing");
@@ -2146,7 +2137,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2190,7 +2181,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2236,7 +2227,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2280,7 +2271,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2335,7 +2326,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2393,7 +2384,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2436,7 +2427,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2479,7 +2470,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2535,7 +2526,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2585,7 +2576,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2633,7 +2624,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
@@ -2679,7 +2670,7 @@ public class Main extends Application {
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
-                            .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            .getConnection("jdbc:postgresql://localhost:5432/database2019",
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);

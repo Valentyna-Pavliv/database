@@ -1,0 +1,168 @@
+﻿
+ALTER TABLE users
+ALTER COLUMN user_name type CHAR(38);
+
+ALTER TABLE hosts ADD COLUMN response_rate INTEGER;
+ALTER TABLE hosts ADD COLUMN picture_url CHAR(110);
+
+
+ALTER TABLE hosts ALTER COLUMN about TYPE CHAR(12610);
+
+ALTER TABLE listings ALTER COLUMN name_listing TYPE CHAR(138);
+
+
+ALTER TABLE listings ALTER COLUMN url TYPE CHAR(37);
+
+
+ALTER TABLE listings ALTER COLUMN picture_url TYPE CHAR(116);
+
+
+ALTER TABLE locations ALTER COLUMN country TYPE CHAR(7);
+ALTER TABLE locations ALTER COLUMN city TYPE CHAR(9);
+
+
+ALTER TABLE amenities ALTER COLUMN amenity_type TYPE CHAR(26);
+
+ALTER TABLE has_amenities ALTER COLUMN amenity_type TYPE CHAR(26);
+
+
+CREATE TABLE bed_type (
+        id_listing          INTEGER
+            CONSTRAINT nnc_has_bed_id_listing NOT NULL,
+        bed_type           CHAR(13)
+            CONSTRAINT nnc_has_bed_room_type NOT NULL
+);
+
+
+ALTER TABLE bed_type
+        ADD CONSTRAINT has_bed_pk PRIMARY KEY ( id_listing);
+
+
+ALTER TABLE bed_type
+        ADD CONSTRAINT has_bed_houses_fk FOREIGN KEY ( id_listing )
+            REFERENCES houses ( id_listing ) ON DELETE CASCADE;
+
+ALTER TABLE reviews ALTER COLUMN review_comment TYPE CHAR(6414);
+
+
+copy users(id_user, user_name)
+from '/home/yann/EPFL/database/csv/users.csv'
+with (format csv);
+
+
+
+
+copy hosts(url, id_user, since, about, thumbnail_url, response_rate, picture_url)
+from  '/home/yann/EPFL/database/csv/hosts_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+
+copy response_time(response_time, host_id)
+from '/home/yann/EPFL/database/csv/response_time.csv'
+with(format csv);
+
+
+
+copy verifications(verification_type)
+from '/home/yann/EPFL/database/csv/verifications.csv'
+with(format csv);
+
+
+
+copy has_verifications(verification_type, user_id)
+from '/home/yann/EPFL/database/csv/has_verifications.csv'
+with(format csv);
+
+
+
+
+
+
+copy listings(id_listing, name_listing, url, space, interaction, notes, picture_url, description, neighbourhood_overview, summary, transit, listing_access, host_id)
+from  '/home/yann/EPFL/database/csv/listings_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+
+
+
+copy locations(latitude, longitude, id_listing, country, country_code, city)
+from '/home/yann/EPFL/database/csv/locations.csv'
+with(format csv);
+
+
+
+copy calendars(calendar_date, id_listing, available, price, daily_price, weekly_price, monthly_price, cleaning_fee, security_deposit)
+from '/home/yann/EPFL/database/csv/calendars.csv'
+with(format csv);
+
+
+
+
+
+copy amenities(amenity_type)
+from '/home/yann/EPFL/database/csv/amenities.csv'
+with(format csv);
+
+
+
+
+
+
+copy has_amenities(amenity_type, id_listing)
+from '/home/yann/EPFL/database/csv/has_amenities.csv'
+with(format csv);
+
+
+
+copy review_scores(value, id_listing, checking, rating, location, accuracy, communication, cleanliness)
+from '/home/yann/EPFL/database/csv/review_scores.csv'
+with(format csv);
+
+
+
+
+copy booking_policies(id_listing, extra_people, is_business_travel_ready, require_guest_profile_picture, require_guest_phone_verification, maximum_nights, minimum_nights, guests_included)
+from '/home/yann/EPFL/database/csv/booking_policies.csv'
+with(format csv);
+
+
+
+copy cancellation_policy (cancellation_policy, id_listing)
+from '/home/yann/EPFL/database/csv/cancellation_policy.csv'
+with(format csv);
+
+
+
+copy  houses (neighbourhood , id_listing, beds, space, house_rules, accommodates, square_feet, bathrooms, bedrooms)
+from  '/home/yann/EPFL/database/csv/houses_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+
+copy property (id_listing, property_type)
+from '/home/yann/EPFL/database/csv/property.csv'
+with(format csv);
+
+
+
+copy  room_type (id_listing, room_type)
+from '/home/yann/EPFL/database/csv/room_type.csv'
+with(format csv);
+
+
+
+copy  bed_type (id_listing, bed_type)
+from '/home/yann/EPFL/database/csv/bed_type.csv'
+with(format csv);
+
+
+
+
+copy reviews (id_review, id_listing, id_reviewer, review_date, review_comment)
+from  '/home/yann/EPFL/database/csv/reviews_newDelimiter.csv'
+with(format csv, delimiter '|');
+
+
+ALTER TABLE listings DROP COLUMN space;
