@@ -2311,13 +2311,13 @@ public class Main extends Application {
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( "SELECT u.id_user, u.user_name\n" +
-                            " FROM users u,\n" +
-                            "(SELECT l.host_id\n" +
-                            "FROM listings l\n" +
-                            "GROUP BY l.host_id\n" +
-                            "ORDER BY count(*) desc) h\n" +
-                            "WHERE h.host_id = u.id_user;\n" );
+                    ResultSet rs = stmt.executeQuery( "SELECT u.id_user, u.user_name " +
+                            "FROM users u, " +
+                            "(SELECT l.host_id \n" +
+                            "FROM listings l \n" +
+                            "GROUP BY l.host_id \n" +
+                            "ORDER BY count(*) desc) h \n" +
+                            "WHERE h.host_id = u.id_user; \n" );
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {
@@ -2354,7 +2354,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[5][2];
+                String[][] data = new String[5][3];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2364,31 +2364,35 @@ public class Main extends Application {
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( "SELECT distinct l.id_listing id_listing, l.name_listing name_listing, c_p_a.p price\n" +
-                            "FROM houses hous, locations loc, review_scores rev_sc, cancellation_policy can_pol, has_verifications h_verif, listings l, (SELECT c.id_listing id, AVG(c.price) p, bool_and(c.available) b\n" +
-                            "   FROM calendars c\n" +
-                            "   WHERE c.calendar_date >= '2019-03-01' AND\n" +
-                            "   c.calendar_date < '2019-04-30'  \n" +
-                            "   GROUP BY c.id_listing)c_p_a\n" +
-                            "WHERE hous.id_listing =l.id_listing AND\n" +
-                            "hous.beds>=2 AND\n" +
-                            "loc.id_listing = l.id_listing AND\n" +
+                    ResultSet rs = stmt.executeQuery( "WITH interval AS (\n" +
+                            "SELECT id_listing, AVG(price) avg_price, bool_and(available) available\n" +
+                            "FROM calendars\n" +
+                            "WHERE calendar_date BETWEEN '2019-03-01' AND '2019-04-30'  \n" +
+                            "GROUP BY id_listing\n" +
+                            ")\n" +
+                            "SELECT distinct l.id_listing, l.name_listing, i.avg_price price\n" +
+                            "FROM houses h\n" +
+                            "LEFT JOIN locations loc ON loc.id_listing = h.id_listing\n" +
+                            "LEFT JOIN review_scores rs ON rs.id_listing = h.id_listing\n" +
+                            "LEFT JOIN cancellation_policy cp ON cp.id_listing = h.id_listing\n" +
+                            "LEFT JOIN interval i ON i.id_listing = h.id_listing\n" +
+                            "LEFT JOIN listings l ON l.id_listing = h.id_listing\n" +
+                            "LEFT JOIN has_verifications v ON v.user_id = l.host_id\n" +
+                            "WHERE\n" +
+                            "h.beds>=2 AND\n" +
                             "loc.city ='Berlin' AND\n" +
-                            "rev_sc.location >= 8 AND\n" +
-                            "can_pol.id_listing = l.id_listing AND\n" +
-                            "can_pol.cancellation_policy ='flexible' AND\n" +
-                            "h_verif.user_id = l.host_id AND\n" +
-                            "(h_verif.verification_type ='government_id' OR\n" +
-                            "h_verif.verification_type = 'offline_government_id') AND\n" +
-                            "c_p_a.b AND c_p_a.id = l.id_listing\n" +
-                            "ORDER BY c_p_a.p ASC LIMIT 5;\n" );
+                            "rs.location >= 8 AND\n" +
+                            "cp.cancellation_policy ='flexible' AND\n" +
+                            "i.available AND\n" +
+                            "(verification_type in ('government_id', 'offline_government_id'))\n" +
+                            "ORDER BY i.avg_price ASC LIMIT 5;\n" );
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {
                         int id_listing = rs.getInt("id_listing");
                         String name_listing = rs.getString("name_listing");
                         String price = rs.getString("price");
-                        String[] temp = {name_listing, String.valueOf(price)};
+                        String[] temp = {name_listing, String.valueOf(id_listing), String.valueOf(price)};
                         data[rs.getRow()-1] = temp;
                     }
                     rs.close();
@@ -2399,7 +2403,7 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String[] columnNames = {"Listing id", "Price",};
+                String[] columnNames = {"Listing name", "Listing id", "Price",};
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -2418,6 +2422,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[16][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2454,8 +2459,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         String acc = rs.getString("acc");
                         Array brl = rs.getArray("best_rated_listings");
-                        builder.append("Accommodate : " + acc + ", Best rated listings : " + brl.toString());
-                        builder.append(System.lineSeparator());
+                        String[] temp = {acc, brl.toString()};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2465,8 +2470,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Accommodates", "Top‐5 rated listings",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2476,6 +2489,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[22610][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2497,8 +2511,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         String host_id = rs.getString("host_id");
                         Array busiest_listings = rs.getArray("busiest_listings");
-                        builder.append("Host id : " + host_id + ", Busiest listings : " + busiest_listings.toString());
-                        builder.append(System.lineSeparator());
+                        String[] temp = {host_id, busiest_listings.toString()};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2508,8 +2522,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Host id", "Busiest listings",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2519,6 +2541,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[88][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2540,8 +2563,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
                         Array top_amenities = rs.getArray("top_amenities");
-                        builder.append("Neighbourhood : " + neighbourhood + ", Top amenities : " + top_amenities.toString());
-                        builder.append(System.lineSeparator());
+                        String[] temp = {neighbourhood, top_amenities.toString()};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2551,8 +2574,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Neighbourhood", "Top amenities",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2592,11 +2623,9 @@ public class Main extends Application {
                             "\n" +
                             "SELECT (most.average - smallest.average)difference\n" +
                             "from most, smallest\n" );
-                    builder.append( "Result : ");
-                    builder.append(System.lineSeparator());
                     while ( rs.next() ) {
-                        int avg_price = rs.getInt(1);
-                        builder.append( "Average pricing : " + avg_price);
+                        float avg_price = rs.getFloat(1);
+                        builder.append( "Difference : " + avg_price);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -2646,7 +2675,7 @@ public class Main extends Application {
                             "ORDER BY c_s.s DESC LIMIT 1;\n" );
                     while ( rs.next() ) {
                         String city = rs.getString("city");
-                        builder.append( "Result : " + city);
+                        builder.append( "City who has the highest number of reviews : " + city);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -2668,6 +2697,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[65][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2694,8 +2724,8 @@ public class Main extends Application {
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
-                        builder.append(neighbourhood);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {neighbourhood};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2705,8 +2735,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Neighbourhood"};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2716,6 +2754,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[2][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2740,8 +2779,8 @@ public class Main extends Application {
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {
                         String country = rs.getString("country");
-                        builder.append(country);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {country};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2751,8 +2790,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Country"};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2762,6 +2809,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[64][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2771,20 +2819,20 @@ public class Main extends Application {
                     c.setAutoCommit(false);
 
                     stmt = c.createStatement();
-                    ResultSet rs = stmt.executeQuery( " SELECT q.neighbourhood  \n" +
+                    ResultSet rs = stmt.executeQuery( "SELECT q.neighbourhood  \n" +
                             "FROM( \n" +
-                            "    SELECT h.neighbourhood, (COUNT(CASE WHEN c. cancellation_policy = 'strict 14 with grace period ' THEN 1   END)*100)/count(*) percentage  \n" +
-                            " FROM houses h  \n" +
+                            "SELECT h.neighbourhood, (COUNT(CASE WHEN c. cancellation_policy = 'strict 14 with grace period' THEN 1    END)*100)/count(*) percentage  \n" +
+                            "FROM houses h  \n" +
                             "     INNER JOIN (SELECT l.id_listing FROM locations l WHERE l.city = 'Barcelona')l ON l.id_listing = h.id_listing\n" +
                             "     INNER JOIN cancellation_policy c ON c.id_listing = h.id_listing\n" +
                             " GROUP BY h.neighbourhood)q\n" +
-                            " WHERE q.percentage>=0;\n" );
+                            " WHERE q.percentage>=5 ;\n" );
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
-                        builder.append(neighbourhood);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {neighbourhood};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2794,8 +2842,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Neighbourhood"};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
     }
