@@ -2178,8 +2178,8 @@ public class Main extends Application {
 
         // CONFIGURATION PREDEFINED QUERIES
         TextArea result_predefined_queries_2 = (TextArea) scene.lookup("#result_predefined_queries_2");
-        result_predefined_queries.setEditable(false);
-        result_predefined_queries.setFont(Font.font(java.awt.Font.MONOSPACED, 16));
+        result_predefined_queries_2.setEditable(false);
+        result_predefined_queries_2.setFont(Font.font(java.awt.Font.MONOSPACED, 16));
         Text description_query_set_2 = (Text) scene.lookup("#description_query_set_2");
 
         Button query21 = (Button) scene.lookup("#query21");
@@ -2201,6 +2201,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[3][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2220,11 +2221,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         String city = rs.getString("city");
                         int count = rs.getInt(2);
-                        builder.append( city);
-                        builder.append(System.lineSeparator());
-                        builder.append("-> " + count);
-                        builder.append(System.lineSeparator());
-                        builder.append(System.lineSeparator());
+                        String[] temp = {city, String.valueOf(count)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2234,8 +2232,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"City", "Count",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2245,6 +2251,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[5][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2261,16 +2268,11 @@ public class Main extends Application {
                             "       FROM (houses h INNER JOIN review_scores rs ON rs.id_listing = h.id_listing)) X, locations l\n" +
                             "           WHERE X.AmountOrder  IN (floor((X.TotalRows+1)/2.0) , ceil((X.TotalRows+1)/2.0)) \n" +
                             "AND l.city = 'Madrid' AND l.id_listing = X.id_listing)X GROUP BY neighbourhood  ORDER BY median DESC LIMIT 5;\n" );
-                    int counter = 1;
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
-                        builder.append( "Top " + counter + " : " + neighbourhood);
-                        builder.append(System.lineSeparator());
                         int median = rs.getInt(2);
-                        builder.append( "-> " + median);
-                        builder.append(System.lineSeparator());
-                        builder.append(System.lineSeparator());
-                        counter++;
+                        String[] temp = {neighbourhood, String.valueOf(median)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2280,8 +2282,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Neighbourhood", "Quality",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2291,6 +2301,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[26658][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2312,8 +2323,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
-                        builder.append( "User name : " + user_name + " : Id user" + id_user);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {user_name, String.valueOf(id_user)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2323,8 +2334,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"User name", "Id user",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
@@ -2335,6 +2354,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[5][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -2368,8 +2388,8 @@ public class Main extends Application {
                         int id_listing = rs.getInt("id_listing");
                         String name_listing = rs.getString("name_listing");
                         String price = rs.getString("price");
-                        builder.append( "Listing id : " + id_listing + ", Listing name : " + name_listing + ", Price :" + price);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {name_listing, String.valueOf(price)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -2379,8 +2399,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries_2.setText(string);
+                String[] columnNames = {"Listing id", "Price",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries_2.setText(result);
             }
         });
 
