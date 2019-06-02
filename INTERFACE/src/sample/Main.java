@@ -21,6 +21,25 @@ import java.sql.*;
 
 public class Main extends Application {
 
+    public String fill(int length, String with) {
+        StringBuilder sb = new StringBuilder(length);
+        while (sb.length() < length) {
+            sb.append(with);
+        }
+        return sb.toString();
+    }
+
+    public String pad(int builder_length, int length) {
+        return pad(builder_length, length, " ");
+    }
+
+    public String pad(int builder_length, int length, String with) {
+        StringBuilder result = new StringBuilder(length);
+        result.append(fill(length - builder_length, with));
+
+        return result.toString();
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         // WINDOW CREATION
@@ -1794,11 +1813,17 @@ public class Main extends Application {
                             "WHERE cal.a AND l.id_listing = cal.id_listing AND l.host_id = u.id_user;\n" );
                     builder.append( "Result : ");
                     builder.append(System.lineSeparator());
-                    int counter = 1;
                     while ( rs.next() ) {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
-                        builder.append( "User name : " + user_name + " : Id user" + id_user);
+                        builder.append(id_user);
+                        int counter = 50 - String.valueOf(id_user).length();
+                        while (counter != 0){
+                            builder.append(" ");
+                            counter--;
+                        }
+                        // TODO: create a new string builder and append to the big one !
+                        builder.append(user_name);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
