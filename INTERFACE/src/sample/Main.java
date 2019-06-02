@@ -1,5 +1,7 @@
 package sample;
 
+import dnl.utils.text.table.TextTable;
+
 import javafx.application.Application;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
@@ -9,15 +11,18 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
+
 
 public class Main extends Application {
 
@@ -1702,7 +1707,9 @@ public class Main extends Application {
 
 
         // CONFIGURATION PREDEFINED QUERIES
-        Text result_predefined_queries = (Text) scene.lookup("#result_predefined_queries");
+        TextArea result_predefined_queries = (TextArea) scene.lookup("#result_predefined_queries");
+        result_predefined_queries.setEditable(false);
+        result_predefined_queries.setFont(Font.font(java.awt.Font.MONOSPACED, 16));
         Text description_query_set_1 = (Text) scene.lookup("#description_query_set_1");
 
         Button query1 = (Button) scene.lookup("#query1");
@@ -1792,9 +1799,9 @@ public class Main extends Application {
         query3.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
                 description_query_set_1.setText("Print all the hosts who have an available property between date 03.2019 and 09.2019.");
-                StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = null;
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -1811,20 +1818,12 @@ public class Main extends Application {
                             "WHERE c.calendar_date >= '2019-03-01' AND c.calendar_date < '2019-10-01'\n" +
                             "GROUP BY c.id_listing)cal\n" +
                             "WHERE cal.a AND l.id_listing = cal.id_listing AND l.host_id = u.id_user;\n" );
-                    builder.append( "Result : ");
-                    builder.append(System.lineSeparator());
+                    data = new String[4815][2];
                     while ( rs.next() ) {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
-                        builder.append(id_user);
-                        int counter = 50 - String.valueOf(id_user).length();
-                        while (counter != 0){
-                            builder.append(" ");
-                            counter--;
-                        }
-                        // TODO: create a new string builder and append to the big one !
-                        builder.append(user_name);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {user_name, String.valueOf(id_user)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -1834,8 +1833,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries.setText(string);
+                String[] columnNames = {"User name", "User id",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries.setText(result);
             }
         });
 
@@ -1862,7 +1869,7 @@ public class Main extends Application {
                             "      AND u2.id_user = l2.host_id;\n" );
                     while ( rs.next() ) {
                         int count = rs.getInt(1);
-                        builder.append( "Host count : " + count);
+                        builder.append( "Number of listing items : " + count);
                         builder.append(System.lineSeparator());
                     }
                     rs.close();
@@ -1884,6 +1891,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[579][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -1891,18 +1899,16 @@ public class Main extends Application {
                                     "postgres", "database2019");
 
                     c.setAutoCommit(false);
-
                     stmt = c.createStatement();
                     ResultSet rs = stmt.executeQuery( "SELECT c.calendar_date\n" +
                             "FROM calendars c, listings l, users u\n" +
                             "WHERE u.user_name ='Viajes Eco'\n" +
                             "    AND u.id_user = l.host_id\n" +
                             "    AND l.id_listing = c.id_listing  AND c.available;\n" );
-                    builder.append( "Available date: ");
                     while ( rs.next() ) {
                         Date date = rs.getDate("calendar_date");
-                        builder.append( date);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {date.toString()};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -1912,17 +1918,25 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries.setText(string);
+                String[] columnNames = {"Availabe date",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries.setText(result);
             }
         });
 
         query6.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent ae) {
                 description_query_set_1.setText("Find all the hosts (host_ids, host_names) that have only one listing.");
-                StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
+                String[][] data = new String[579][2];
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -1942,8 +1956,8 @@ public class Main extends Application {
                     while ( rs.next() ) {
                         int id_user = rs.getInt("id_user");
                         String user_name = rs.getString("user_name");
-                        builder.append( "User name : " + user_name + " : Id user : " + id_user);
-                        builder.append(System.lineSeparator());
+                        String[] temp = {user_name, String.valueOf(id_user)};
+                        data[rs.getRow()-1] = temp;
                     }
                     rs.close();
                     stmt.close();
@@ -1953,8 +1967,16 @@ public class Main extends Application {
                     System.err.println(e.getClass().getName()+": "+e.getMessage());
                     System.exit(0);
                 }
-                String string = builder.toString();
-                result_predefined_queries.setText(string);
+                String[] columnNames = {"User name, User id",};
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_predefined_queries.setText(result);
             }
         });
 

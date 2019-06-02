@@ -4,5 +4,8 @@ module INTERFACE {
     requires javafx.graphics;
     requires java.sql;
     requires postgresql;
+    requires j.text.utils;
+    requires commons.lang;
+    requires java.desktop;
     opens sample;
 }
