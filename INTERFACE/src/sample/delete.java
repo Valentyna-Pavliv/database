@@ -224,7 +224,7 @@ public class delete {
                                 error_message_insdel.setText("Deletion done !");
                                 break;
                             }
-                            case "has_amenites": {
+                            case "has_amenities": {
                                 String selectStatement = "DELETE FROM has_amenites WHERE amenity_type = ? AND id_listing = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, input1_insdel.getText());

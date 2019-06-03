@@ -224,7 +224,7 @@ public class insert {
                                 error_message_insdel.setText("Insertion done !");
                                 break;
                             }
-                            case "has_amenites": {
+                            case "has_amenities": {
                                 String selectStatement = "INSERT INTO has_amenites VALUES (?, ?);";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, input1_insdel.getText());

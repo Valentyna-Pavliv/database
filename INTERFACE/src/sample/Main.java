@@ -56,7 +56,7 @@ public class Main extends Application {
 
         // GLOBAL
         ObservableList table_name = FXCollections.observableArrayList("has_verifications", "verifications",
-                "response_time", "hosts", "review_scores", "users", "amenities", "has_amenites", "listings", "reviews", "booking_polices",
+                "response_time", "hosts", "review_scores", "users", "amenities", "has_amenities", "listings", "reviews", "booking_polices",
                 "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type");
 
         // CONFIGURATION SEARCH
@@ -174,7 +174,7 @@ public class Main extends Application {
                             case "hosts": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM hosts x\n" +
-                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? limit 500;";
+                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
@@ -214,13 +214,12 @@ public class Main extends Application {
                             }
 
                             case "review_scores": {
-                                String selectStatement = "SELECT *\n" +
-                                        "                FROM review_scores x\n" +
-                                        "                WHERE x.value = ? OR x.id_listing = ? OR x.checking = ? OR x.rating = ? OR x.location = ?" +
-                                        "OR x.accuracy LIKE ? OR x.communication = ? OR x.cleanliness = ?;";
+                                String selectStatement = "SELECT * \n" +
+                                        "                FROM review_scores x \n" +
+                                        "                WHERE x.value = ? OR x.id_listing = ? OR x.checking = ? OR x.rating = ? OR x.location = ? \n" +
+                                        "OR x.accuracy = ? OR x.communication = ? OR x.cleanliness = ?;";
                                 stmt = c.prepareStatement(selectStatement);
-                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-                                int foo;
+                                int foo = 0;
                                 try {
                                     foo = Integer.parseInt(search_bar.getText());
                                 }
@@ -228,14 +227,14 @@ public class Main extends Application {
                                 {
                                     foo = 0;
                                 }
-                                stmt.setObject(1, foo);
-                                stmt.setObject(2, foo);
-                                stmt.setObject(3, foo);
-                                stmt.setObject(4, foo);
-                                stmt.setObject(5, foo);
-                                stmt.setObject(6, foo);
-                                stmt.setObject(7, foo);
-                                stmt.setObject(8, foo);
+                                stmt.setInt(1, (Integer) foo);
+                                stmt.setInt(2, (Integer) foo);
+                                stmt.setInt(3, (Integer) foo);
+                                stmt.setInt(4, (Integer) foo);
+                                stmt.setInt(5, (Integer) foo);
+                                stmt.setInt(6, (Integer) foo);
+                                stmt.setInt(7, (Integer) foo);
+                                stmt.setInt(8, (Integer) foo);
 
                                 stmt.execute();
                                 rs = stmt.getResultSet();
@@ -257,52 +256,139 @@ public class Main extends Application {
                                 break;
                             }
 
-//                            case "users": {
-//                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM users x\n" +
-//                                        "                WHERE x.user_name LIKE ? OR x.id_user = ?;";
-//                                stmt = c.prepareStatement(selectStatement);
-//                                stmt.setObject(1, '%'+search_bar.getText()+'%');
-//                                int foo;
-//                                try {
-//                                    foo = Integer.parseInt(search_bar.getText());
-//                                }
-//                                catch (NumberFormatException e)
-//                                {
-//                                    foo = 0;
-//                                }
-//                                stmt.setObject(2, foo);
-//
-//                                stmt.execute();
-//                                rs = stmt.getResultSet();
-//                                builder.append("Result :");
-//                                builder.append(System.lineSeparator());
-//                                int counter = 1;
-//                                while (rs.next()) {
-//                                    builder.append("Entry " + counter + " : ");
-//                                    builder.append(System.lineSeparator());
-//                                    String url = rs.getString("url");
-//                                    int id_user = rs.getInt("id_user");
-//                                    String since = rs.getString("since");
-//                                    String about = rs.getString("about");
-//                                    String thumbnail_url = rs.getString("thumbnail_url");
-//                                    builder.append("Url : " + url);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("User id : " + id_user);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Since : " + since);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("About : " + about);
-//                                    builder.append(System.lineSeparator());
-//                                    builder.append("Thumbnail_url : " + thumbnail_url);
-//                                    builder.append(System.lineSeparator());
-//                                    counter++;
-//                                }
-//                                break;
-//                            }
+                            case "users": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM users x\n" +
+                                        "                WHERE x.user_name LIKE ? OR x.id_user = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+
+                                while (rs.next()) {
+                                    int id_user = rs.getInt("id_user");
+                                    String user_name = rs.getString("user_name");
+                                    String[] temp = {user_name, String.valueOf(id_user)};
+                                    tempy.add(temp);
+                                }
+                                columnNames = new String[]{"User name", "User id"};
+                                break;
+                            }
+
+                            case "amenities": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM amenities x\n" +
+                                        "                WHERE x.amenity_type LIKE ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+
+                                while (rs.next()) {
+                                    String amenity_type = rs.getString("amenity_type");
+                                    String[] temp = {amenity_type};
+                                    tempy.add(temp);
+                                }
+                                columnNames = new String[]{"Amenity type"};
+                                break;
+                            }
+
+                            case "has_amenities": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM has_amenities x\n" +
+                                        "                WHERE x.amenity_type LIKE ? OR x.id_listing = ?;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+
+                                while (rs.next()) {
+                                    int id_listing = rs.getInt("id_listing");
+                                    String amenity_type = rs.getString("amenity_type");
+                                    String[] temp = {String.valueOf(id_listing), amenity_type};
+                                    tempy.add(temp);
+                                }
+                                columnNames = new String[]{"Listing id", "Amenity type"};
+                                break;
+                            }
+
+                            case "listings": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM listings x\n" +
+                                        "                WHERE x.name_listing LIKE ? OR x.id_listing = ? OR x.host_id = ?" +
+                                        "OR x.url LIKE ? OR x.interaction LIKE ? OR x.notes LIKE ?" +
+                                        "OR x.picture_url LIKE ? OR x.description LIKE ? OR x.neighbourhood_overview LIKE ? OR x.summary LIKE ?" +
+                                        "OR x.transit LIKE ? OR x.listing_access LIKE ? LIMIT 1000;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                stmt.setObject(4, '%'+search_bar.getText()+'%');
+                                stmt.setObject(5, '%'+search_bar.getText()+'%');
+                                stmt.setObject(6, '%'+search_bar.getText()+'%');
+                                stmt.setObject(7, '%'+search_bar.getText()+'%');
+                                stmt.setObject(8, '%'+search_bar.getText()+'%');
+                                stmt.setObject(9, '%'+search_bar.getText()+'%');
+                                stmt.setObject(10, '%'+search_bar.getText()+'%');
+                                stmt.setObject(11, '%'+search_bar.getText()+'%');
+                                stmt.setObject(12, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+                                stmt.setObject(3, foo);
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+
+                                while (rs.next()) {
+                                    int id_listing = rs.getInt("id_listing");
+                                    int host_id = rs.getInt("host_id");
+                                    String name_listing = rs.getString("name_listing");
+                                    String url = rs.getString("url");
+                                    String interaction = rs.getString("interaction");
+                                    String notes = rs.getString("notes");
+                                    String picture_url = rs.getString("picture_url");
+                                    String description = rs.getString("description");
+                                    String neighbourhood_overview = rs.getString("neighbourhood_overview");
+                                    String summary = rs.getString("summary");
+                                    String transit = rs.getString("transit");
+                                    String listing_access = rs.getString("listing_access");
+                                    String[] temp = {name_listing, String.valueOf(id_listing), String.valueOf(host_id), url, interaction, notes, picture_url,
+                                            description, neighbourhood_overview, summary, transit, listing_access};
+                                    tempy.add(temp);
+                                }
+                                columnNames = new String[]{"Listing name", "Listing id", "Host id", "Url", "Interaction", "Notes", "Picture url",
+                                "Description", "Neighbourhood overview", "Summary", "transit", "Listing access"};
+                                break;
+                            }
 
 
-//                    "users", "amenities", "has_amenites", "listings", "reviews", "booking_polices",
+//                    "listings", "reviews", "booking_polices",
 //                    "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type"
                         }
                         rs.close();
