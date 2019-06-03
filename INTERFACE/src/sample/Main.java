@@ -22,6 +22,7 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class Main extends Application {
@@ -58,9 +59,10 @@ public class Main extends Application {
                 "response_time", "hosts", "review_scores", "users", "amenities", "has_amenites", "listings", "reviews", "booking_polices",
                 "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type");
 
-
         // CONFIGURATION SEARCH
-        Text result_search_queries = (Text) scene.lookup("#result_search_queries");
+        TextArea result_search_queries = (TextArea) scene.lookup("#result_search_queries");
+        result_search_queries.setEditable(false);
+        result_search_queries.setFont(Font.font(java.awt.Font.MONOSPACED, 16));
         Button search_button = (Button) scene.lookup("#search_button");
         ChoiceBox table_selection_search = (ChoiceBox) scene.lookup("#table_selection_search");
         TextField search_bar = (TextField) scene.lookup("#search_bar");
@@ -74,7 +76,8 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 PreparedStatement stmt = null;
-                String[][] data = null;
+                ArrayList<String[]> tempy = new ArrayList<>();
+                String[] columnNames = null;
                 if (table_selection_search.getValue() == null || search_bar.getText().isBlank()) {
                     builder.append("Please select a table or fill the search bar !");
                 }
@@ -108,13 +111,13 @@ public class Main extends Application {
                                 stmt.execute();
                                 rs = stmt.getResultSet();
 
-                                data = new String[579][2];
                                 while (rs.next()) {
                                     int user_id = rs.getInt("user_id");
                                     String verification_type = rs.getString("verification_type");
                                     String[] temp = {String.valueOf(user_id), verification_type};
-                                    data[rs.getRow()-1] = temp;
+                                    tempy.add(temp);
                                 }
+                                columnNames = new String[]{"User id", "Verification type"};
                                 break;
                             }
 
@@ -131,9 +134,10 @@ public class Main extends Application {
                                 builder.append(System.lineSeparator());
                                 while (rs.next()) {
                                     String verification_type = rs.getString("verification_type");
-                                    builder.append("Verification type : " + verification_type);
-                                    builder.append(System.lineSeparator());
+                                    String[] temp = {verification_type};
+                                    tempy.add(temp);
                                 }
+                                columnNames = new String[]{"Verification type"};
                                 break;
                             }
 
@@ -160,16 +164,17 @@ public class Main extends Application {
                                 while (rs.next()) {
                                     String response_time = rs.getString("response_time");
                                     int host_id = rs.getInt("host_id");
-                                    builder.append("Response time : " + response_time + ", Host id : " + host_id);
-                                    builder.append(System.lineSeparator());
+                                    String[] temp = {String.valueOf(host_id), response_time};
+                                    tempy.add(temp);
                                 }
+                                columnNames = new String[]{"Host id", "Response time"};
                                 break;
                             }
 
                             case "hosts": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM hosts x\n" +
-                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ?;";
+                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? limit 500;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
@@ -194,35 +199,25 @@ public class Main extends Application {
 
                                 stmt.execute();
                                 rs = stmt.getResultSet();
-                                builder.append("Result :");
-                                builder.append(System.lineSeparator());
-                                int counter = 1;
+
                                 while (rs.next()) {
-                                    builder.append("Entry " + counter + " : ");
-                                    builder.append(System.lineSeparator());
                                     String url = rs.getString("url");
                                     int id_user = rs.getInt("id_user");
                                     String since = rs.getString("since");
                                     String about = rs.getString("about");
                                     String thumbnail_url = rs.getString("thumbnail_url");
-                                    builder.append("Url : " + url);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("User id : " + id_user);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("Since : " + since);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("About : " + about);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("Thumbnail_url : " + thumbnail_url);
-                                    builder.append(System.lineSeparator());
-                                    counter++;
+                                    String[] temp = {String.valueOf(id_user), url, since, about, thumbnail_url};
+                                    tempy.add(temp);
                                 }
+                                columnNames = new String[]{"Id_user", "Url", "Since", "About", "Thumbnailurl"};
                                 break;
                             }
+
                             case "review_scores": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM review_scores x\n" +
-                                        "                WHERE x.value LIKE ? OR x.id_listing = ? OR x.checking = ? OR x.rating LIKE ? OR x.location LIKE ?;";
+                                        "                WHERE x.value = ? OR x.id_listing = ? OR x.checking = ? OR x.rating = ? OR x.location = ?" +
+                                        "OR x.accuracy LIKE ? OR x.communication = ? OR x.cleanliness = ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
@@ -233,43 +228,32 @@ public class Main extends Application {
                                 {
                                     foo = 0;
                                 }
+                                stmt.setObject(1, foo);
                                 stmt.setObject(2, foo);
-                                Date date = null;
-                                try {
-                                    date = (Date) Date.valueOf(search_bar.getText());
-                                }
-                                catch (Exception e){
-                                    date = new Date(System.currentTimeMillis());
-                                }
-                                stmt.setDate(3, date);
-                                stmt.setObject(4, '%'+search_bar.getText()+'%');
-                                stmt.setObject(5, '%'+search_bar.getText()+'%');
+                                stmt.setObject(3, foo);
+                                stmt.setObject(4, foo);
+                                stmt.setObject(5, foo);
+                                stmt.setObject(6, foo);
+                                stmt.setObject(7, foo);
+                                stmt.setObject(8, foo);
 
                                 stmt.execute();
                                 rs = stmt.getResultSet();
-                                builder.append("Result :");
-                                builder.append(System.lineSeparator());
-                                int counter = 1;
+
                                 while (rs.next()) {
-                                    builder.append("Entry " + counter + " : ");
-                                    builder.append(System.lineSeparator());
-                                    String url = rs.getString("url");
-                                    int id_user = rs.getInt("id_user");
-                                    String since = rs.getString("since");
-                                    String about = rs.getString("about");
-                                    String thumbnail_url = rs.getString("thumbnail_url");
-                                    builder.append("Url : " + url);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("User id : " + id_user);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("Since : " + since);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("About : " + about);
-                                    builder.append(System.lineSeparator());
-                                    builder.append("Thumbnail_url : " + thumbnail_url);
-                                    builder.append(System.lineSeparator());
-                                    counter++;
+                                    int value = rs.getInt("value");
+                                    int id_listing = rs.getInt("id_listing");
+                                    int checking = rs.getInt("checking");
+                                    int rating = rs.getInt("rating");
+                                    int location = rs.getInt("location");
+                                    int accuracy = rs.getInt("accuracy");
+                                    int communication = rs.getInt("communication");
+                                    int cleanliness = rs.getInt("cleanliness");
+                                    String[] temp = {String.valueOf(value), String.valueOf(id_listing), String.valueOf(checking), String.valueOf(rating),
+                                            String.valueOf(location), String.valueOf(accuracy), String.valueOf(communication), String.valueOf(cleanliness)};
+                                    tempy.add(temp);
                                 }
+                                columnNames = new String[]{"Listing id", "Value", "Checking", "Rating", "Location", "Accuracy", "Communication", "Cleanliness"};
                                 break;
                             }
 
@@ -330,8 +314,19 @@ public class Main extends Application {
                         System.exit(0);
                     }
                 }
-                String string = builder.toString();
-                result_search_queries.setText(string);
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
+                TextTable tt = new TextTable(columnNames, data);
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
+                    tt.printTable(ps, 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String result = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                result_search_queries.setText(result);
             }
         });
 
