@@ -14,22 +14,8 @@ public class insert {
     public static void configuration_insert(Scene scene){
         ChoiceBox choicebox_insdel = (ChoiceBox) scene.lookup("#choicebox_insdel");
         Button insert_button_insdel = (Button) scene.lookup("#insert_button_insdel");
-        Button delete_button_insdel = (Button) scene.lookup("#delete_button_insdel");
         Text error_message_insdel = (Text) scene.lookup("#error_message_insdel");
 
-        Text text1_insdel = (Text) scene.lookup("#text1_insdel");
-        Text text2_insdel = (Text) scene.lookup("#text2_insdel");
-        Text text3_insdel = (Text) scene.lookup("#text3_insdel");
-        Text text4_insdel = (Text) scene.lookup("#text4_insdel");
-        Text text5_insdel = (Text) scene.lookup("#text5_insdel");
-        Text text6_insdel = (Text) scene.lookup("#text6_insdel");
-        Text text7_insdel = (Text) scene.lookup("#text7_insdel");
-        Text text8_insdel = (Text) scene.lookup("#text8_insdel");
-        Text text9_insdel = (Text) scene.lookup("#text9_insdel");
-        Text text10_insdel = (Text) scene.lookup("#text10_insdel");
-        Text text11_insdel = (Text) scene.lookup("#text11_insdel");
-        Text text12_insdel = (Text) scene.lookup("#text12_insdel");
-        Text text13_insdel = (Text) scene.lookup("#text13_insdel");
         TextField input1_insdel = (TextField) scene.lookup("#input1_insdel");
         TextField input2_insdel = (TextField) scene.lookup("#input2_insdel");
         TextField input3_insdel = (TextField) scene.lookup("#input3_insdel");
