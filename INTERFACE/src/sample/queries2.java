@@ -14,6 +14,7 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class queries2 {
 
@@ -42,7 +43,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[3][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -63,7 +64,7 @@ public class queries2 {
                         String city = rs.getString("city");
                         int count = rs.getInt(2);
                         String[] temp = {city, String.valueOf(count)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -74,6 +75,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"City", "Count",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -92,7 +97,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[5][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -113,7 +118,7 @@ public class queries2 {
                         String neighbourhood = rs.getString("neighbourhood");
                         int median = rs.getInt(2);
                         String[] temp = {neighbourhood, String.valueOf(median)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -124,6 +129,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Neighbourhood", "Quality",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -142,7 +151,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[26658][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -165,7 +174,7 @@ public class queries2 {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
                         String[] temp = {user_name, String.valueOf(id_user)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -176,6 +185,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"User name", "Id user",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -195,7 +208,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[5][3];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -234,7 +247,7 @@ public class queries2 {
                         String name_listing = rs.getString("name_listing");
                         String price = rs.getString("price");
                         String[] temp = {name_listing, String.valueOf(id_listing), String.valueOf(price)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -245,6 +258,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Listing name", "Listing id", "Price",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -263,7 +280,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[16][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -301,7 +318,7 @@ public class queries2 {
                         String acc = rs.getString("acc");
                         Array brl = rs.getArray("best_rated_listings");
                         String[] temp = {acc, brl.toString()};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -312,6 +329,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Accommodates", "Top‐5 rated listings",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -330,7 +351,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[22610][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -353,7 +374,7 @@ public class queries2 {
                         String host_id = rs.getString("host_id");
                         Array busiest_listings = rs.getArray("busiest_listings");
                         String[] temp = {host_id, busiest_listings.toString()};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -364,6 +385,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Host id", "Busiest listings",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -382,7 +407,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[88][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -405,7 +430,7 @@ public class queries2 {
                         String neighbourhood = rs.getString("neighbourhood");
                         Array top_amenities = rs.getArray("top_amenities");
                         String[] temp = {neighbourhood, top_amenities.toString()};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -416,6 +441,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Neighbourhood", "Top amenities",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -538,7 +567,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[65][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -566,7 +595,7 @@ public class queries2 {
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
                         String[] temp = {neighbourhood};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -577,6 +606,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Neighbourhood"};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -595,7 +628,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[2][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -621,7 +654,7 @@ public class queries2 {
                     while ( rs.next() ) {
                         String country = rs.getString("country");
                         String[] temp = {country};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -632,6 +665,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Country"};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -650,7 +687,7 @@ public class queries2 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[64][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -673,7 +710,7 @@ public class queries2 {
                     while ( rs.next() ) {
                         String neighbourhood = rs.getString("neighbourhood");
                         String[] temp = {neighbourhood};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -684,6 +721,10 @@ public class queries2 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Neighbourhood"};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
