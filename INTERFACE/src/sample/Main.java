@@ -59,7 +59,6 @@ public class Main extends Application {
                 "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type");
 
 
-
         // CONFIGURATION SEARCH
         Text result_search_queries = (Text) scene.lookup("#result_search_queries");
         Button search_button = (Button) scene.lookup("#search_button");
@@ -75,6 +74,7 @@ public class Main extends Application {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 PreparedStatement stmt = null;
+                String[][] data = null;
                 if (table_selection_search.getValue() == null || search_bar.getText().isBlank()) {
                     builder.append("Please select a table or fill the search bar !");
                 }
@@ -107,16 +107,13 @@ public class Main extends Application {
 
                                 stmt.execute();
                                 rs = stmt.getResultSet();
-                                int counter = 1;
+
+                                data = new String[579][2];
                                 while (rs.next()) {
                                     int user_id = rs.getInt("user_id");
-                                    builder.append("Result " + counter + " : " + user_id);
-                                    builder.append(System.lineSeparator());
                                     String verification_type = rs.getString("verification_type");
-                                    builder.append("-> " + verification_type);
-                                    builder.append(System.lineSeparator());
-                                    builder.append(System.lineSeparator());
-                                    counter++;
+                                    String[] temp = {String.valueOf(user_id), verification_type};
+                                    data[rs.getRow()-1] = temp;
                                 }
                                 break;
                             }
@@ -172,7 +169,7 @@ public class Main extends Application {
                             case "hosts": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM hosts x\n" +
-                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ? LIMIT 50;";
+                                        "                WHERE x.url LIKE ? OR x.id_user = ? OR x.since = ? OR x.about LIKE ? OR x.thumbnail_url LIKE ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
@@ -225,7 +222,7 @@ public class Main extends Application {
                             case "review_scores": {
                                 String selectStatement = "SELECT *\n" +
                                         "                FROM review_scores x\n" +
-                                        "                WHERE x.value LIKE ? OR x.id_listing = ? OR x.checking = ? OR x.rating LIKE ? OR x.location LIKE ? LIMIT 50;";
+                                        "                WHERE x.value LIKE ? OR x.id_listing = ? OR x.checking = ? OR x.rating LIKE ? OR x.location LIKE ?;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 int foo;
@@ -276,10 +273,10 @@ public class Main extends Application {
                                 break;
                             }
 
-//                            case "review_scores": {
+//                            case "users": {
 //                                String selectStatement = "SELECT *\n" +
-//                                        "                FROM review_scores x\n" +
-//                                        "                WHERE x.value LIKE ? OR x.id_listing = ? OR x.checking = ? OR x.rating LIKE ? OR x.location LIKE ? LIMIT 50;";
+//                                        "                FROM users x\n" +
+//                                        "                WHERE x.user_name LIKE ? OR x.id_user = ?;";
 //                                stmt = c.prepareStatement(selectStatement);
 //                                stmt.setObject(1, '%'+search_bar.getText()+'%');
 //                                int foo;
@@ -291,16 +288,6 @@ public class Main extends Application {
 //                                    foo = 0;
 //                                }
 //                                stmt.setObject(2, foo);
-//                                Date date = null;
-//                                try {
-//                                    date = (Date) Date.valueOf(search_bar.getText());
-//                                }
-//                                catch (Exception e){
-//                                    date = new Date(System.currentTimeMillis());
-//                                }
-//                                stmt.setDate(3, date);
-//                                stmt.setObject(4, '%'+search_bar.getText()+'%');
-//                                stmt.setObject(5, '%'+search_bar.getText()+'%');
 //
 //                                stmt.execute();
 //                                rs = stmt.getResultSet();

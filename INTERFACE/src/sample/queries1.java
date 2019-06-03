@@ -14,6 +14,7 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class queries1 {
     public static void configure_queries_1(Scene scene) {
@@ -111,7 +112,7 @@ public class queries1 {
                 description_query_set_1.setText("Print all the hosts who have an available property between date 03.2019 and 09.2019.");
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = null;
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -128,12 +129,11 @@ public class queries1 {
                             "WHERE c.calendar_date >= '2019-03-01' AND c.calendar_date < '2019-10-01'\n" +
                             "GROUP BY c.id_listing)cal\n" +
                             "WHERE cal.a AND l.id_listing = cal.id_listing AND l.host_id = u.id_user;\n" );
-                    data = new String[4815][2];
                     while ( rs.next() ) {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
                         String[] temp = {user_name, String.valueOf(id_user)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -144,6 +144,10 @@ public class queries1 {
                     System.exit(0);
                 }
                 String[] columnNames = {"User name", "User id",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -201,7 +205,7 @@ public class queries1 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[579][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -218,7 +222,7 @@ public class queries1 {
                     while ( rs.next() ) {
                         Date date = rs.getDate("calendar_date");
                         String[] temp = {date.toString()};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -229,6 +233,10 @@ public class queries1 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Availabe date",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -246,7 +254,7 @@ public class queries1 {
                 description_query_set_1.setText("Find all the hosts (host_ids, host_names) that have only one listing.");
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[21263][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -267,7 +275,7 @@ public class queries1 {
                         String user_name = rs.getString("user_name");
                         int id_user = rs.getInt("id_user");
                         String[] temp = {user_name, String.valueOf(id_user)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -278,6 +286,10 @@ public class queries1 {
                     System.exit(0);
                 }
                 String[] columnNames = {"User name", "User id",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -388,7 +400,7 @@ public class queries1 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[10][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -412,7 +424,7 @@ public class queries1 {
                         int id_user = rs.getInt("id_user");
                         String user_name = rs.getString("user_name");
                         String[] temp = {user_name, String.valueOf(id_user)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -423,6 +435,10 @@ public class queries1 {
                     System.exit(0);
                 }
                 String[] columnNames = {"User name", "User id",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
@@ -441,7 +457,7 @@ public class queries1 {
                 StringBuilder builder = new StringBuilder();
                 Connection c = null;
                 Statement stmt = null;
-                String[][] data = new String[10][2];
+                ArrayList<String[]> tempy = new ArrayList<>();
                 try {
                     Class.forName("org.postgresql.Driver");
                     c = DriverManager
@@ -462,7 +478,7 @@ public class queries1 {
                         int id_listing = rs.getInt("id_listing");
                         String name_listing = rs.getString("name_listing");
                         String[] temp = {name_listing, String.valueOf(id_listing)};
-                        data[rs.getRow()-1] = temp;
+                        tempy.add(temp);
                     }
                     rs.close();
                     stmt.close();
@@ -473,6 +489,10 @@ public class queries1 {
                     System.exit(0);
                 }
                 String[] columnNames = {"Listing name", "Listing id",};
+                String[][] data = new String[tempy.size()][2];
+                for (int i = 0; i < tempy.size(); i++) {
+                    data[i] = tempy.get(i);
+                }
                 TextTable tt = new TextTable(columnNames, data);
                 final ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try (PrintStream ps = new PrintStream(baos, true, "UTF-8")) {
