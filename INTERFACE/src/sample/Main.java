@@ -339,7 +339,7 @@ public class Main extends Application {
                                         "                WHERE x.name_listing LIKE ? OR x.id_listing = ? OR x.host_id = ?" +
                                         "OR x.url LIKE ? OR x.interaction LIKE ? OR x.notes LIKE ?" +
                                         "OR x.picture_url LIKE ? OR x.description LIKE ? OR x.neighbourhood_overview LIKE ? OR x.summary LIKE ?" +
-                                        "OR x.transit LIKE ? OR x.listing_access LIKE ? LIMIT 1000;";
+                                        "OR x.transit LIKE ? OR x.listing_access LIKE ? LIMIT 500;";
                                 stmt = c.prepareStatement(selectStatement);
                                 stmt.setObject(1, '%'+search_bar.getText()+'%');
                                 stmt.setObject(4, '%'+search_bar.getText()+'%');
@@ -387,8 +387,96 @@ public class Main extends Application {
                                 break;
                             }
 
+                            case "reviews": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM reviews x\n" +
+                                        "                WHERE x.review_comment LIKE ? OR x.id_review = ? OR x.id_listing = ? OR x.id_reviewer = ? OR x.review_date = ? LIMIT 500;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(2, foo);
+                                stmt.setObject(3, foo);
+                                stmt.setObject(4, foo);
+                                Date date = null;
+                                try {
+                                    date = (Date) Date.valueOf(search_bar.getText());
+                                }
+                                catch (Exception e){
+                                    date = new Date(System.currentTimeMillis());
+                                }
+                                stmt.setDate(5, date);
 
-//                    "listings", "reviews", "booking_polices",
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+
+                                while (rs.next()) {
+                                    String review_comment = rs.getString("review_comment");
+                                    int id_review = rs.getInt("id_review");
+                                    int id_listing = rs.getInt("id_listing");
+                                    int id_reviewer = rs.getInt("id_reviewer");
+                                    Date review_date = rs.getDate("review_date");
+                                    String[] temp = {String.valueOf(id_review), String.valueOf(id_listing), String.valueOf(id_reviewer), review_date.toString(), review_comment};
+                                    tempy.add(temp);
+                                }
+                                columnNames = new String[]{"Review id", "Listing id", "Reviewer id", "Review date", "Review comment"};
+                                break;
+                            }
+
+                            case "booking_polices": {
+                                String selectStatement = "SELECT *\n" +
+                                        "                FROM booking_polices x\n" +
+                                        "                WHERE x.is_business_travel_ready LIKE ? OR x.require_guest_profile_picture LIKE ? " +
+                                        "OR x.require_guest_phone_verification LIKE ? OR x.id_listing = ? OR x.extra_people = ? " +
+                                        "OR x.maximum_nights = ? OR x.minimum_nights = ? OR x.guests_included = ? LIMIT 500;";
+                                stmt = c.prepareStatement(selectStatement);
+                                stmt.setObject(1, '%'+search_bar.getText()+'%');
+                                stmt.setObject(2, '%'+search_bar.getText()+'%');
+                                stmt.setObject(3, '%'+search_bar.getText()+'%');
+                                int foo;
+                                try {
+                                    foo = Integer.parseInt(search_bar.getText());
+                                }
+                                catch (NumberFormatException e)
+                                {
+                                    foo = 0;
+                                }
+                                stmt.setObject(4, foo);
+                                stmt.setObject(5, foo);
+                                stmt.setObject(6, foo);
+                                stmt.setObject(7, foo);
+                                stmt.setObject(8, foo);
+
+                                stmt.execute();
+                                rs = stmt.getResultSet();
+
+                                while (rs.next()) {
+                                    String is_business_travel_ready = rs.getString("is_business_travel_ready");
+                                    String require_guest_profile_picture = rs.getString("require_guest_profile_picture");
+                                    String require_guest_phone_verification = rs.getString("require_guest_phone_verification");
+                                    int id_listing = rs.getInt("id_listing");
+                                    int extra_people = rs.getInt("extra_people");
+                                    int maximum_nights = rs.getInt("maximum_nights");
+                                    int minimum_nights = rs.getInt("minimum_nights");
+                                    int guests_included = rs.getInt("guests_included");
+                                    String[] temp = {String.valueOf(id_listing), String.valueOf(extra_people), is_business_travel_ready,
+                                            require_guest_profile_picture, require_guest_phone_verification,
+                                            String.valueOf(maximum_nights), String.valueOf(minimum_nights), String.valueOf(guests_included)};
+                                    tempy.add(temp);
+                                }
+                                columnNames = new String[]{"Listing id", "Extra people", "Business travel ready", "Require profile picture",
+                                        "Require phone verification", "Maximum nights", "Minimum nights", "Guests included"};
+                                break;
+                            }
+
+
+//                     "booking_polices",
 //                    "calendars", "locations", "houses", "property", "cancellation_policy", "room_type", "bed_type"
                         }
                         rs.close();
